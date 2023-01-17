@@ -1,3 +1,11 @@
+import { StyledHomePage } from './Main.styled';
+import Background from '../../components/Background/Background';
+
 export default function Main() {
-    return <div>Main...</div>;
+  return (
+    <>
+      <Background />
+      <StyledHomePage></StyledHomePage>
+    </>
+  );
 }
