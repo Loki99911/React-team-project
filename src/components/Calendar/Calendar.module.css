@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar {
+    width: 74px;
+    height: 44px;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1.17;
+    color: rgba(82, 85, 95, 1);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    letter-spacing: 0.04em;
+    margin-left: 10px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        position: absolute;
+        /* margin-right: 44px; */
+    }
+}
+
+/* @media screen and (min-width: 1280px) {
+  .container {
+    margin-right: 32px;
+  }
+} */
