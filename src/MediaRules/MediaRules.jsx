@@ -21,4 +21,3 @@ export const Default = ({ children }) => {
 };
 
 
-// npm i react-responsive
