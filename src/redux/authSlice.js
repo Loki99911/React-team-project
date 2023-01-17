@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+// import { createSlice } from '@reduxjs/toolkit';
 // import {
 //   signupUser,
 //   loginUser,
@@ -6,13 +6,13 @@ import { createSlice } from '@reduxjs/toolkit';
 //   getCurrentUser,
 // } from './operations';
 
-export const authSlice = createSlice({
-  name: 'user',
-  initialState: {
-    user: { name: null, email: null },
-    token: null,
-    isLogin: false,
-  },
+// export const authSlice = createSlice({
+//   name: 'user',
+//   initialState: {
+//     user: { name: null, email: null },
+//     token: null,
+//     isLogin: false,
+//   },
 
 //   extraReducers: builder => {
 //     builder
@@ -22,4 +22,4 @@ export const authSlice = createSlice({
 //         state.isLogin = true;
 //       })
 //   },
-});
+// });
