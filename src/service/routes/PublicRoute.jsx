@@ -1,5 +1,5 @@
-import { Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+// import { Navigate } from 'react-router-dom';
+// import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 export const PublicRoute = ({
@@ -7,10 +7,10 @@ export const PublicRoute = ({
   restricted = false,
   redirectTo = '/',
 }) => {
-  const isLogin = useSelector(state => state.user.isLogin);
-  const shouldRedirect = isLogin && restricted;
+  // const isLogin = useSelector(state => state.user.isLogin);
+  // const shouldRedirect = isLogin && restricted;
 
-  return shouldRedirect ? <Navigate to={redirectTo} /> : children;
+  // return shouldRedirect ? <Navigate to={redirectTo} /> : children;
 };
 
 PublicRoute.propTypes = {
