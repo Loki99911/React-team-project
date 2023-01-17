@@ -141,7 +141,13 @@ export const ExspensesIncLink = styled(NavLink)`
 
 export const LinkBox = styled.div`
   display: flex;
-  /* margin-top: 500px; */
+
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    bottom: -14%;
+    gap: 2px;
+  }
+  /* height:100vh; */
 
   @media screen and (min-width: 768px) {
     margin-top: 60px;
