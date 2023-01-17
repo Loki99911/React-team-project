@@ -3,7 +3,7 @@ import { Route, Routes} from 'react-router-dom';
 // import { useDispatch, useSelector } from 'react-redux';
 import { lazy } from 'react';
 import { SharedLayout } from '../components/SharedLayout/SharedLayout';
-import { PublicRoute, PrivateRoute } from '../service/routes';
+// import { PublicRoute, PrivateRoute } from '../service/routes';
 
 const Register = lazy(() => import('../pages/Register/Register'));
 const Main = lazy(() => import('../pages/Main/Main'));
@@ -18,7 +18,7 @@ export const App = () => {
       <Route path="/" element={<SharedLayout />}>
         <Route
           index
-          element={<PublicRoute><Register /></PublicRoute>}
+          element={<Register />}
         />
         <Route
           path="/main"
@@ -29,7 +29,7 @@ export const App = () => {
         </Route>
         <Route
           path="/reports"
-          element={<PrivateRoute><Reports /></PrivateRoute>}
+          element={<Reports />}
         />
       </Route>
     </Routes>
