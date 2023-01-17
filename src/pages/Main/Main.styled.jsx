@@ -16,6 +16,7 @@ export const StyledHomePage = styled.div`
     background-image: url(${bgTabl});
     background-position: bottom 60px right 88px;
     background-repeat: no-repeat;
+    background-size: 25%;
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
@@ -30,6 +31,8 @@ export const StyledHomePage = styled.div`
     padding: 40px 91px 83px 91px;
     background-image: url(${bgDesk});
     background-position: bottom;
+    background-size: contain;
+ 
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
@@ -39,4 +42,3 @@ export const StyledHomePage = styled.div`
     }
   }
 `;
-
