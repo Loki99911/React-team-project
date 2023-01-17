@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/518.c9308c2d.chunk.js","mappings":"4JAAe,SAASA,IACpB,OAAO,wCACV,C","sources":["pages/Expenses/Expenses.jsx"],"sourcesContent":["export default function Expenses() {\n    return <div>Expenses...</div>;\n};"],"names":["Expenses"],"sourceRoot":""}
