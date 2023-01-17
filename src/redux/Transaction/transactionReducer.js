@@ -10,6 +10,8 @@ import {
   getSpecificPeriodTrans,
 } from './transactionOperations';
 
+import { handleUserBalance, getFullUserInfo } from 'redux/Auth/authOperations';
+
 const pending = state => {
   state.isLoading = true;
 };
@@ -19,9 +21,6 @@ const rejected = (state, { payload }) => {
 };
 
 const initialState = {
-  isLoading: false,
-  error: null,
-  newBalance: 0,
   incomes: {
     transactions: [],
     stats: {},
@@ -36,6 +35,10 @@ const initialState = {
     expenses: { total: null, incomesData: null },
     incomes: { total: null, incomesData: null },
   },
+  isLoading: false,
+  error: null,
+  newBalance: 0,
+  allTransactions: [],
 };
 
 const transactionSlice = createSlice({
@@ -43,6 +46,7 @@ const transactionSlice = createSlice({
   initialState,
   extraReducers: builder =>
     builder
+      //   --------------------   transactions  ------------------------------
       .addCase(addIncome.pending, pending)
       .addCase(addIncome.rejected, rejected)
       .addCase(getIncomeStats.pending, pending)
@@ -64,7 +68,7 @@ const transactionSlice = createSlice({
         state.error = null;
         state.incomes.transactions.unshift(payload.transaction);
         state.newBalance = payload.newBalance;
-        //   probably add push to "all User's transaction"
+        state.allTransactions.push(payload.transaction);
       })
       .addCase(getIncomeStats.fulfilled, (state, { payload }) => {
         state.isLoading = false;
@@ -82,7 +86,7 @@ const transactionSlice = createSlice({
         state.error = null;
         state.expences.transactions.unshift(payload.transaction);
         state.newBalance = payload.newBalance;
-        //   probably add push to "all User's transaction"
+        state.allTransactions.push(payload.transaction);
       })
       .addCase(getExpenseStats.fulfilled, (state, { payload }) => {
         state.isLoading = false;
@@ -105,7 +109,9 @@ const transactionSlice = createSlice({
         state.incomes.transactions = state.incomes.transactions.filter(
           trans => trans._id !== payload.id
         );
-        //   probably add filtering to "all User's transaction"
+        state.allTransactions = state.allTransactions.filter(
+          trans => trans._id !== payload.id
+        );
       })
       .addCase(getSpecificPeriodTrans.fulfilled, (state, { payload }) => {
         state.isLoading = false;
@@ -116,6 +122,13 @@ const transactionSlice = createSlice({
         state.transactionsByPeriod.incomes.total = payload.incomes.total;
         state.transactionsByPeriod.incomes.incomesData =
           payload.incomes.incomesData;
+      })
+      .addCase(handleUserBalance.fulfilled, (state, { payload }) => {
+        state.newBalance = payload.newBalance;
+      })
+      .addCase(getFullUserInfo.fulfilled, (state, { payload }) => {
+        state.newBalance = payload.newBalance;
+        state.allTransactions = payload.transactions;
       }),
 });
 
