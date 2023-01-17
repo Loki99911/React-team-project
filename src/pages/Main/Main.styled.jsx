@@ -144,7 +144,8 @@ export const LinkBox = styled.div`
 
   @media screen and (max-width: 767px) {
     position: absolute;
-    bottom: -14%;
+    transform: translate(0, 190%);
+    bottom: 0;
     gap: 2px;
   }
   /* height:100vh; */
