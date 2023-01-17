@@ -12,6 +12,7 @@ import {
   LoginInput,
   LoginBtn,
   LoginBtnBlock,
+  GoogleBtn,
 } from './LoginForm.styled';
 
 
@@ -24,9 +25,9 @@ const LoginForm = () => {
   return (
     <FormLayout>
       <p>You can log in with your Google Account:</p>
-      <button type="button">
+      <GoogleBtn type="button">
         <img src={google} alt="google" />
-      </button>
+      </GoogleBtn>
       <p>Or log in using an email and password, after registering:</p>
       <Formik
         initialValues={{ email: '', password: '' }}
@@ -41,14 +42,13 @@ const LoginForm = () => {
           }
           return errors;
         }}
-        onSubmit={(values) => {
+        onSubmit={values => {
           dispatch(logIn(values));
-          
+
           if (userIsLogin) {
             navigate('/main');
           }
-        }
-        }
+        }}
       >
         {({
           values,
