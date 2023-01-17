@@ -1,23 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 // import { authSlice } from './authSlice';
 import storage from 'redux-persist/lib/storage';
-import {
-  persistStore,
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist';
+import { persistStore, persistReducer } from 'redux-persist';
 import transactionReducer from './Transaction/transactionReducer';
 import authReducer from './Auth/authReducer';
 
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['refreshToken', 'sid'],
+  whitelist: ['refreshToken', 'sid', 'accessToken'],
 };
 
 const persistedReducer = persistReducer(authPersistConfig, authReducer);
