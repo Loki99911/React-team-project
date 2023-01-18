@@ -1,17 +1,6 @@
 import styled from 'styled-components';
 
-// export const NotifyBalanceBackdrop = styled.div`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-// `;
-
 export const NotifyBalanceContainer = styled.div`
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    display: none;
-  }
   position: absolute;
   top: 250px;
   left: 50%;
@@ -23,11 +12,9 @@ export const NotifyBalanceContainer = styled.div`
   background: linear-gradient(117.84deg, #1d346a 2.84%, #031634 67.28%);
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 30px;
-
-  @media screen and (min-width: 768px) {
-    max-width: 288px;
-    top: 160px;
-    left: 35%;
+  
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    display: none;
   }
 
   @media screen and (min-width: 1280px) {

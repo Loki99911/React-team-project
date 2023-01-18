@@ -34,10 +34,15 @@ export const StyledCloseButton = styled.button`
   position: absolute;
   top: 20px;
   right: 20px;
+  background-color: transparent;
   cursor: pointer;
-  use{
+  use {
     width: 12px;
     height: 12px;
+  }
+  transition: transform 250ms linear;
+  :hover {
+    transform: rotate(180deg)
   }
 `;
 

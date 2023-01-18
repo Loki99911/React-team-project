@@ -1,15 +1,14 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
 import {
   BalanceFormStyled,
   BalanceFormLabel,
   BalanceFormInput,
   BalanceFormBtn,
 } from './BalanceForm.styled';
-import { useSelector } from 'react-redux';
 import NotifyBalance from '../NotifyBalance/NotifyBalance';
-import { useState, useEffect } from 'react';
 import { InfoModal } from 'components/InfoModal/InfoModal';
 import { handleUserBalance } from '../../redux/Auth/authOperations';
-import { useDispatch } from 'react-redux';
 import { getBalance } from '../../redux/Transaction/transactionSelectors';
 
 export default function BalanceForm() {
@@ -21,7 +20,6 @@ export default function BalanceForm() {
 
   useEffect(() => {
     setBalance(String(stateBalance));
-    // eslint-disable-next-line
   }, [stateBalance]);
 
   const handleSubmit = e => {

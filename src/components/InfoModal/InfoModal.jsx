@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-// import PropTypes from 'prop-types';
 import {
   StyledModalWindow,
   StyledContentDiv,
@@ -42,7 +41,6 @@ export const InfoModal = ({ children, closeModal, dispatch }) => {
   return createPortal(
     // Backdrop
     <StyledModalBackdrop
-     
       onClick={handleBackdropClose}
     >
       {/* Modal window */}
