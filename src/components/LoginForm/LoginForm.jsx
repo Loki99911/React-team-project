@@ -1,8 +1,7 @@
 import React from 'react';
 import { Formik } from 'formik';
 import shortid from 'shortid';
-import { useDispatch, useSelector  } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useDispatch,} from 'react-redux';
 import google from '../../images/google.svg';
 import { logIn, signUp } from '../../redux/Auth/authOperations';
 import {
@@ -18,8 +17,6 @@ import {
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const userIsLogin = useSelector(state => state.auth.isLoggedIn);
   const emailID = shortid.generate();
   const passwordlID = shortid.generate();
   return (
@@ -44,10 +41,6 @@ const LoginForm = () => {
         }}
         onSubmit={values => {
           dispatch(logIn(values));
-
-          if (userIsLogin) {
-            navigate('/main');
-          }
         }}
       >
         {({
@@ -83,19 +76,16 @@ const LoginForm = () => {
             {errors.password && touched.password && errors.password}
             <LoginBtnBlock>
               <LoginBtn type="submit" disabled={isSubmitting}>
-                Log in
+                {'Log in'.toUpperCase()}
               </LoginBtn>
               <LoginBtn
                 type="button"
                 disabled={isSubmitting}
                 onClick={() => {
                   dispatch(signUp(values));
-                  if (userIsLogin) {
-                    navigate('/main');
-                  }
                 }}
               >
-                Registration
+                {'Registration'.toUpperCase()}
               </LoginBtn>
             </LoginBtnBlock>
           </Form>

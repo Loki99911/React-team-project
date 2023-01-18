@@ -1,18 +1,29 @@
 import styled from 'styled-components';
 
 export const FormLayout = styled.div`
+  font-family: 'Roboto';
+  font-style: normal;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 425px;
   height: 550px;
+  margin-left: 160px;
   padding: 55px 85px;
   border-radius: 30px;
-  border: 1px solid red;
+  background-color: #ffffff;
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+`;
+export const FormText = styled.p`
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
 `;
 
 export const Form = styled.form`
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: flex-start;
 `;
@@ -39,12 +50,15 @@ export const LoginInput = styled.input`
   }
 `;
 export const LoginBtnBlock = styled.div`
-display: flex;
+  display: flex;
   gap: 15px;
-  
 `;
 
 export const LoginBtn = styled.button`
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -62,9 +76,7 @@ export const LoginBtn = styled.button`
 `;
 
 export const GoogleBtn = styled.button`
-  width: 120px;
-  height: 40px;
-  padding: 0;
+  padding: 10px 19px;
   margin: 0;
   background-color: #f6f7fb;
   border: none;
