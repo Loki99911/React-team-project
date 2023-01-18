@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   NotifyBalanceContainer,
-  NotifyBalanceBackdrop,
+ 
   NotifyBalanceText,
   NotifyBalanceTitle,
 } from './NotifyBalance.styled';
 
 
 export default function NotifyBalance() {
-  const [isOpen, setIsOpen] = useState(true);
+  // const [isOpen, setIsOpen] = useState(true);
 
-  const handleClose = () => {
-    setIsOpen(false);
-  };
+  // const handleClose = () => {
+  //   setIsOpen(false);
+  // };
 
-  const handleBackdropClick = event => {
-    if (event.currentTarget === event.target) {
-      handleClose();
-    }
-  };
+  // const handleBackdropClick = event => {
+  //   if (event.currentTarget === event.target) {
+  //     handleClose();
+  //   }
+  // };
 
   return (
-    isOpen && (
-      <NotifyBalanceBackdrop onClick={handleBackdropClick}>
+    
+      // <NotifyBalanceBackdrop onClick={handleBackdropClick}>
         <NotifyBalanceContainer>
           <NotifyBalanceTitle>
             Hello! To get started, enter the current balance of your account!
@@ -31,7 +31,7 @@ export default function NotifyBalance() {
             You can't spend money until you have it
           </NotifyBalanceText>
         </NotifyBalanceContainer>
-      </NotifyBalanceBackdrop>
-    )
+      // </NotifyBalanceBackdrop>
+    
   );
 }
