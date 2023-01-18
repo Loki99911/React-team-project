@@ -11,7 +11,10 @@ export const StyledHomePage = styled.div`
   padding: 46px 0px 0px 0px;
   width: 100%;
   margin: 0 auto;
-  height: 100vh;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 
   @media screen and (min-width: 768px) {
     /* height: 1178px; */
@@ -145,13 +148,11 @@ export const LinkBox = styled.div`
   display: flex;
 
   @media screen and (max-width: 767px) {
-    position: absolute;
-    transform: translate(0, 190%);
-    bottom: 0;
     gap: 2px;
+    display: flex;
+    margin-top: auto;
   }
-  /* height:100vh; */
-
+  
   @media screen and (min-width: 768px) {
     margin-top: 60px;
   }

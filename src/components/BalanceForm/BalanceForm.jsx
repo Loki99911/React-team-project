@@ -12,7 +12,6 @@ import { handleUserBalance } from '../../redux/Auth/authOperations';
 import { useDispatch } from 'react-redux';
 import { getBalance } from '../../redux/Transaction/transactionSelectors';
 
-
 export default function BalanceForm() {
   const [modalOpen, setModalOpen] = useState(false);
   const stateBalance = useSelector(getBalance);
@@ -20,24 +19,25 @@ export default function BalanceForm() {
 
   const dispatch = useDispatch();
 
-    useEffect(() => {
-      setBalance(stateBalance);
-      // eslint-disable-next-line
-    }, [stateBalance]);
+  useEffect(() => {
+    setBalance(String(stateBalance));
+    // eslint-disable-next-line
+  }, [stateBalance]);
 
   const handleSubmit = e => {
     e.preventDefault();
     // console.log(e.target.elements);
-   
   };
 
   const handleChange = ({ target: { value } }) => {
-    setBalance(Number(value));
+    const numText = value.split('').slice(0, value.indexOf('.')).join('');
+    // console.log(value.split('').slice(0, value.indexOf('.')).join(''));
+    setBalance(numText);
   };
   // Handle update users balance
   const handleClick = () => {
-    dispatch(handleUserBalance(balance));
-     setBalance('');
+    dispatch(handleUserBalance(Number(balance)));
+    setBalance('');
   };
   // Open modal window
   const handleModalOpen = () => {
@@ -55,7 +55,7 @@ export default function BalanceForm() {
         <div>
           {' '}
           <BalanceFormInput
-            type="number"
+            type="text"
             name="balance"
             title="Please, enter your balance"
             placeholder="00.00 UAH"
@@ -63,7 +63,7 @@ export default function BalanceForm() {
             required
             onChange={handleChange}
             // placeholder={`${balance}.00 UAH`}
-            value={balance} //как сделать с .UAH
+            value={`${balance}.00 UAH`} //как сделать с .UAH
           />
           <BalanceFormBtn type="submit" onClick={handleModalOpen}>
             Confirm
