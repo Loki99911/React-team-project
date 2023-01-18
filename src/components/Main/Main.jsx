@@ -10,6 +10,7 @@ import { addIncome, getIncomeStats } from 'redux/Transaction/transactionOperatio
 import { Calendar } from 'components/Calendar/Calendar';
 import { Calculator } from 'components/Calculator/Calculator';
 import { Loader } from 'components/Loader/Loader';
+import { getIsLoading, getExpencesCategories, getIncomesCategories, getExpencesTransactions, getIncomesTransactions, getExpencesMonthStats, getIncomesMonthStats, getBalance } from '../../redux/Transaction/transactionSelectors';
 
 export const Main = () => {
   const [description, setDescription] = useState('');
@@ -18,20 +19,17 @@ export const Main = () => {
   const [list, setList] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [emptyInput, setEmptyInput] = useState(false);
+  const loadingExpenseIncome = useSelector(getIsLoading);
 
-  const loadingExpense = useSelector(state => state.expense.isLoading);
-  const loadingIncome = useSelector(state => state.income.isLoading);
-  let loading = loadingExpense === true || loadingIncome === true;
+  let loading = loadingExpenseIncome === true;
 
-  const prodExp = useSelector(({ expense }) => expense.categories);
-  const prodInc = useSelector(({ income }) => income.categories);
-  const expensesTransactionData = useSelector(
-    ({ expense }) => expense.expenses
-  );
-  const incomesTransactionData = useSelector(({ income }) => income.incomes);
-  const expensesSummaryData = useSelector(({ expense }) => expense.monthsStats);
-  const incomesSummaryData = useSelector(({ income }) => income.monthsStats);
-  const balance = useSelector(({ balance }) => balance);
+  const prodExp = useSelector(getExpencesCategories);
+  const prodInc = useSelector(getIncomesCategories);
+  const expensesTransactionData = useSelector(getExpencesTransactions);
+  const incomesTransactionData = useSelector(getIncomesTransactions);
+  const expensesSummaryData = useSelector(getExpencesMonthStats);
+  const incomesSummaryData = useSelector(getIncomesMonthStats);
+  const balance = useSelector(getBalance);
   const dispatch = useDispatch();
   const pageLocation = useLocation().pathname;
 
@@ -129,14 +127,14 @@ export const Main = () => {
 
   return (
     <div className={s.container}>
-      <nav>
+      {/* <nav>
         <NavLink
           to="/expenses"
           className={({ isActive }) =>
             s.btn + (isActive ? ' ' + s.btnAccent : '')
           }
         >
-          EXPENSES
+          EXPEN
         </NavLink>
         <NavLink
           to="/income"
@@ -146,7 +144,7 @@ export const Main = () => {
         >
           INCOME
         </NavLink>
-      </nav>
+      </nav> */}
 
       <div className={s.contentContainer}>
         {loading ? (
