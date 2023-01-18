@@ -2,8 +2,8 @@ import Background from '../../components/Background/Background';
 import { StyledReportsPage, Wrap, Link } from './Reports.styled';
 import { ReactComponent as ToMainIcon } from '../../images/backSpace.svg';
 import ReportMonth from 'components/ReportMonth.jsx/ReportMonth';
-import ReportStats from 'components/ReportStats/ReportStats';
-import ReportCategories from 'components/ReportCategories/ReportCategories';
+
+import ReportsData from 'components/ReportsData/ReportsData';
 
 export default function Reports() {
   return (
@@ -16,8 +16,7 @@ export default function Reports() {
           </Link>
           <ReportMonth />
         </Wrap>
-        <ReportStats />
-        <ReportCategories />
+      <ReportsData/>
       </StyledReportsPage></>
   )
 }

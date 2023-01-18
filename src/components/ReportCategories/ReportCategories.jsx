@@ -1,7 +1,16 @@
-export default function ReportCategories() {
+// import { useSelector } from "react-redux"
+// import {getExpencesReportData} from "../../redux/Transaction/transactionSelectors"
+
+// import { useSelector } from "react-redux"
+// import { getExpencesReportData } from "redux/Transaction/transactionSelectors"
+
+export default function ReportCategories({onChange}) {
+
+  // const data = useSelector(getExpencesReportData)
+  // console.log(data)
+
     return (
-        <p>Expenses
-        </p>
+      <><p>{onChange === "expenses"? `expenses`: `income`}</p></>
     )
 }
 
