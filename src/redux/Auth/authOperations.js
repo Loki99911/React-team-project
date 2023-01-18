@@ -74,7 +74,6 @@ export const refreshUser = createAsyncThunk(
   async (_, { rejectWithValue, getState }) => {
     const state = getState();
     const persistedRefreshToken = state.auth.refreshToken;
-    const persistedAccessToken = state.auth.accessToken;
     const persistedSid = { sid: state.auth.sid };
 
     if (!persistedRefreshToken) {
