@@ -11,19 +11,12 @@ import {
 } from './InfoModal.styled';
 import { OrangeButton } from 'components/Buttons/OrangeButton';
 import { WhiteButton } from 'components/Buttons/WhiteButton';
-import close from '../../images/close.svg';
-
+import { ReactComponent as Close } from '../../images/close.svg';
 
 const modalRoot = document.getElementById('modal-root');
 const body = document.querySelector('body');
 
-export const InfoModal = ({
-  children,
-  closeModal,
-  dispatch,
-  changeBalance,
-
-}) => {
+export const InfoModal = ({ children, closeModal, dispatch }) => {
   // Close on Esc button
   const handleEscapeClose = event => {
     if (event.code === 'Escape') {
@@ -49,23 +42,19 @@ export const InfoModal = ({
   return createPortal(
     // Backdrop
     <StyledModalBackdrop
-      className="modal-backdrop"
+     
       onClick={handleBackdropClose}
     >
       {/* Modal window */}
       <StyledModalWindow>
         {/* Close button img X */}
         <StyledCloseButton onClick={closeModal}>
-          <img src={close} alt="close" />
+          <Close />
         </StyledCloseButton>
         <StyledContentDiv>
           <StyledText>{children}</StyledText>
           <StyledDivWithButtons>
-            <OrangeButton
-              dispatch={dispatch}
-              closeModal={closeModal}
-              changeBalance={changeBalance}
-            >
+            <OrangeButton dispatch={dispatch} closeModal={closeModal}>
               YES
             </OrangeButton>
             <WhiteButton closeModal={closeModal}>NO</WhiteButton>
@@ -76,5 +65,3 @@ export const InfoModal = ({
     modalRoot
   );
 };
-
-

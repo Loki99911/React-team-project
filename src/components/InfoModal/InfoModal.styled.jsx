@@ -35,14 +35,19 @@ export const StyledCloseButton = styled.button`
   top: 20px;
   right: 20px;
   cursor: pointer;
+  use{
+    width: 12px;
+    height: 12px;
+  }
 `;
 
 export const StyledModalBackdrop = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
 
   background-color: rgba(0, 0, 0, 0.2);
 `;

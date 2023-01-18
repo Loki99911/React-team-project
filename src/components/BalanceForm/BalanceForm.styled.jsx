@@ -29,8 +29,15 @@ export const BalanceFormLabel = styled.label`
 `;
 
 export const BalanceFormInput = styled.input`
+  font-family: 'Roboto';
+  font-style: normal;
   font-weight: 700;
-  width: calc(50% - 40px);
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+
+
+  width: 140px;
   padding: 12px 18px;
   color: #52555f;
   text-align: right;
@@ -60,7 +67,7 @@ export const BalanceFormInput = styled.input`
   }
 
   @media screen and (min-width: 768px) {
-    width: 85px;
+    width: 125px;
     padding: 12px 20px;
     border-radius: 16px;
     margin-right: 15px;
@@ -68,6 +75,13 @@ export const BalanceFormInput = styled.input`
 `;
 
 export const BalanceFormBtn = styled.button`
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  
   width: 140px;
   padding: 12px 18px;
   color: rgba(82, 85, 95, 0.7);
