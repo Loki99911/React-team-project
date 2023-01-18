@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
-export const NotifyBalanceBackdrop = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+// export const NotifyBalanceBackdrop = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// `;
+
+export const NotifyBalanceContainer = styled.div`
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     display: none;
   }
-`;
-
-export const NotifyBalanceContainer = styled.div`
   position: absolute;
   top: 250px;
   left: 50%;

@@ -4,10 +4,13 @@ import {
   BalanceFormInput,
   BalanceFormBtn,
 } from './BalanceForm.styled';
+import { useSelector} from 'react-redux';
 import NotifyBalance from '../NotifyBalance/NotifyBalance';
 
 export default function BalanceForm() {
 
+  const stateBalance = useSelector(state => state.transactions.newBalance);
+  
   return (
     <>
       <BalanceFormStyled>
@@ -24,7 +27,7 @@ export default function BalanceForm() {
           />
           <BalanceFormBtn type="submit">Confirm</BalanceFormBtn>
         </div>
-        <NotifyBalance />
+        {!stateBalance && <NotifyBalance />}
       </BalanceFormStyled>
     </>
   );
