@@ -4,7 +4,7 @@ import {
   BalanceFormInput,
   BalanceFormBtn,
 } from './BalanceForm.styled';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector} from 'react-redux';
 import NotifyBalance from '../NotifyBalance/NotifyBalance';
 
 export default function BalanceForm() {
