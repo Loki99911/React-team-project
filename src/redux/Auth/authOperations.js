@@ -31,7 +31,6 @@ export const logIn = createAsyncThunk(
     try {
       const data = await logInUserAPI(user);
       console.log('LOGGED IN ');
-      // console.log(data);
       token.set(data.accessToken);
       return data;
     } catch (error) {
