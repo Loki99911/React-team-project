@@ -80,6 +80,7 @@ export const refreshUser = createAsyncThunk(
       setRefreshToken(refreshToken);
       const data = await axios.post('/auth/refresh', { sid });
       token.set(accessToken);
+      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error);

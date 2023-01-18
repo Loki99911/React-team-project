@@ -5,6 +5,9 @@ import { lazy } from 'react';
 import { SharedLayout } from '../components/SharedLayout/SharedLayout';
 // import { PublicRoute, PrivateRoute } from '../service/routes';
 import { useMediaRules } from '../MediaRules/MediaRules';
+// import { useDispatch } from 'react-redux';
+// import { useEffect } from 'react';
+// import { refreshUser, getFullUserInfo } from '../redux/Auth/authOperations';
 
 const Register = lazy(() => import('../pages/Register/Register'));
 const Main = lazy(() => import('../pages/Main/Main'));
@@ -14,6 +17,16 @@ const Reports = lazy(() => import('../pages/Reports/Reports'));
 
 export const App = () => {
   const { isMobile } = useMediaRules();
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(refreshUser());
+  // }, [dispatch]);
+
+  // useEffect(() => {
+  //   dispatch(getFullUserInfo());
+  // }, [dispatch]);
+
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
