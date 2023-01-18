@@ -10,7 +10,7 @@ import {
   getSpecificPeriodTrans,
 } from './transactionOperations';
 
-import { handleUserBalance, getFullUserInfo } from 'redux/Auth/authOperations';
+import { handleUserBalance, refreshUser } from 'redux/Auth/authOperations';
 
 const pending = state => {
   state.isLoading = true;
@@ -126,9 +126,9 @@ const transactionSlice = createSlice({
       .addCase(handleUserBalance.fulfilled, (state, { payload }) => {
         state.newBalance = payload.newBalance;
       })
-      .addCase(getFullUserInfo.fulfilled, (state, { payload }) => {
-        state.newBalance = payload.newBalance;
-        state.allTransactions = payload.transactions;
+      .addCase(refreshUser.fulfilled, (state, { payload }) => {
+        state.newBalance = payload.user.balance;
+        state.allTransactions = payload.user.transactions;
       }),
 });
 

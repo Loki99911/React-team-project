@@ -17,7 +17,6 @@ const initialState = {
   userData: {
     email: null,
     id: null,
-    transactions: null,
   },
 };
 
@@ -29,22 +28,25 @@ const authSlice = createSlice({
       .addCase(signUp.fulfilled, (state, { payload }) => {
         state.userData.email = payload.userData.email;
         state.userData.id = payload.userData.id;
-        state.userData.transactions = payload.userData.transactions;
+        state.accessToken = payload.accessToken;
+        state.refreshToken = payload.refreshToken;
+        state.sid = payload.sid;
         state.isLoggedIn = true;
       })
       .addCase(logIn.fulfilled, (state, { payload }) => {
         state.userData.email = payload.userData.email;
         state.userData.id = payload.userData.id;
-        state.userData.transactions = payload.userData.transactions;
         state.accessToken = payload.accessToken;
         state.refreshToken = payload.refreshToken;
         state.sid = payload.sid;
         state.isLoggedIn = true;
       })
       .addCase(refreshUser.fulfilled, (state, { payload }) => {
-        state.accessToken = payload.newAccessToken;
-        state.refreshToken = payload.newRefreshToken;
-        state.sid = payload.newSid;
+        state.accessToken = payload.data.newAccessToken;
+        state.refreshToken = payload.data.newRefreshToken;
+        state.sid = payload.data.newSid;
+        state.userData.email = payload.user.email;
+        state.userData.id = payload.user.id;
         state.isLoggedIn = true;
       })
       .addCase(logout.fulfilled, () => ({ ...initialState })),
