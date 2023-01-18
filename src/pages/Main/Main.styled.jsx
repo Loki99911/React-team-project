@@ -1,19 +1,19 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-// import { HandySvg } from 'handy-svg';
 import bgDesk from '../../images/BgDesktop_1.png';
 import bgDesk2 from '../../images/BgDesktop_2.png';
 import bgTabl from '../../images/BgTablet_1.png';
 import bgTabl2 from '../../images/BgTablet_2.png';
-// import { ReactComponent as Reports } from '../../images/reports.svg';
 
 export const StyledHomePage = styled.div`
   padding: 46px 0px 0px 0px;
+  width: 100%;
   margin: 0 auto;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 
   @media screen and (min-width: 768px) {
-    /* height: 1178px; */
     padding: 40px 32px 60px 32px;
     background-image: url(${bgTabl});
     background-position: bottom 60px right 88px;
@@ -29,7 +29,6 @@ export const StyledHomePage = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    /* height: 795px; */
     padding: 40px 91px 83px 91px;
     background-image: url(${bgDesk});
     background-position: bottom;
@@ -100,9 +99,9 @@ export const ExspensesIncLink = styled(NavLink)`
   font-weight: 700;
   font-size: 12px;
   line-height: 14px;
+  
   display: flex;
   align-items: center;
-  /* text-align: center; */
   justify-content: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -144,13 +143,11 @@ export const LinkBox = styled.div`
   display: flex;
 
   @media screen and (max-width: 767px) {
-    position: absolute;
-    transform: translate(0, 190%);
-    bottom: 0;
     gap: 2px;
+    display: flex;
+    margin-top: auto;
   }
-  /* height:100vh; */
-
+  
   @media screen and (min-width: 768px) {
     margin-top: 60px;
   }
