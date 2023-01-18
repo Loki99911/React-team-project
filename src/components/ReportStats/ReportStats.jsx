@@ -1,16 +1,16 @@
-import { StatsContainer, VerticalLine, TextWrap, Text } from "./ReportStats.styled"
+import { StatsContainer, VerticalLine, TextWrap, Text, TextExpenses, TextIncomes } from "./ReportStats.styled"
 
 export default function ReportStats() {
     return (
         <StatsContainer>
             <TextWrap>
                 <Text>Expenses:</Text>
-                <Text> - 18 000.00 UAH.</Text>
+                <TextExpenses> - 18 000.00 UAH.</TextExpenses>
             </TextWrap>
             <VerticalLine />
             <TextWrap>
                 <Text>Income:</Text>
-                <Text> + 35 000.00 UAH.</Text>
+                <TextIncomes> + 35 000.00 UAH.</TextIncomes>
             </TextWrap>
         </StatsContainer>
     )

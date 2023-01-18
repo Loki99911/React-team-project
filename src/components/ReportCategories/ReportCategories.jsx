@@ -29,5 +29,5 @@ const categories = [
   "Прочее"
 ]
 
-const TrimCategories = categories.map(category => category.replace(/ /g,''))
+// const TrimCategories = categories.map(category => category.replace(/ /g,''))
 // console.log(TrimCategories)

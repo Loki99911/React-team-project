@@ -34,7 +34,7 @@ margin-bottom: 32px;
 `
 
 export const MonthText = styled.p`
-margin: 0;
+padding: 0px 5px;
 font-style: normal;
 font-weight: 700;
 font-size: 14px;

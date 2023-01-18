@@ -55,3 +55,19 @@ font-size: 14px;
 line-height: 16px;
 color: #52555F;
 `
+
+export const TextExpenses = styled.p`
+margin: 0;
+font-weight: 700;
+font-size: 14px;
+line-height: 16px;
+color: #e53935;
+`
+
+export const TextIncomes = styled.p`
+margin: 0;
+font-weight: 700;
+font-size: 14px;
+line-height: 16px;
+color: #407946;
+`
