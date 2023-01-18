@@ -43,6 +43,7 @@ export const StyledHomePage = styled.div`
     }
   }
 `;
+
 export const Wrap = styled.div`
   display: flex;
   flex-direction: column-reverse;

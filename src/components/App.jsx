@@ -6,6 +6,7 @@ import { SharedLayout } from '../components/SharedLayout/SharedLayout';
 // import { PublicRoute, PrivateRoute } from '../service/routes';
 import { useMediaRules } from '../MediaRules/MediaRules';
 
+
 const Register = lazy(() => import('../pages/Register/Register'));
 const Main = lazy(() => import('../pages/Main/Main'));
 const Expenses = lazy(() => import('../pages/Expenses/Expenses'));
