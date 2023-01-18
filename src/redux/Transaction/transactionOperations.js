@@ -42,6 +42,7 @@ export const getIncomeCategories = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const data = await getIncomeCategoriesAPI();
+      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

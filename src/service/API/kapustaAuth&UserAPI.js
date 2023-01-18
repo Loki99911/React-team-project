@@ -2,15 +2,6 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://kapusta-backend.goit.global';
 
-export const token = {
-  set(token) {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-  },
-  unset() {
-    axios.defaults.headers.common.Authorization = '';
-  },
-};
-
 export const signUpUserAPI = user => {
   return axios.post('/auth/register', user).then(({ data }) => {
     return data;
@@ -25,7 +16,18 @@ export const logInUserAPI = user => {
 
 export const logOutUserAPI = () => {
   return axios.post('/auth/logout').then(({ data }) => {
-    token.unset();
+    return data;
+  });
+};
+
+export const fullUserInfoAPI = () => {
+  return axios.get('/user').then(({ data }) => {
+    return data;
+  });
+};
+
+export const userBalanceAPI = body => {
+  return axios.patch('/user/balance', body).then(({ data }) => {
     return data;
   });
 };
@@ -33,10 +35,12 @@ export const logOutUserAPI = () => {
 // axios.interceptors.response.use(
 //   response => response,
 //   async error => {
+//     // const state = store.getState();
+//     // console.log(state);
 //     if (error.response.status === 401) {
 //       try {
-//         const { data } = await axios.post('/auth/refresh', { sid });
-//         token.set(data.newAccessToken);
+//         const { data } = await axios.post('/auth/refresh');
+//         // token.set(data.newAccessToken);
 //       } catch (error) {}
 //     }
 //   }
