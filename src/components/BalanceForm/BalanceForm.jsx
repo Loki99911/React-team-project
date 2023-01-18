@@ -17,6 +17,7 @@ export default function BalanceForm() {
   const [modalOpen, setModalOpen] = useState(false);
   const stateBalance = useSelector(getBalance);
   const [balance, setBalance] = useState('');
+
   const dispatch = useDispatch();
 
     useEffect(() => {
@@ -26,6 +27,7 @@ export default function BalanceForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
+    // console.log(e.target.elements);
    
   };
 
@@ -34,7 +36,7 @@ export default function BalanceForm() {
   };
   // Handle update users balance
   const handleClick = () => {
-    dispatch(handleUserBalance({ newBalance: balance }));
+    dispatch(handleUserBalance(balance));
      setBalance('');
   };
   // Open modal window
@@ -60,7 +62,8 @@ export default function BalanceForm() {
             pattern="[0-9, .UAH]*"
             required
             onChange={handleChange}
-            value={balance}
+            // placeholder={`${balance}.00 UAH`}
+            value={balance} //как сделать с .UAH
           />
           <BalanceFormBtn type="submit" onClick={handleModalOpen}>
             Confirm
@@ -69,11 +72,7 @@ export default function BalanceForm() {
         {!stateBalance && <NotifyBalance />}
       </BalanceFormStyled>
       {modalOpen && (
-        <InfoModal
-        
-          closeModal={handleModalClose}
-          dispatch={handleClick}
-        >
+        <InfoModal closeModal={handleModalClose} dispatch={handleClick}>
           Are you sure?
         </InfoModal>
       )}

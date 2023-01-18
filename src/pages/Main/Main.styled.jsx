@@ -9,6 +9,7 @@ import bgTabl2 from '../../images/BgTablet_2.png';
 
 export const StyledHomePage = styled.div`
   padding: 46px 0px 0px 0px;
+  width: 100%;
   margin: 0 auto;
   height: 100vh;
 
