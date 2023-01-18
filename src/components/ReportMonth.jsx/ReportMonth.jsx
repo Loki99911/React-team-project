@@ -47,9 +47,9 @@ setYear(getYear());
     } else {
       monthString = monthNumber + 1;
     }
-     const query = `${year}-${monthString}`;
+   const query = `${year}-${monthString}`;
+   if (query === '-01') {return}
      dispatch(getSpecificPeriodTrans(query))
-    //  console.log(query)
     // if (query !== '-01') dispatch(getReports(query));
     // dispatch(reportsQueryAction(`${year}-${monthString}`));
  }, [monthNumber, year]);
