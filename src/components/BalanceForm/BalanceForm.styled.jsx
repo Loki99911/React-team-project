@@ -36,7 +36,6 @@ export const BalanceFormInput = styled.input`
   line-height: 14px;
   letter-spacing: 0.02em;
 
-
   width: 140px;
   padding: 12px 18px;
   color: #52555f;
