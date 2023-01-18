@@ -18,11 +18,11 @@ export const token = {
   },
 };
 
-export const setRefreshToken = (refreshToken = '') => {
-  if (refreshToken) {
-    return (axios.defaults.headers.authorization = `Bearer ${refreshToken}`);
+export const setRefreshToken = refreshToken => {
+  if (refreshToken !== '') {
+    return (axios.defaults.headers.common.Authorization = `Bearer ${refreshToken}`);
   }
-  axios.defaults.headers.authorization = '';
+  axios.defaults.headers.common.Authorization = '';
 };
 
 export const logIn = createAsyncThunk(
@@ -31,7 +31,7 @@ export const logIn = createAsyncThunk(
     try {
       const data = await logInUserAPI(user);
       console.log('LOGGED IN ');
-      // console.log(data);
+      console.log('access token in login:', data.accessToken);
       token.set(data.accessToken);
       return data;
     } catch (error) {
@@ -45,8 +45,9 @@ export const signUp = createAsyncThunk(
   async (user, { rejectWithValue, dispatch }) => {
     try {
       await signUpUserAPI(user);
-      const data = await dispatch(logIn(user));
-      return data.payload;
+      const data = await logInUserAPI(user);
+      console.log('sign up data:', data);
+      return data;
     } catch (error) {
       if (error.response.status === 409) {
         console.log('duplicate');
@@ -69,34 +70,23 @@ export const logout = createAsyncThunk(
 );
 
 export const refreshUser = createAsyncThunk(
-  'auth/refresh2',
+  'auth/refresh',
   async (_, { rejectWithValue, getState }) => {
-    try {
-      const { accessToken, refreshToken, sid } = getState().auth;
-      if (refreshToken === null) {
-        return rejectWithValue();
-      }
-
-      setRefreshToken(refreshToken);
-      const data = await axios.post('/auth/refresh', { sid });
-      token.set(accessToken);
-      return data;
-    } catch (error) {
-      return rejectWithValue(error);
+    const state = getState();
+    const persistedRefreshToken = state.auth.refreshToken;
+    const persistedAccessToken = state.auth.accessToken;
+    const persistedSid = { sid: state.auth.sid };
+    console.log(persistedAccessToken);
+    if (!persistedRefreshToken) {
+      return rejectWithValue();
     }
-  }
-);
-
-export const getFullUserInfo = createAsyncThunk(
-  'auth/FullUserInfo',
-  async (_, { rejectWithValue, getState }) => {
+    setRefreshToken(persistedRefreshToken);
     try {
-      const { accessToken } = getState().auth;
-      token.set(accessToken);
-      const data = await fullUserInfoAPI();
-      return data;
+      const { data } = await axios.post('/auth/refresh', persistedSid);
+      token.set(data.newAccessToken);
+      const user = await fullUserInfoAPI();
+      return { data, user };
     } catch (error) {
-      console.log('Unauthorized. Please login again');
       return rejectWithValue(error);
     }
   }
@@ -134,6 +124,21 @@ export const handleUserBalance = createAsyncThunk(
 //       token.set(data.newAccessToken);
 //       return data;
 //     } catch (error) {
+//       return rejectWithValue(error);
+//     }
+//   }
+// );
+
+// export const getFullUserInfo = createAsyncThunk(
+//   'auth/FullUserInfo',
+//   async (_, { rejectWithValue, getState }) => {
+//     try {
+//       const { accessToken } = getState().auth;
+//       token.set(accessToken);
+//       const data = await fullUserInfoAPI();
+//       return data;
+//     } catch (error) {
+//       console.log('Unauthorized. Please login again');
 //       return rejectWithValue(error);
 //     }
 //   }
