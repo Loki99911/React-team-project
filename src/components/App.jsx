@@ -53,7 +53,14 @@ export const App = () => {
           </>
         )}
 
-        <Route path="/reports" element={<Reports />} />
+        <Route
+          path="/reports"
+          element={
+            <PrivateRoute>
+              <Reports />
+            </PrivateRoute>
+          }
+        />
       </Route>
     </Routes>
   );

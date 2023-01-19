@@ -11,6 +11,7 @@ import Background from '../../components/Background/Background';
 import BalanceForm from '../../components/BalanceForm/BalanceForm';
 import { useMediaRules } from '../../MediaRules/MediaRules';
 import { ReactComponent as IconReports } from '../../images/reports.svg';
+import { Loader } from 'components/Loader/Loader';
 
 export default function Main() {
   const { isMobile } = useMediaRules();
@@ -32,7 +33,7 @@ export default function Main() {
               <ExspensesIncLink to="expenses">Expenses</ExspensesIncLink>
               <ExspensesIncLink to="income">Income</ExspensesIncLink>
             </LinkBox>
-            <Suspense fallback={<div>Loading page...</div>}>
+            <Suspense fallback={<Loader />}>
               <Outlet />
             </Suspense>
           </>
