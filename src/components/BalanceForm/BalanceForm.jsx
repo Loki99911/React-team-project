@@ -10,9 +10,6 @@ import NotifyBalance from '../NotifyBalance/NotifyBalance';
 import { InfoModal } from 'components/InfoModal/InfoModal';
 import { handleUserBalance } from '../../redux/Auth/authOperations';
 import { getBalance } from '../../redux/Transaction/transactionSelectors';
-import CurrencyInput from 'react-currency-input-field';
-
-
 
 export default function BalanceForm() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -27,19 +24,24 @@ export default function BalanceForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
+    handleModalOpen()
   };
 
-  const handleChange = ({target:{value}}) => {
-  
+  const handleChange = ({ target: { value } }) => {
     const numText = value.split('').slice(0, value.indexOf('.')).join('');
     setBalance(numText);
   };
 
   // Handle update users balance
   const handleClick = () => {
+    if (Number(balance) === 0) {
+      setBalance(prev => String(stateBalance));
+      alert('!!!!!!');
+      return;
+    }
     dispatch(handleUserBalance(Number(balance)));
-    setBalance('');
   };
+
   // Open modal window
   const handleModalOpen = () => {
     setModalOpen(true);
@@ -83,7 +85,7 @@ export default function BalanceForm() {
               setBalance(numText);
             }}
           /> */}
-          <BalanceFormBtn type="submit" onClick={handleModalOpen}>
+          <BalanceFormBtn type="submit">
             Confirm
           </BalanceFormBtn>
         </div>
