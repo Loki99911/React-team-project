@@ -70,9 +70,12 @@ const TriangleBar = (props) => {
 
 export default function ReportGraphic({ state }) {
   const [dataArray, setDataArray] = useState([]);
-
- useEffect(() => {
-   return setDataArray(state)
+  console.log(dataArray)
+  useEffect(() => {
+    setDataArray([...state])
+        return () => {
+      setDataArray([]);
+    };
   }, [state])
 
   return (
