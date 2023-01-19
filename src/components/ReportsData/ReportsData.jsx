@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import ReportStats from 'components/ReportStats/ReportStats';
 import ReportCategories from 'components/ReportCategories/ReportCategories';
