@@ -42,7 +42,7 @@ export const StyledCloseButton = styled.button`
   }
   transition: transform 250ms linear;
   :hover {
-    transform: rotate(180deg)
+    transform: rotate(180deg);
   }
 `;
 
