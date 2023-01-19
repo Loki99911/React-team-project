@@ -6,13 +6,24 @@ export const FormLayout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 425px;
-  height: 550px;
-  margin-left: 160px;
-  padding: 55px 85px;
+  /* width: 425px; */
+  padding: 40px 20px;
+  margin-top: 50px;
+  /* height: 496px; */
+
   border-radius: 30px;
   background-color: #ffffff;
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  @media screen and (min-width: 768px) {
+    width: 425px;
+    /* height: 550px; */
+    padding: 55px 85px;
+    margin-top: 80px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 0;
+    margin-left: 160px;
+  }
 `;
 export const FormText = styled.p`
   font-weight: 400;
@@ -76,6 +87,9 @@ export const LoginBtn = styled.button`
 `;
 
 export const GoogleBtn = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 19px;
   margin: 0;
   background-color: #f6f7fb;

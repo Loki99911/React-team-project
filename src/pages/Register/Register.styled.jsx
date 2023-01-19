@@ -6,18 +6,23 @@ import bgTabl2 from '../../images/BgTablet_2.png';
 
 export const RegisterLayout = styled.div`
   display: flex;
-  justify-content: right;
-  align-items: center;
+  flex-direction: column;
+  justify-content: left;
   flex-grow: 1;
-  padding: 115px 90px 125px auto;
+  /* padding: 85px 20px auto 20px; */
+  padding-top: 85px;
+  padding-left: 20px;
+  padding-bottom: auto;
+  padding-right: 20px;
 
   @media screen and (min-width: 768px) {
-    /* height: 1178px; */
-    padding: 40px 32px 60px 32px;
+    /* padding: 80px 170px auto 170px; */
+    padding-top: 80px;
+    padding-left: 170px;
+    padding-right: 170px;
     background-image: url(${bgDesk}), url(${bgTabl});
     background-position: top 30px right 0px, bottom 55px left 100px;
     background-repeat: no-repeat;
-    /* background-size: contain, auto; */
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
@@ -27,8 +32,18 @@ export const RegisterLayout = styled.div`
     }
   }
   @media screen and (min-width: 1280px) {
-    /* height: 795px; */
-    padding: 40px 91px 83px 91px;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    /* padding: 115px 90px 125px 90px; */
+    padding-top: 115px;
+    padding-left: 90px;
+    padding-bottom: 125px;
+    padding-right: 170px;
     background-position: top 30px right 0px, bottom 50px left 100px;
   }
+`;
+
+export const RegisterImgBox = styled.div`
+  display: flex;
 `;
