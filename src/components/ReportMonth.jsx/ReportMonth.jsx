@@ -25,20 +25,19 @@ export const getMonth = () => dateNow.getMonth();
 export const getYear = () => dateNow.getFullYear();
 
 export default function ReportMonth() {
+  const dispatch = useDispatch();
 
-const dispatch = useDispatch()    
+  const [monthNumber, setMonthNumber] = useState(0);
+  const [month, setMonth] = useState('');
+  const [year, setYear] = useState('');
 
-const [monthNumber, setMonthNumber] = useState(0);
-const [month, setMonth] = useState('');
-const [year, setYear] = useState('');
+  useEffect(() => {
+    setMonthNumber(getMonth());
+    setMonth(monthNames[getMonth()]);
+    setYear(getYear());
+  }, []);
 
-    useEffect(() => {
-setMonthNumber(getMonth());
-setMonth(monthNames[getMonth()]);
-setYear(getYear());
-    }, []);
-    
- useEffect(() => {
+  useEffect(() => {
     setMonth(monthNames[monthNumber]);
     let monthString = '';
 
@@ -47,16 +46,18 @@ setYear(getYear());
     } else {
       monthString = monthNumber + 1;
     }
-   const query = `${year}-${monthString}`;
-   if (query === '-01') {return}
-     dispatch(getSpecificPeriodTrans(query))
+    const query = `${year}-${monthString}`;
+    if (query === '-01') {
+      return;
+    }
+    dispatch(getSpecificPeriodTrans(query));
     // if (query !== '-01') dispatch(getReports(query));
     // dispatch(reportsQueryAction(`${year}-${monthString}`));
- }, [monthNumber, year]);
-    
-    //[monthNumber, year, dispatch]);
+  }, [monthNumber, year, dispatch]);
+  // ------------------------------------dispatch Требует в зависимости!!!!
+  //[monthNumber, year, dispatch]);
 
-const handlerClick = name => {
+  const handlerClick = name => {
     switch (name) {
       case 'decrement':
         // dispatch(filteredDataAction([]));
@@ -79,23 +80,22 @@ const handlerClick = name => {
     }
   };
 
-
-    return (
-        <>
-            <ReportWrap>
-                <LinkText>Main Paige</LinkText>
-            </ReportWrap>
-            <ReportWrap>
-                <p>Balance:</p>
-            </ReportWrap>
-            <ReportWrap>
-                <PeriodText>Current Period:</PeriodText>
-                <ButtonsNextPrev onButtonClick={handlerClick}>
-                    <MonthText>
-                    {month} {year}
-                    </MonthText>
-                </ButtonsNextPrev>
-            </ReportWrap>
-        </>
-    )
+  return (
+    <>
+      <ReportWrap>
+        <LinkText>Main Paige</LinkText>
+      </ReportWrap>
+      <ReportWrap>
+        <p>Balance:</p>
+      </ReportWrap>
+      <ReportWrap>
+        <PeriodText>Current Period:</PeriodText>
+        <ButtonsNextPrev onButtonClick={handlerClick}>
+          <MonthText>
+            {month} {year}
+          </MonthText>
+        </ButtonsNextPrev>
+      </ReportWrap>
+    </>
+  );
 }
