@@ -116,10 +116,10 @@ const transactionSlice = createSlice({
       .addCase(getSpecificPeriodTrans.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        state.transactionsByPeriod.expenses.total = payload.expenses.total;
+        state.transactionsByPeriod.expenses.total = payload.expenses.expenseTotal;
         state.transactionsByPeriod.expenses.incomesData =
-          payload.expenses.incomesData;
-        state.transactionsByPeriod.incomes.total = payload.incomes.total;
+          payload.expenses.expensesData;
+        state.transactionsByPeriod.incomes.total = payload.incomes.incomeTotal;
         state.transactionsByPeriod.incomes.incomesData =
           payload.incomes.incomesData;
       })
