@@ -102,7 +102,7 @@ const transactionSlice = createSlice({
       .addCase(removeTransaction.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        state.newBalance = payload.newBalance;
+        state.newBalance = payload.data.newBalance;
         state.expences.transactions = state.expences.transactions.filter(
           trans => trans._id !== payload.id
         );

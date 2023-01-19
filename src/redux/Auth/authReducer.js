@@ -1,19 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { logIn, signUp, refreshUser, logout } from './authOperations';
 
-// const pending = state => {
-//   state.isLoading = true;
-// };
-// const rejected = (state, { payload }) => {
-//   state.isLoading = false;
-//   state.error = payload;
-// };
+const pending = state => {
+  state.isUserFetching = true;
+};
+const rejected = state => {
+  state.isUserFetching = false;
+  state.isLoggedIn = false;
+};
 
 const initialState = {
   accessToken: null,
   refreshToken: null,
   sid: null,
   isLoggedIn: false,
+  isUserFetching: false,
   userData: {
     email: null,
     id: null,
@@ -49,7 +50,10 @@ const authSlice = createSlice({
         state.userData.id = payload.user.id;
         state.isLoggedIn = true;
       })
-      .addCase(logout.fulfilled, () => ({ ...initialState })),
+      .addCase(logout.fulfilled, () => ({ ...initialState }))
+
+      .addCase(refreshUser.pending, pending)
+      .addCase(refreshUser.rejected, rejected),
 });
 
 export default authSlice.reducer;
