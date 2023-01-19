@@ -8,30 +8,71 @@ ul {
   color: #000000;
   overflow: hidden;
   border-bottom: 2px solid #f5f6fb;
-  border-radius: 16px 16px 0 0;
+  border-radius: 30px 30px 0 0;
 }
 
 .Thead {
-  display: grid;
-  grid-template-columns: 1fr 2.6fr 1.5fr 1.5fr 0.7fr;
-  background-color: #f5f6fb;
-  text-align: center;
-}
-
-.Thead li {
+  font-family: 'Roboto';
   font-weight: 700;
   font-size: 12px;
-  line-height: 1.66;
+  line-height: 14px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  color: #000000;
+  background-color: #f5f6fb;
+  text-align: center;
+  height: 40px;
+}
+
+.Td {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #52555F;
+  border-bottom: 2px solid #f5f6fb;
 }
 
 .Description {
   text-align: left;
-  padding-left: 5px;
+  padding-left: 10px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: #52555F;
+  border-bottom: 2px solid #f5f6fb;
 }
+
+.ExpensesSum {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid #f5f6fb;
+  color: #e7192e;
+}
+
+.IncomeSum {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #407946;
+  border-bottom: 2px solid #f5f6fb;
+}
+
 
 .Tbody {
   display: flex;
@@ -111,7 +152,9 @@ ul {
   .Tbody::-webkit-scrollbar {
     display: none;
   }
-}.Line {
+}
+
+.Line {
   display: grid;
   grid-template-columns: 1fr 2.6fr 1.5fr 1.5fr 0.8fr;
   grid-template-areas: 'Date Description Category Sum Delete';
@@ -170,15 +213,7 @@ ul {
   justify-content: flex-end;
 }
 
-.ExpensesSum {
-  composes: Sum;
-  color: #e7192e;
-}
 
-.IncomeSum {
-  composes: Sum;
-  color: #407946;
-}
 
 @media screen and (max-width: 1279px) {
   .Line {

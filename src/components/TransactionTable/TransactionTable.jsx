@@ -7,14 +7,14 @@ import DeleteButton from 'components/common/button-delete/button-delete';
 
 export const TransactionTable = ({ tablePage, transactionData }) => {
   const dispatch = useDispatch();
-  console.log(transactionData);
-  console.log(getExpencesReportData);
+  console.log(tablePage);
+
 
   return (
 
 
     <table className={s.Table}>
-      <thead>
+      <thead className={s.Thead}>
         <tr>
           <th>Date</th>
           <th>Description</th>
@@ -27,21 +27,21 @@ export const TransactionTable = ({ tablePage, transactionData }) => {
       <tbody>
         {transactionData?.map(item => (
           <tr key={item._id}>
-            <td>{item.date}</td>
-            <td>{item.description}</td>
-            <td>{item.category}</td>
-            {tablePage === '/expenses' ? (
-              <td>{`- ${item.amount} грн.`}</td>
+            <td className={s.Td}>{item.date}</td>
+            <td className={s.Description}>{item.description}</td>
+            <td className={s.Td}>{item.category}</td>
+            {tablePage === '/main/expenses' ? (
+              <td className={s.ExpensesSum}>{`- ${item.amount} грн.`}</td>
             ) : (
-              <td>{`${item.amount} грн.`}</td>
+              <td className={s.IncomeSum}>{`${item.amount} грн.`}</td>
             )}
-            <td>
+            <td className={s.Td}>
               <DeleteButton onClick={() => dispatch(removeTransaction(item._id))} />
             </td>
           </tr>
         ))}
       </tbody>
-    </table>
+    </table >
   );
 };
 
