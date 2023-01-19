@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+// import CurrencyInput from 'react-currency-input-field';
 
 export const BalanceFormStyled = styled.form`
   margin: 0 auto 50px;
