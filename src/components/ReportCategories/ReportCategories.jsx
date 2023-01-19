@@ -6,40 +6,9 @@ import { List, Item, ItemIncome, ItemSvg } from './ReportCategories.styled';
 import {ReactComponent as BgcIcon} from '../../images/reportsFiles/bgcForSvg.svg';
 import { ReactComponent as OrangeBgc } from '../../images/orangeBgc.svg';
 
-const categoryToEng = name => {
-  switch (name.trim()) {
-    case 'Продукты':
-      return 'Products';
-    case 'Алкоголь':
-      return 'ЗСУ';
-    case 'Развлечения':
-      return 'Entertainment';
-    case 'Здоровье':
-      return 'Health';
-    case 'Транспорт':
-      return 'Transport';
-    case 'Всё для дома':
-      return 'Housing';
-    case 'Техника':
-      return 'Technics';
-    case 'Коммуналка и связь':
-      return 'Communal and communication';
-    case 'Спорт и хобби':
-      return 'Sport and hobby';
-    case 'Образование':
-      return 'Education';
-    case 'Прочее':
-      return 'Other';
-    case 'З/П':
-      return 'Salary';
-    case 'Доп. доход':
-      return 'Additional income';
-    default:
-      break;
-  }
-};
+import { Translator } from "components/Translator/Translator";
 
-export default function ReportCategories({ onChange }) {
+export default function ReportCategories({ onChange, onClick, convert }) {
   
   const [active, setActive] = useState('');
   const [data, setData] = useState({});
@@ -48,25 +17,36 @@ export default function ReportCategories({ onChange }) {
 
   const valueArr = [];
   
+  function ObjectConvertor (obj) {
+    const entries = Object.entries(obj)
+  const newArray = entries.map(entry => {
+    const obj = {name: Translator(entry[0]), uv: entry[1].total}
+    return obj
+  })
+  return newArray}
+
  useEffect(() => {
    if (expensesData.total !== null && incomesData.total !== null) {
-        if (onChange === 'expenses') {
+     if (onChange === 'expenses') {  
+       convert(ObjectConvertor(expensesData.incomesData))
       setData(expensesData.incomesData ?? {});
       setActive('');
-    } else {
+     } else {
+       convert(ObjectConvertor(incomesData.incomesData))
       setData(incomesData.incomesData ?? {});
       setActive('');
-    }
-  }
+     }
+   }
+   // eslint-disable-next-line 
   }, [onChange, expensesData, incomesData])
 
 const clickEventHandler = event => {
   setActive(event.currentTarget.id);
-  // const filteredValueArr = valueArr.filter(
-  //   item => item[0].replace(/\s+/g, '') === event.currentTarget.id
-  // );    ------------------------------------filteredValueArr Не тспользуется нигде!!!!
-  // dispatch(filteredDataAction(filteredValueArr));
-};
+    const filteredValueArr = valueArr.filter(
+      item => item[0].replace(/\s+/g, '') === event.currentTarget.id
+  );
+  onClick(filteredValueArr[0])
+  };
   
   const entries = Object.entries(data) ?? [];
   return (
@@ -101,7 +81,7 @@ const clickEventHandler = event => {
                   
                   <use href={`${reportsIcon}#${iconName}`}></use>
                 </ItemSvg>
-                <p>{categoryToEng(item[0])}</p>
+                <p>{Translator(item[0])}</p>
               </Item>
             );
           } else if (onChange === 'income') {
@@ -133,7 +113,7 @@ const clickEventHandler = event => {
                   />}
                   <use href={`${reportsIcon}#${iconName}`}></use>
                 </ItemSvg>
-                <p>{categoryToEng(item[0])}</p>
+                <p>{Translator(item[0])}</p>
               </ItemIncome>
             );
           }
