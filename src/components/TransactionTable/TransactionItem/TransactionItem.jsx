@@ -1,6 +1,10 @@
 import DeleteButton from 'components/common/button-delete/button-delete';
 import PropTypes from 'prop-types';
 import s from './TransactionItem.module.css';
+import { useDispatch } from 'react-redux';
+import { removeTransaction } from 'redux/Transaction/transactionOperations';
+
+
 
 export const TransactionItem = ({
   transactionData,
@@ -8,7 +12,7 @@ export const TransactionItem = ({
   hendelDelete,
 }) => {
   const { date, description, category, amount, _id } = transactionData;
-
+  const dispatch = useDispatch();
   return (
     <ul className={s.Line} id={_id}>
       <li className={s.Date}>{date}</li>
@@ -20,7 +24,7 @@ export const TransactionItem = ({
         <li className={s.IncomeSum}>{`${amount} грн.`}</li>
       )}
       <li className={s.Delete}>
-        <DeleteButton onClick={() => hendelDelete(_id)} />
+        <DeleteButton onClick={() => dispatch(removeTransaction(_id))} />
       </li>
     </ul>
   );

@@ -2,7 +2,8 @@
 //     return <div>Expenses...</div>;
 // };
 
-import { Main } from 'components/Main/Main';
+import { ExpencePart } from 'components/ExpIncPart/ExpencePart';
+// import { Main } from 'components/Main/Main';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {
@@ -18,7 +19,7 @@ const Expenses = () => {
     }, [dispatch]);
     return (
         <>
-            <Main />
+            <ExpencePart />
         </>
     );
 };

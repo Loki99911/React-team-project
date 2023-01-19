@@ -1,66 +1,46 @@
 import { useDispatch } from 'react-redux';
-import { TransactionItem } from './TransactionItem/TransactionItem';
 import s from './TransactionTable.module.css';
-
+import { getExpencesReportData } from 'redux/Transaction/transactionSelectors'
 import { removeTransaction } from 'redux/Transaction/transactionOperations';
-// import { incomeDelete } from 'redux/income/income-operations';
-
-
 import { PropTypes } from 'prop-types';
-import Modal from 'components/Modal/Modal';
-import { useState } from 'react';
+import DeleteButton from 'components/common/button-delete/button-delete';
 
 export const TransactionTable = ({ tablePage, transactionData }) => {
   const dispatch = useDispatch();
-  const [trID, setTrID] = useState('');
-  const [modalActive, setOnSubmitButton] = useState(false);
-
-  const hendelDelete = () => {
-    if (tablePage === '/expenses') {
-      dispatch(removeTransaction(trID));
-    }
-    if (tablePage === '/income') {
-      dispatch(removeTransaction(trID));
-    }
-  };
-
-  const modalChange = state => {
-    setOnSubmitButton(!modalActive);
-    if (state) {
-      hendelDelete();
-    }
-  };
-
-  const hendelOpenModal = id => {
-    setTrID(id);
-    modalChange();
-  };
+  console.log(transactionData);
+  console.log(getExpencesReportData);
 
   return (
-    <ul className={s.Table}>
-      {modalActive && <Modal title="Are you sure?" modalChange={modalChange} />}
-      <li>
-        <ul className={s.Thead}>
-          <li className={s.Date}>Date</li>
-          <li className={s.Description}>Description</li>
-          <li className={s.Category}>Category</li>
-          <li className={s.Sum}>Sum</li>
-          <li className={s.Delete}></li>
-        </ul>
-      </li>
-      <li className={s.Tbody}>
-        {transactionData?.map(elem => {
-          return (
-            <TransactionItem
-              key={elem._id}
-              transactionData={elem}
-              tablePage={tablePage}
-              hendelDelete={hendelOpenModal}
-            />
-          );
-        })}
-      </li>
-    </ul>
+    <table className={s.Table}>
+      {/* {modalActive && <Modal title="Are you sure?" modalChange={modalChange} />} */}
+      <thead>
+        <tr className={s.Thead}>
+          <th className={s.Date}>Date</th>
+          <th className={s.Description}>Description</th>
+          <th className={s.Category}>Category</th>
+          <th className={s.Sum}>Sum</th>
+          <th className={s.Delete}></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {transactionData?.map(item => (
+          <tr key={item._id}>
+            <td className={s.Date}>{item.date}</td>
+            <td className={s.Description}>{item.description}</td>
+            <td className={s.Category}>{item.category}</td>
+            {tablePage === '/expenses' ? (
+              <td className={s.ExpensesSum}>{`- ${item.amount} грн.`}</td>
+            ) : (
+              <td className={s.IncomeSum}>{`${item.amount} грн.`}</td>
+            )}
+            <td className={s.Delete}>
+              <DeleteButton onClick={() => dispatch(removeTransaction(item._id))} />
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };
 
