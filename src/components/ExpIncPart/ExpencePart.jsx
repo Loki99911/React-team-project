@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addExpense, getExpenseCategories, getExpenseStats } from "redux/Transaction/transactionOperations";
 import { getBalance, getExpencesCategories, getExpencesMonthStats, getExpencesTransactions, getIsLoading } from "redux/Transaction/transactionSelectors";
-import s from './Main.module.css';
+import s from './ExpIncPart.module.css';
 import { Calendar } from 'components/Calendar/Calendar';
 import { Calculator } from 'components/Calculator/Calculator';
 import { Loader } from 'components/Loader/Loader';

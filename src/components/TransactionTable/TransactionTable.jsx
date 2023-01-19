@@ -11,30 +11,31 @@ export const TransactionTable = ({ tablePage, transactionData }) => {
   console.log(getExpencesReportData);
 
   return (
+
+
     <table className={s.Table}>
-      {/* {modalActive && <Modal title="Are you sure?" modalChange={modalChange} />} */}
       <thead>
-        <tr className={s.Thead}>
-          <th className={s.Date}>Date</th>
-          <th className={s.Description}>Description</th>
-          <th className={s.Category}>Category</th>
-          <th className={s.Sum}>Sum</th>
-          <th className={s.Delete}></th>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Sum</th>
+          <th></th>
         </tr>
       </thead>
 
       <tbody>
         {transactionData?.map(item => (
           <tr key={item._id}>
-            <td className={s.Date}>{item.date}</td>
-            <td className={s.Description}>{item.description}</td>
-            <td className={s.Category}>{item.category}</td>
+            <td>{item.date}</td>
+            <td>{item.description}</td>
+            <td>{item.category}</td>
             {tablePage === '/expenses' ? (
-              <td className={s.ExpensesSum}>{`- ${item.amount} грн.`}</td>
+              <td>{`- ${item.amount} грн.`}</td>
             ) : (
-              <td className={s.IncomeSum}>{`${item.amount} грн.`}</td>
+              <td>{`${item.amount} грн.`}</td>
             )}
-            <td className={s.Delete}>
+            <td>
               <DeleteButton onClick={() => dispatch(removeTransaction(item._id))} />
             </td>
           </tr>

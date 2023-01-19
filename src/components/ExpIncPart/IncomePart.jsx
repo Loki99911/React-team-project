@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addIncome, getIncomeCategories, getIncomeStats } from "redux/Transaction/transactionOperations";
 import { getBalance, getIncomesCategories, getIncomesMonthStats, getIncomesTransactions, getIsLoading } from "redux/Transaction/transactionSelectors";
-import s from './Main.module.css';
+import s from './ExpIncPart.module.css';
 import { Calendar } from 'components/Calendar/Calendar';
 import { Calculator } from 'components/Calculator/Calculator';
 import { Loader } from 'components/Loader/Loader';
@@ -137,7 +137,7 @@ export const IncomePart = () => {
                                                 onClick={handleCloseByDrope}>
                                             </div>
                                             <ul className={s.listCategory}>
-                                                    {prodInc.map((el, ind) => (
+                                                {prodInc.map((el, ind) => (
                                                     <li
                                                         value={el}
                                                         key={ind}
@@ -194,12 +194,12 @@ export const IncomePart = () => {
                         <div className={s.tableContainer}>
                             <div className={s.prods}>
                                 <TransactionTable
-                                        transactionData={incomesTransactionData}
+                                    transactionData={incomesTransactionData}
                                     tablePage={pageLocation}
                                 />
                             </div>
                             <div className={s.sumary}>
-                                    <SummaryTable summaryData={incomesSummaryData} />
+                                <SummaryTable summaryData={incomesSummaryData} />
                             </div>
                         </div>
                     </>
