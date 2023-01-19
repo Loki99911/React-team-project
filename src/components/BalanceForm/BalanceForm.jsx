@@ -24,19 +24,24 @@ export default function BalanceForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // console.log(e.target.elements);
+    handleModalOpen()
   };
 
   const handleChange = ({ target: { value } }) => {
     const numText = value.split('').slice(0, value.indexOf('.')).join('');
-    // console.log(value.split('').slice(0, value.indexOf('.')).join(''));
     setBalance(numText);
   };
+
   // Handle update users balance
   const handleClick = () => {
+    if (Number(balance) === 0) {
+      setBalance(prev => String(stateBalance));
+      alert('!!!!!!');
+      return;
+    }
     dispatch(handleUserBalance(Number(balance)));
-    setBalance('');
   };
+
   // Open modal window
   const handleModalOpen = () => {
     setModalOpen(true);
@@ -63,7 +68,24 @@ export default function BalanceForm() {
             // placeholder={`${balance}.00 UAH`}
             value={`${balance}.00 UAH`} //как сделать с .UAH
           />
-          <BalanceFormBtn type="submit" onClick={handleModalOpen}>
+          {/* <CurrencyInput
+            className='input-st'
+            id="input-example"
+            name="balance"
+            placeholder="Please, enter your balance"
+            suffix=".00 UAH"
+            value={balance}
+            decimalsLimit={2}
+            decimalSeparator={'.'}
+            onValueChange={value => {
+              const numText = value
+                .split('')
+                .slice(0, value.indexOf('.'))
+                .join('');
+              setBalance(numText);
+            }}
+          /> */}
+          <BalanceFormBtn type="submit">
             Confirm
           </BalanceFormBtn>
         </div>

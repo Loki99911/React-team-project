@@ -80,7 +80,7 @@ export const BalanceFormBtn = styled.button`
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  
+
   width: 140px;
   padding: 12px 18px;
   color: rgba(82, 85, 95, 0.7);
