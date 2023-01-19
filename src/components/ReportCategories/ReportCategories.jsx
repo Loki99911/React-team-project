@@ -11,7 +11,7 @@ const categoryToEng = name => {
     case 'Продукты':
       return 'Products';
     case 'Алкоголь':
-      return 'Alcohol';
+      return 'ЗСУ';
     case 'Развлечения':
       return 'Entertainment';
     case 'Здоровье':
@@ -39,7 +39,7 @@ const categoryToEng = name => {
   }
 };
 
-export default function ReportCategories({ onChange, onClick }) {
+export default function ReportCategories({ onChange }) {
   
   const [active, setActive] = useState('');
   const [data, setData] = useState({});
@@ -48,43 +48,24 @@ export default function ReportCategories({ onChange, onClick }) {
 
   const valueArr = [];
   
-  function ObjectConvertor (obj) {
-    const entries = Object.entries(obj)
-  const newArray = entries.map(entry => {
-    const obj = {name: entry[0], uv: entry[1].total}
-    return obj
-  })
-  return newArray}
-
-  // useEffect(() => {const filteredValueArr = valueArr.filter(
-  //   item => item[0].replace(/\s+/g, '') 
-  // );
-  //   console.log(filteredValueArr[0])
-  // onClick(filteredValueArr[0]) }, [active])
-
  useEffect(() => {
    if (expensesData.total !== null && incomesData.total !== null) {
-     if (onChange === 'expenses') {  
-       onClick(ObjectConvertor(expensesData.incomesData))
+        if (onChange === 'expenses') {
       setData(expensesData.incomesData ?? {});
       setActive('');
-     } else {
-      onClick(ObjectConvertor(incomesData.incomesData))
+    } else {
       setData(incomesData.incomesData ?? {});
       setActive('');
-     }
-     
-
+    }
   }
   }, [onChange, expensesData, incomesData])
 
 const clickEventHandler = event => {
-  setActive(event.currentTarget.id);
+    setActive(event.currentTarget.id);
     const filteredValueArr = valueArr.filter(
       item => item[0].replace(/\s+/g, '') === event.currentTarget.id
-  );
-  console.log(filteredValueArr[0])
-  onClick(filteredValueArr[0])
+    );
+    // dispatch(filteredDataAction(filteredValueArr));
   };
   
   const entries = Object.entries(data) ?? [];
