@@ -9,7 +9,6 @@ export const PublicRoute = ({
   redirectTo = '/main',
 }) => {
   const isLogin = useSelector(getIsLoggedIn);
-  console.log(isLogin);
   const shouldRedirect = isLogin && restricted;
   return shouldRedirect ? <Navigate to={redirectTo} /> : children;
 };
