@@ -1,0 +1,30 @@
+.button {
+  width: 136px;
+  height: 44px;
+  border-radius: 16px;
+  border: 2px solid #f2f5fc;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 1.14;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background-color: #fff;
+  color: #000;
+}
+
+.button:hover,
+.button:focus {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: #ff751d;
+  color: #fff;
+  transition: all 0.2s ease-out;
+}
+
+.buttonContainer {
+  display: inline;
+  width: 47%;
+}
