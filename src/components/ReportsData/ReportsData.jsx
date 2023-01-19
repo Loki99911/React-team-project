@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import ReportStats from 'components/ReportStats/ReportStats';
 import ReportCategories from 'components/ReportCategories/ReportCategories';
@@ -20,11 +20,22 @@ export default function ReportsData() {
     return obj
   })
   return newArray
-}
+  }
+  
+  // useEffect(() => { }, [handleClick, ])
+
+  function convertArrow(incomeArrow) {
+    if (incomeArrow === undefined) { return setArrow([]) } else {
+      // console.log(incomeArrow)
+      // const newArray = Object.values(incomeArrow[1])
+      return setArrow(incomeArrow)}
+  }
+  
   function getArrow(incomeArrow) {
     if (incomeArrow === undefined) { return setArrow([]) } else {
       // console.log(incomeArrow)
       // const newArray = Object.values(incomeArrow[1])
+      console.log(incomeArrow)
       const newArray = incomeArrow[1]
       const ObjArray = ObjectConvertor(newArray)
       return setArrow(ObjArray)
@@ -50,7 +61,7 @@ export default function ReportsData() {
         <NavText>{operation}</NavText>
       </ButtonsNextPrev>
     </Nav>
-    <ReportCategories onChange={operation} onClick={getArrow}></ReportCategories>
+    <ReportCategories onChange={operation} onClick={getArrow} convert={convertArrow}></ReportCategories>
   </Box>
   <ReportGraphic state={arrow}></ReportGraphic>
 </>
