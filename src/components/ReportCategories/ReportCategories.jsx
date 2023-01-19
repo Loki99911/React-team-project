@@ -73,9 +73,8 @@ export default function ReportCategories({ onChange, onClick }) {
       setData(incomesData.incomesData ?? {});
       setActive('');
      }
-     
-
-  }
+   }
+   // eslint-disable-next-line 
   }, [onChange, expensesData, incomesData])
 
 const clickEventHandler = event => {
