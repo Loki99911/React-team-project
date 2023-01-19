@@ -1,6 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import {
   signUpUserAPI,
   logInUserAPI,
@@ -31,10 +34,21 @@ export const logIn = createAsyncThunk(
     try {
       const data = await logInUserAPI(user);
       console.log('LOGGED IN ');
-      console.log('access token in login:', data.accessToken);
       token.set(data.accessToken);
       return data;
     } catch (error) {
+      if (error.response.status === 403) {
+        toast.error(
+          'Invalid email or password. Please check data you entered! ',
+          {
+            position: toast.POSITION.TOP_RIGHT,
+          }
+        );
+        return;
+      }
+      toast.error('Something went wrong. Please try again!', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
       return rejectWithValue(error.message);
     }
   }
@@ -42,16 +56,24 @@ export const logIn = createAsyncThunk(
 
 export const signUp = createAsyncThunk(
   'auth/register',
-  async (user, { rejectWithValue, dispatch }) => {
+  async (user, { rejectWithValue }) => {
     try {
       await signUpUserAPI(user);
       const data = await logInUserAPI(user);
-      console.log('sign up data:', data);
       return data;
     } catch (error) {
       if (error.response.status === 409) {
-        console.log('duplicate');
+        toast.info(
+          'User with such email email already exists! Please Log In ',
+          {
+            position: toast.POSITION.TOP_RIGHT,
+          }
+        );
+        return;
       }
+      toast.error('Something went wrong. Please try again!', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
       return rejectWithValue(error);
     }
   }
@@ -64,6 +86,9 @@ export const logout = createAsyncThunk(
       token.unset();
       return data;
     } catch (error) {
+      toast.error('Something went wrong. Please try again!', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
       return rejectWithValue(error.response.status);
     }
   }
@@ -94,11 +119,27 @@ export const refreshUser = createAsyncThunk(
 export const handleUserBalance = createAsyncThunk(
   'auth/userBalance',
   async (balance, { rejectWithValue }) => {
+    const id = toast.loading('Please wait...');
+
     try {
       const data = await userBalanceAPI({ newBalance: balance });
+      toast.update(id, {
+        render: 'Balance updated!',
+        type: toast.TYPE.SUCCESS,
+        isLoading: false,
+        autoClose: 3000,
+        closeButton: true,
+      });
+
       return data;
     } catch (error) {
-      console.log('error in handleUserBalance ');
+      toast.update(id, {
+        render: 'Something went wrong. Please try again ',
+        type: toast.TYPE.ERROR,
+        isLoading: false,
+        autoClose: 3000,
+        closeButton: true,
+      });
       return rejectWithValue(error.message);
     }
   }

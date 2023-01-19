@@ -61,12 +61,12 @@ export default function ReportCategories({ onChange }) {
   }, [onChange, expensesData, incomesData])
 
 const clickEventHandler = event => {
-    setActive(event.currentTarget.id);
-    const filteredValueArr = valueArr.filter(
-      item => item[0].replace(/\s+/g, '') === event.currentTarget.id
-    );
-    // dispatch(filteredDataAction(filteredValueArr));
-  };
+  setActive(event.currentTarget.id);
+  // const filteredValueArr = valueArr.filter(
+  //   item => item[0].replace(/\s+/g, '') === event.currentTarget.id
+  // );    ------------------------------------filteredValueArr Не тспользуется нигде!!!!
+  // dispatch(filteredDataAction(filteredValueArr));
+};
   
   const entries = Object.entries(data) ?? [];
   return (

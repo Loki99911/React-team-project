@@ -6,10 +6,9 @@ import PropTypes from 'prop-types';
 export const PublicRoute = ({
   children,
   restricted = false,
-  redirectTo = '/main',
+  redirectTo = '/main/expenses',
 }) => {
   const isLogin = useSelector(getIsLoggedIn);
-  console.log(isLogin);
   const shouldRedirect = isLogin && restricted;
   return shouldRedirect ? <Navigate to={redirectTo} /> : children;
 };
