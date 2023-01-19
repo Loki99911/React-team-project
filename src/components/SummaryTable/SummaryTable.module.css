@@ -1,0 +1,61 @@
+.Table {
+  width: 100%;
+  min-width: 213px;
+
+  background: #f5f6fb;
+  border-radius: 16px 16px 16px 0;
+
+  margin-bottom: 50px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.66;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.Title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid #fff;
+  min-height: 38px;
+
+  font-weight: 700;
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+  max-height: 342px;
+  overflow: scroll;
+}
+
+.Item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 12px;
+
+  color: #52555f;
+  border-top: 2px solid #fff;
+}
+
+@media screen and (max-width: 1279px) {
+  .Table {
+    min-width: 230px;
+  }
+  .List {
+    max-height: 210px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Table {
+    display: none;
+  }
+}
+
+.List::-webkit-scrollbar {
+  display: none;
+}

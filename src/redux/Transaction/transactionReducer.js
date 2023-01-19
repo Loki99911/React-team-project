@@ -91,7 +91,7 @@ const transactionSlice = createSlice({
       .addCase(getExpenseStats.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        state.expences.transactions = payload.incomes;
+        state.expences.transactions = payload.expenses;
         state.expences.stats = payload.monthsStats;
       })
       .addCase(getExpenseCategories.fulfilled, (state, { payload }) => {

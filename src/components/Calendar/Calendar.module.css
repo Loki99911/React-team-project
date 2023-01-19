@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30;
+    color: #010101;
+  }
+  
+  .btn_calendar {
+    background-color: white;
+    border: none;
+    height: 100%;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 1.16;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    margin: 0;
+    padding: 0;
+  
+    color: #52555f;
+  }
+  
+  .svg_calendar {
+    margin-right: 10px;
+  }

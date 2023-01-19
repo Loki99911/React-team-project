@@ -1,0 +1,10 @@
+.btnDelete {
+  background: transparent;
+  border-radius: 50%;
+  padding: 6px;
+  border: none;
+}
+
+.btnDelete:hover {
+  background-color: #f5f6fb;
+}
