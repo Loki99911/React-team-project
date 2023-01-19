@@ -1,6 +1,4 @@
-// import PropTypes from 'prop-types';
 import { StyledOrangeButton } from './Buttons.styled';
-
 
 export const OrangeButton = ({
   children,
@@ -9,7 +7,6 @@ export const OrangeButton = ({
 
 }) => {
   const handleClick = () => {
-
       dispatch();
       closeModal();
   };
