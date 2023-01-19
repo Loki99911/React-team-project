@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
 import s from './TransactionTable.module.css';
-import { getExpencesReportData } from 'redux/Transaction/transactionSelectors'
 import { removeTransaction } from 'redux/Transaction/transactionOperations';
 import { PropTypes } from 'prop-types';
 import DeleteButton from 'components/common/button-delete/button-delete';
@@ -30,7 +29,7 @@ export const TransactionTable = ({ tablePage, transactionData }) => {
             <td className={s.Td}>{item.date}</td>
             <td className={s.Description}>{item.description}</td>
             <td className={s.Td}>{item.category}</td>
-            {tablePage === '/main/expenses' ? (
+            {tablePage === '/main/expenses' || tablePage === '/expenses' || tablePage === '/Main/expenses' ? (
               <td className={s.ExpensesSum}>{`- ${item.amount} грн.`}</td>
             ) : (
               <td className={s.IncomeSum}>{`${item.amount} грн.`}</td>
