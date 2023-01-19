@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { Container } from './SharedLayout.styled';
 import { AppBar } from '../AppBar/AppBar';
 import { Loader } from 'components/Loader/Loader';
+import { ToastContainer } from 'react-toastify';
 
 export const SharedLayout = () => {
   return (
@@ -11,6 +12,7 @@ export const SharedLayout = () => {
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
+      <ToastContainer />
     </Container>
   );
 };
