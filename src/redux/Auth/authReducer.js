@@ -49,6 +49,7 @@ const authSlice = createSlice({
         state.userData.email = payload.user.email;
         state.userData.id = payload.user.id;
         state.isLoggedIn = true;
+        state.isUserFetching = false;
       })
       .addCase(logout.fulfilled, () => ({ ...initialState }))
 
