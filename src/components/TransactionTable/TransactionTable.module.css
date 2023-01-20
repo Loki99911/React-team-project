@@ -8,6 +8,8 @@ ul {
   /* height: 500px; */
   color: #000000;
   overflow: hidden;
+  /* flex-shrink: 1;
+  table-layout: fixed; */
   border-bottom: 2px solid #f5f6fb;
   border-radius: 30px 30px 0 0;
 }
@@ -28,7 +30,6 @@ ul {
 .Td {
   font-family: 'Roboto';
   font-style: normal;
-  height: 50px;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
@@ -36,64 +37,55 @@ ul {
   letter-spacing: 0.04em;
   color: #52555F;
   border-bottom: 2px solid #f5f6fb;
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
 }
 
 .Description {
-  text-align: left;
-  padding-left: 10px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.04em;
   color: #52555F;
-  height: 50px;
-  border-bottom: 2px solid #f5f6fb;
 }
 
 .ExpensesSum {
-  font-family: 'Roboto';
-  font-style: normal;
   font-weight: 700;
-  font-size: 12px;
-  height: 50px;
-  line-height: 14px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  border-bottom: 2px solid #f5f6fb;
   color: #e7192e;
 }
 
 .IncomeSum {
+  font-weight: 700;
+  color: #407946;
+}
+
+.Tr {
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 12px;
-  height: 50px;
   line-height: 14px;
   text-align: center;
   letter-spacing: 0.04em;
-  color: #407946;
   border-bottom: 2px solid #f5f6fb;
 }
 
 
-.Tbody {
-  display: flex;
-  flex-direction: column;
-  height: 340px;
-  background-image: url('images/TableGrid.png');
-  overflow-y: scroll;
+/* /* /* .Tbody {
 
-  border-style: solid;
-  border-color: #f5f6fb;
-  border-top: none;
-  border-bottom: none;
-  border-width: 2px;
-}
+  /* display: flex; */
+/* flex-direction: column; */
+/* height: 340px;
+/* background-image: url('images/TableGrid.png'); */
+/* overflow-y: scroll; */
+/* width: 100%;
+  display: block; */
 
-.Tbody::-webkit-scrollbar {
+/* border-style: solid;
+border-color: #f5f6fb;
+border-top: none;
+border-bottom: none;
+border-width: 2px; */
+
+/* } */
+
+/* .Tbody::-webkit-scrollbar {
   width: 6px;
   background: #f5f6fb;
 }
@@ -105,7 +97,7 @@ ul {
 
 .Tbody::-webkit-scrollbar-track {
   background-color: #f5f6fb;
-}
+} */
 
 @media screen and (max-width: 1279px) {
   .Table {
@@ -277,4 +269,64 @@ ul {
     margin-right: 0;
     margin-left: auto;
   }
+}
+
+.TableScroll {
+  margin-right: 75px;
+  border-radius: 30px 30px 0 0;
+  overflow: hidden;
+  color: #000000;
+
+}
+
+
+.TableScrollBody {
+  height: 340px;
+  overflow-x: auto;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.TableScroll table {
+  width: 100%;
+  table-layout: fixed;
+  border: none;
+  border-collapse: collapse;
+}
+
+.TableScroll thead th {
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  padding: 5px 5px;
+  background: #d8d8d8;
+  font-size: 14px;
+  color: #000000;
+
+}
+
+.TableScroll tbody td {
+  text-align: left;
+
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.TableScroll tbody tr:nth-child(even) {
+  background: #f3f3f3;
+}
+
+/* Стили для скролла */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
