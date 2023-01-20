@@ -1,4 +1,4 @@
-import { ReportWrap, LinkText, MonthText, PeriodText, Container } from "./ReportMonth.styled"
+import { ReportWrap, LinkText, MonthText, PeriodText } from "./ReportMonth.styled"
 import { ButtonsNextPrev } from "components/ButtonsNextPrev/ButtonsNextPrev"
 import { useEffect, useState } from "react";
 import { getSpecificPeriodTrans } from "redux/Transaction/transactionOperations";
@@ -53,11 +53,9 @@ export default function ReportMonth() {
       return;
     }
     dispatch(getSpecificPeriodTrans(query));
-    // if (query !== '-01') dispatch(getReports(query));
-    // dispatch(reportsQueryAction(`${year}-${monthString}`));
+
   }, [monthNumber, year, dispatch]);
-  // ------------------------------------dispatch Требует в зависимости!!!!
-  //[monthNumber, year, dispatch]);
+
 
   const handlerClick = name => {
     switch (name) {

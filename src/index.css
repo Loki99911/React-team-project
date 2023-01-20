@@ -26,16 +26,3 @@ body .recharts-text.recharts-label tspan {
 
   fill: #52555f;
 }
-
-body .recharts-rectangle :nth-child(3n + 1) {
-  fill: #ff751d;
-  stroke-linecap: round;
-}
-
-/* body .recharts-layer.recharts-bar-rectangle.recharts-rectangle {
-  fill: red;
-}
-
-body .recharts-rectangle:nth-child(2n + 3) {
-  fill: red;
-} */
