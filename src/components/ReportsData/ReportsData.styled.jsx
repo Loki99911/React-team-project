@@ -8,6 +8,7 @@ export const Box = styled.div`
     margin-top: 32px;
     border-radius: 30px;
     background-color: #fff;
+    box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2)
   }
   @media screen and (min-width: 1280px) {
     padding: 20px 205px;

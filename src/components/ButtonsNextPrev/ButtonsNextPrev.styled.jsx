@@ -13,4 +13,11 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 250ms linear;
+  :hover,
+  :focus {
+    color: #ff751d;
+    cursor: pointer;
+    
+  }
 `

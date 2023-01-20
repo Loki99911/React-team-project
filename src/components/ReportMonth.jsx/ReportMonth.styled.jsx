@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: flex;
+`
+
+
 export const LinkText = styled.p`
 display: none;
 font-family: 'Roboto';
@@ -16,6 +21,7 @@ color: rgba(82, 85, 95, 0.7);
 `
 
 export const PeriodText = styled.p`
+margin: 0;
 font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
@@ -30,10 +36,16 @@ export const ReportWrap = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-margin-bottom: 32px;
+margin-top: 32px;
+@media screen and (min-width: 768px) {
+  margin-top: 0;
+  margin-bottom: 32px;
+  }
 `
 
 export const MonthText = styled.p`
+width: 130px;
+margin: 0;
 padding: 0px 5px;
 font-style: normal;
 font-weight: 700;
