@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { lazy } from 'react';
 import { SharedLayout } from '../components/SharedLayout/SharedLayout';
@@ -40,6 +40,7 @@ export const App = () => {
                 </PrivateRoute>
               }
             >
+              <Route index element={<Navigate to="/main/expenses" />} />
               <Route path="expenses" element={<Expenses />} />
               <Route path="income" element={<Income />} />
             </Route>{' '}
