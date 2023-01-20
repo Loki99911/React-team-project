@@ -44,6 +44,7 @@ export const App = () => {
               <Route path="expenses" element={<Expenses />} />
               <Route path="income" element={<Income />} />
             </Route>{' '}
+            <Route path="*" element={<Navigate to="/main" />} />
           </>
         )}
         {isMobile && (
