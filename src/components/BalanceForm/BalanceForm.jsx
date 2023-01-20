@@ -10,11 +10,13 @@ import NotifyBalance from '../NotifyBalance/NotifyBalance';
 import { InfoModal } from 'components/InfoModal/InfoModal';
 import { handleUserBalance } from '../../redux/Auth/authOperations';
 import { getBalance } from '../../redux/Transaction/transactionSelectors';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function BalanceForm() {
   const [modalOpen, setModalOpen] = useState(false);
   const stateBalance = useSelector(getBalance);
-  const [balance, setBalance] = useState('');
+  const [balance, setBalance] = useState(stateBalance);
 
   const dispatch = useDispatch();
 
@@ -24,7 +26,7 @@ export default function BalanceForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    handleModalOpen()
+    toggleModal();
   };
 
   const handleChange = ({ target: { value } }) => {
@@ -32,23 +34,19 @@ export default function BalanceForm() {
     setBalance(numText);
   };
 
-  // Handle update users balance
   const handleClick = () => {
     if (Number(balance) === 0) {
       setBalance(prev => String(stateBalance));
-      alert('!!!!!!');
+      toast.error('Balance cannot be "0". Try again!', {
+        position: toast.POSITION.TOP_CENTER,
+      });
       return;
     }
     dispatch(handleUserBalance(Number(balance)));
   };
 
-  // Open modal window
-  const handleModalOpen = () => {
-    setModalOpen(true);
-  };
-  // Close modal window
-  const handleModalClose = () => {
-    setModalOpen(false);
+  const toggleModal = () => {
+    setModalOpen(prev => !prev);
   };
 
   return (
@@ -65,34 +63,14 @@ export default function BalanceForm() {
             pattern="[0-9, .UAH]*"
             required
             onChange={handleChange}
-            // placeholder={`${balance}.00 UAH`}
-            value={`${balance}.00 UAH`} //как сделать с .UAH
+            value={`${balance}.00 UAH`}
           />
-          {/* <CurrencyInput
-            className='input-st'
-            id="input-example"
-            name="balance"
-            placeholder="Please, enter your balance"
-            suffix=".00 UAH"
-            value={balance}
-            decimalsLimit={2}
-            decimalSeparator={'.'}
-            onValueChange={value => {
-              const numText = value
-                .split('')
-                .slice(0, value.indexOf('.'))
-                .join('');
-              setBalance(numText);
-            }}
-          /> */}
-          <BalanceFormBtn type="submit">
-            Confirm
-          </BalanceFormBtn>
+          <BalanceFormBtn type="submit">Confirm</BalanceFormBtn>
         </div>
         {!stateBalance && <NotifyBalance />}
       </BalanceFormStyled>
       {modalOpen && (
-        <InfoModal closeModal={handleModalClose} dispatch={handleClick}>
+        <InfoModal closeModal={toggleModal} dispatch={handleClick}>
           Are you sure?
         </InfoModal>
       )}
