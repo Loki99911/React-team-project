@@ -16,19 +16,18 @@ const modalRoot = document.getElementById('modal-root');
 const body = document.querySelector('body');
 
 export const InfoModal = ({ children, closeModal, dispatch }) => {
-  // Close on Esc button
   const handleEscapeClose = event => {
     if (event.code === 'Escape') {
       closeModal();
     }
   };
-  // Close on backdrop click
+
   const handleBackdropClose = event => {
     if (event.target === event.currentTarget) {
       closeModal();
     }
   };
-  // No scroll of body when modal window is open
+
   useEffect(() => {
     window.addEventListener('keydown', handleEscapeClose);
 
@@ -39,13 +38,8 @@ export const InfoModal = ({ children, closeModal, dispatch }) => {
   });
 
   return createPortal(
-    // Backdrop
-    <StyledModalBackdrop
-      onClick={handleBackdropClose}
-    >
-      {/* Modal window */}
+    <StyledModalBackdrop onClick={handleBackdropClose}>
       <StyledModalWindow>
-        {/* Close button img X */}
         <StyledCloseButton onClick={closeModal}>
           <Close />
         </StyledCloseButton>

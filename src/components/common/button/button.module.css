@@ -18,7 +18,6 @@
 .button:hover,
 .button:focus {
   cursor: pointer;
-  transform: scale(1.1);
   background-color: #ff751d;
   color: #fff;
   transition: all 0.2s ease-out;
