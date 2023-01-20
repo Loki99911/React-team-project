@@ -53,6 +53,55 @@ export const Translator = name => {
       return 'З/П';
     case 'Additional income':
       return 'Доп. доход';
+
+    case 'Январь':
+      return 'January';
+    case 'Февраль':
+      return 'February';
+    case 'Март':
+      return 'March';
+    case 'Апрель':
+      return 'April';
+    case 'Май':
+      return 'May';
+    case 'Июнь':
+      return 'June';
+    case 'Июль':
+      return 'July';
+    case 'Август':
+      return 'August';
+    case 'Сентябрь':
+      return 'September';
+    case 'Октябрь':
+      return 'October';
+    case 'Ноябрь':
+      return 'November';
+    case 'Декабрь':
+      return 'December';
+    case 'January':
+      return 'Январь';
+    case 'February':
+      return 'Февраль';
+    case 'March':
+      return 'Март';
+    case 'April':
+      return 'Апрель';
+    case 'May':
+      return 'Май';
+    case 'June':
+      return 'Июнь';
+    case 'July':
+      return 'Июль';
+    case 'August':
+      return 'Август';
+    case 'September':
+      return 'Сентябрь';
+    case 'October':
+      return 'Октябрь';
+    case 'November':
+      return 'Ноябрь';
+    case 'December':
+      return 'Декабрь';
     default:
       break;
   }
