@@ -10,7 +10,7 @@ import Button from 'components/common/button/button';
 import { SummaryTable } from 'components/SummaryTable/SummaryTable';
 import { TransactionTable } from 'components/TransactionTable/TransactionTable';
 import { useLocation } from "react-router-dom";
-
+import { Translator } from "components/Translator/Translator";
 
 export const ExpencePart = () => {
     const [description, setDescription] = useState('');
@@ -125,7 +125,7 @@ export const ExpencePart = () => {
                                             type="button"
                                         >
                                             {category ? (
-                                                <p style={{ color: '#52555F' }}>{category}</p>
+                                                <p style={{ color: '#52555F' }}>{Translator(category)}</p>
                                             ) : (
                                                 <p style={{ color: '#c7ccdc' }}>Product category</p>
                                             )}
@@ -148,7 +148,7 @@ export const ExpencePart = () => {
                                                                 handleIsListTogle();
                                                             }}
                                                         >
-                                                            {el}
+                                                            {Translator(el)}
                                                         </li>
                                                     ))}
                                                 </ul>

@@ -3,7 +3,7 @@ import s from './TransactionTable.module.css';
 import { removeTransaction } from 'redux/Transaction/transactionOperations';
 import { PropTypes } from 'prop-types';
 import DeleteButton from 'components/common/button-delete/button-delete';
-
+import { Translator } from 'components/Translator/Translator';
 export const TransactionTable = ({ tablePage, transactionData }) => {
   const dispatch = useDispatch();
   console.log(tablePage);
@@ -28,7 +28,7 @@ export const TransactionTable = ({ tablePage, transactionData }) => {
           <tr key={item._id}>
             <td className={s.Td}>{item.date}</td>
             <td className={s.Description}>{item.description}</td>
-            <td className={s.Td}>{item.category}</td>
+            <td className={s.Td}>{Translator(item.category)}</td>
             {tablePage === '/main/expenses' || tablePage === '/expenses' || tablePage === '/Main/expenses' ? (
               <td className={s.ExpensesSum}>{`- ${item.amount} грн.`}</td>
             ) : (

@@ -1,5 +1,6 @@
 import s from './SummaryTable.module.css';
 import { PropTypes } from 'prop-types';
+import { Translator } from "components/Translator/Translator";
 
 export const SummaryTable = ({ summaryData = {} }) => {
   const monthStats = Object.entries(summaryData).filter(
@@ -13,7 +14,7 @@ export const SummaryTable = ({ summaryData = {} }) => {
         {monthStats?.map((elem, index) => {
           return (
             <li key={index} className={s.Item}>
-              <span className={s.Mouth}>{elem[0]}</span>
+              <span className={s.Mouth}>{Translator(elem[0])}</span>
               <span className={s.Sum}>{elem[1]}</span>
             </li>
           );
