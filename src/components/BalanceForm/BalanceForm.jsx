@@ -14,7 +14,7 @@ import { getBalance } from '../../redux/Transaction/transactionSelectors';
 export default function BalanceForm() {
   const [modalOpen, setModalOpen] = useState(false);
   const stateBalance = useSelector(getBalance);
-  const [balance, setBalance] = useState('');
+  const [balance, setBalance] = useState(stateBalance);
 
   const dispatch = useDispatch();
 
@@ -24,7 +24,7 @@ export default function BalanceForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    handleModalOpen()
+    handleModalOpen();
   };
 
   const handleChange = ({ target: { value } }) => {
@@ -85,9 +85,7 @@ export default function BalanceForm() {
               setBalance(numText);
             }}
           /> */}
-          <BalanceFormBtn type="submit">
-            Confirm
-          </BalanceFormBtn>
+          <BalanceFormBtn type="submit">Confirm</BalanceFormBtn>
         </div>
         {!stateBalance && <NotifyBalance />}
       </BalanceFormStyled>
