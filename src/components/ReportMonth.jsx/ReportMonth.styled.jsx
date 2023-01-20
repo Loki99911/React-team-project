@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: flex;
+`
+
+
 export const LinkText = styled.p`
 display: none;
 font-family: 'Roboto';
@@ -16,6 +21,7 @@ color: rgba(82, 85, 95, 0.7);
 `
 
 export const PeriodText = styled.p`
+margin: 0;
 font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
@@ -34,6 +40,8 @@ margin-bottom: 32px;
 `
 
 export const MonthText = styled.p`
+width: 130px;
+margin: 0;
 padding: 0px 5px;
 font-style: normal;
 font-weight: 700;

@@ -8,13 +8,15 @@ import bgTabl2 from '../../images/BgTablet_2.png';
 export const StyledReportsPage = styled.div`
     position: relative;
     text-align: center;
-  padding: 56px 0px 0px 0px;
+ padding: 46px 0px 0px 0px;
+  width: 100%;
   margin: 0 auto;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 
   @media screen and (min-width: 768px) {
-    /* height: 1178px; */
-    padding: 42px 32px 60px 32px;
+    padding: 40px 32px 60px 32px;
     background-image: url(${bgTabl});
     background-position: bottom 60px right 88px;
     background-repeat: no-repeat;
@@ -29,7 +31,7 @@ export const StyledReportsPage = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    padding: 42px 91px 83px 123px;
+    padding: 40px 91px 83px 91px;
     background-image: url(${bgDesk});
     background-position: bottom;
     background-size: contain;
@@ -54,7 +56,7 @@ export const Wrap = styled.div`
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start
   }
    @media screen and (min-width: 1280px) {
     padding-left: 40px;
@@ -86,10 +88,6 @@ export const Link = styled(NavLink)`
   :focus {
     color: #ff751d;
   }
-  :hover .reportsIcon,
-  :focus .reportsIcon {
-    fill: #ff751d;
-  }
   .backToMain {
     width: 100%;
     height: 100%;
@@ -106,6 +104,6 @@ export const Link = styled(NavLink)`
 
     @media screen and (min-width: 1280px) {
     top: 56px;
-    left: 126px;
+    left: 91px;
     }
 `;
