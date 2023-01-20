@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { lazy } from 'react';
 import { SharedLayout } from '../components/SharedLayout/SharedLayout';
 import { PublicRoute, PrivateRoute } from '../service/routes';
 import { useMediaRules } from '../MediaRules/MediaRules';
 import { refreshUser } from 'redux/Auth/authOperations';
+import { getIsUserFetching } from 'redux/Auth/authSelectors';
+import { Loader } from './Loader/Loader';
 
 const Register = lazy(() => import('../pages/Register/Register'));
 const Main = lazy(() => import('../pages/Main/Main'));
@@ -14,12 +16,15 @@ const Income = lazy(() => import('../pages/Income/Income'));
 const Reports = lazy(() => import('../pages/Reports/Reports'));
 
 export const App = () => {
+  const isUserFetching = useSelector(getIsUserFetching);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
   const { isMobile } = useMediaRules();
-  return (
+  return isUserFetching ? (
+    <Loader />
+  ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route
