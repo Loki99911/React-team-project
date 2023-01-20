@@ -86,7 +86,7 @@ export const LoginBtn = styled.button`
   }
 `;
 
-export const GoogleBtn = styled.button`
+export const GoogleBtn = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
