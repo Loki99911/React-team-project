@@ -51,6 +51,7 @@ export const App = () => {
             <Route path="/main" element={<Main />} />
             <Route path="/expenses" element={<Expenses />} />
             <Route path="/income" element={<Income />} />
+            <Route path="*" element={<Navigate to="/main" />} />
           </>
         )}
 
