@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik } from 'formik';
 import shortid from 'shortid';
-import { useDispatch,} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import google from '../../images/google.svg';
 import { logIn, signUp } from '../../redux/Auth/authOperations';
 import {
@@ -14,7 +14,6 @@ import {
   GoogleBtn,
 } from './LoginForm.styled';
 
-
 const LoginForm = () => {
   const dispatch = useDispatch();
   const emailID = shortid.generate();
@@ -22,7 +21,10 @@ const LoginForm = () => {
   return (
     <FormLayout>
       <p>You can log in with your Google Account:</p>
-      <GoogleBtn type="button">
+      <GoogleBtn
+        type="button"
+        href="https://kapusta-backend.goit.global/auth/google"
+      >
         <img src={google} alt="google" />
       </GoogleBtn>
       <p>Or log in using an email and password, after registering:</p>
