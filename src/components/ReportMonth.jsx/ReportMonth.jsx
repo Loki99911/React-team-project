@@ -3,6 +3,8 @@ import { ButtonsNextPrev } from "components/ButtonsNextPrev/ButtonsNextPrev"
 import { useEffect, useState } from "react";
 import { getSpecificPeriodTrans } from "redux/Transaction/transactionOperations";
 import { useDispatch } from "react-redux";
+import ReportBalanceForm from "components/ReportBalanceForm/ReportBalanceForm";
+
 
 const dateNow = new Date();
 
@@ -86,7 +88,7 @@ export default function ReportMonth() {
         <LinkText>Main Paige</LinkText>
       </ReportWrap>
       <ReportWrap>
-        <p>Balance:</p>
+        <ReportBalanceForm/>
       </ReportWrap>
       <ReportWrap>
         <PeriodText>Current Period:</PeriodText>

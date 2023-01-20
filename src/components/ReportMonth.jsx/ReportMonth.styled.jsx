@@ -36,7 +36,11 @@ export const ReportWrap = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-margin-bottom: 32px;
+margin-top: 32px;
+@media screen and (min-width: 768px) {
+  margin-top: 0;
+  margin-bottom: 32px;
+  }
 `
 
 export const MonthText = styled.p`

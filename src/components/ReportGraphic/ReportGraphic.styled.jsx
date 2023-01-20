@@ -25,3 +25,17 @@ export const TableBox = styled.div`
     padding: 20px 130px;
   }
 `;
+
+
+export  const Text = styled.text`
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.02em;
+color: #52555F;
+`;

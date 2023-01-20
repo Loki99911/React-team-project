@@ -78,6 +78,31 @@ export const ItemSvg = styled.svg`
   position: relative;
 `;
 
-export const Text = styled.svg`
+export const Text = styled.p`
   margin-bottom: 0;
+  height: 20px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+letter-spacing: 0.02em;
+text-transform: uppercase;
+
+color: #52555F;
+`
+
+export const TextPrice = styled.p`
+padding-left: 2px;
+padding-bottom: 2px;
+  margin-bottom: 0;
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+
+color: #52555F;
 `

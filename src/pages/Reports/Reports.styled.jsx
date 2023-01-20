@@ -8,7 +8,7 @@ import bgTabl2 from '../../images/BgTablet_2.png';
 export const StyledReportsPage = styled.div`
     position: relative;
     text-align: center;
- padding: 46px 0px 0px 0px;
+ padding: 24px 0px 0px 0px;
   width: 100%;
   margin: 0 auto;
   display: flex;
