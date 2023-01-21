@@ -43,7 +43,6 @@ export default function Main() {
           <>
             <Calendar />
             <LinkBox>
-
               <ExspensesIncLink to="/expenses">Expenses</ExspensesIncLink>
               <ExspensesIncLink to="/income">Income</ExspensesIncLink>
             </LinkBox>

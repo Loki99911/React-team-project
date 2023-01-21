@@ -51,7 +51,10 @@ export default function BalanceForm() {
 
   return (
     <>
-      <BalanceFormStyled onSubmit={handleSubmit}>
+      <BalanceFormStyled
+        onSubmit={handleSubmit}
+        className={`animate__animated animate__bounceInDown`}
+      >
         <BalanceFormLabel>Balance:</BalanceFormLabel>
         <div>
           {' '}
