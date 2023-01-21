@@ -39,6 +39,8 @@
   border: 0px;
   color: #000000;
   /* outline: 1px solid rgb(13, 64, 64); */
+  cursor: pointer;
+  transition: color 250ms linear;
 }
 
 @media screen and (max-width: 768px) {
@@ -221,6 +223,8 @@
   border-left: 0px;
   border-color: #f5f6fb;
   background-color: #fff;
+  cursor: pointer;
+  transition: color 250ms linear;
 }
 
 @media screen and (max-width: 768px) {
@@ -249,6 +253,8 @@
   border: 2px solid #f5f6fb;
   box-shadow: 0px 3px 4px rgba(170, 178, 197, 0.4);
   margin-top: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 @media screen and (max-width: 768px) {
