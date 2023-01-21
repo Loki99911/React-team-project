@@ -14,6 +14,7 @@
   background-color: #fff;
   color: #52555F;
   transition: all 0.2s ease-out;
+
 }
 
 .button:hover,
@@ -23,9 +24,25 @@
   color: #fff;
 }
 
+.button:active {
+  cursor: pointer;
+  background-color: #fc6303;
+  color: rgb(0, 0, 0);
+}
+
+.button:first-child {
+  margin-right: 15px;
+}
+
 .buttonContainer {
   display: inline;
   width: 47%;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+  .button {
+    width: 125px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -36,5 +53,14 @@
   .buttonContainer {
     display: inline;
     width: 50%;
+  }
+
+  .button:first-child {
+    margin-right: 20px;
+  }
+
+  .buttonContainer {
+    display: inline;
+    width: 30%;
   }
 }

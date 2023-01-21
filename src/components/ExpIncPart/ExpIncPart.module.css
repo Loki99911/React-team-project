@@ -290,14 +290,7 @@
   padding-left: 0;
 }
 
-@media screen and (max-width: 768px) {
-  .listCategory {
-    top: 88px;
-    width: 280px;
-    font-size: 14px;
-    margin-left: 20px;
-  }
-}
+
 
 .itemCategory {
   font-size: 12px;
@@ -313,6 +306,22 @@
 .itemCategory:hover {
   color: #52555f;
   background-color: #f5f6fb;
+}
+
+
+@media screen and (max-width: 768px) {
+  .listCategory {
+    top: 88px;
+    width: 280px;
+    font-size: 14px;
+    margin-left: 20px;
+  }
+
+  .itemCategory {
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .inputSummContainer {
@@ -364,6 +373,11 @@
     border-radius: 20px;
     background-color: #f5f6fb;
     border: 2px solid #ffffff;
+
+  }
+
+  .inputSumm {
+    border-right: 2px solid #fff;
   }
 }
 
@@ -390,7 +404,7 @@
 
 @media screen and (max-width: 768px) {
   .buttonContainer {
-    margin: 0 auto;
+    margin: 0px;
   }
 
   .prods {
