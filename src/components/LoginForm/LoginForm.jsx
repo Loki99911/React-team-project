@@ -12,6 +12,7 @@ import {
   LoginBtn,
   LoginBtnBlock,
   GoogleBtn,
+  ErrorText,
 } from './LoginForm.styled';
 
 const LoginForm = () => {
@@ -33,11 +34,14 @@ const LoginForm = () => {
         validate={values => {
           const errors = {};
           if (!values.email) {
-            errors.email = 'Required';
+            errors.email = 'This is a required field';
           } else if (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
             errors.email = 'Invalid email address';
+          }
+          if (!values.password) {
+            errors.password = 'This is a required field';
           }
           return errors;
         }}
@@ -64,8 +68,11 @@ const LoginForm = () => {
               onBlur={handleBlur}
               value={values.email}
               id={emailID}
+              placeholder="your@email.com"
             />
-            {errors.email && touched.email && errors.email}
+            <ErrorText>
+              {errors.email && touched.email && errors.email}
+            </ErrorText>
             <LoginLabel htmlFor={passwordlID}>Password:</LoginLabel>
             <LoginInput
               type="password"
@@ -74,8 +81,13 @@ const LoginForm = () => {
               onBlur={handleBlur}
               value={values.password}
               id={passwordlID}
+              placeholder="Password (min 8 characters)"
+              pattern="[0-9A-Za-zА-Яа-яЁёЄєЇї!@#$%^&*]{8,}"
             />
-            {errors.password && touched.password && errors.password}
+            <ErrorText>
+              {errors.password && touched.password && errors.password}
+            </ErrorText>
+
             <LoginBtnBlock>
               <LoginBtn type="submit" disabled={isSubmitting}>
                 {'Log in'.toUpperCase()}
