@@ -29,7 +29,7 @@ export const ExpencePart = () => {
     const balance = useSelector(getBalance);
     const dispatch = useDispatch();
     const pageLocation = useLocation().pathname;
-
+    console.log(expensesTransactionData);
 
     useEffect(() => {
         dispatch(getExpenseCategories());
@@ -103,6 +103,7 @@ export const ExpencePart = () => {
                         <Loader />
                     ) : (
                         <>
+                            <a href="/React-team-project/Main"><svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="s.backToMain"><path d=" M18 5H3.83L7.41 1.41L6 0L0 6L6 12L7.41 10.59L3.83 7H18V5Z" fill="#FF751D"></path></svg></a>
                             <div className={s.formContainer}>
                                 <div className={s.calendar}>
                                     <Calendar startDate={startDate} setStartDate={setStartDate} />

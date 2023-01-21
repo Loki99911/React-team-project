@@ -13,6 +13,7 @@ import { useMediaRules } from '../../MediaRules/MediaRules';
 import { ReactComponent as IconReports } from '../../images/reports.svg';
 import { Loader } from 'components/Loader/Loader';
 import { Calendar } from 'components/Calendar/Calendar';
+import MobileTransactionList from 'components/MobileTransactionList/MobileTransactionList';
 
 export default function Main() {
   const { isMobile } = useMediaRules();
@@ -42,6 +43,7 @@ export default function Main() {
         {isMobile && (
           <>
             <Calendar />
+            <MobileTransactionList />
             <LinkBox>
 
               <ExspensesIncLink to="/expenses">Expenses</ExspensesIncLink>

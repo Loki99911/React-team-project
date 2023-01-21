@@ -317,6 +317,10 @@
   -webkit-appearance: none;
 }
 
+.backToMain {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .inputSummContainer {
     margin: 0 auto;
@@ -356,6 +360,11 @@
   .buttonContainer {
     margin: 0 auto;
   }
+
+  .prods {
+    display: none;
+  }
+
 }
 
 .tableContainer {
@@ -367,6 +376,7 @@
   .tableContainer {
     flex-wrap: wrap;
   }
+
 }
 
 .prods {
