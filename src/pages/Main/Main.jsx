@@ -12,6 +12,7 @@ import BalanceForm from '../../components/BalanceForm/BalanceForm';
 import { useMediaRules } from '../../MediaRules/MediaRules';
 import { ReactComponent as IconReports } from '../../images/reports.svg';
 import { Loader } from 'components/Loader/Loader';
+import { Calendar } from 'components/Calendar/Calendar';
 
 export default function Main() {
   const { isMobile } = useMediaRules();
@@ -40,7 +41,9 @@ export default function Main() {
         )}
         {isMobile && (
           <>
+            <Calendar />
             <LinkBox>
+
               <ExspensesIncLink to="/expenses">Expenses</ExspensesIncLink>
               <ExspensesIncLink to="/income">Income</ExspensesIncLink>
             </LinkBox>
