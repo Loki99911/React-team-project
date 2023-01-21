@@ -103,119 +103,126 @@ export const ExpencePart = () => {
 
 
     return (
+
+
+
         <div className={s.container}>
             <div className={s.contentContainer}>
-                {
-                    loading ? (
-                        <Loader />
-                    ) : (
-                        <>
-                            <a href="/React-team-project/Main"><svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="s.backToMain"><path d=" M18 5H3.83L7.41 1.41L6 0L0 6L6 12L7.41 10.59L3.83 7H18V5Z" fill="#FF751D"></path></svg></a>
-                            <div className={s.formContainer}>
-                                <div className={s.calendar}>
-                                    <Calendar selected={newDate} />
+
+                <div className={s.backToMain}>
+                    <a href="/React-team-project/Main">
+                        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d=" M18 5H3.83L7.41 1.41L6 0L0 6L6 12L7.41 10.59L3.83 7H18V5Z" fill="#FF751D">
+                            </path>
+                        </svg>
+                    </a></div>
+
+                {loading ? (
+                    <Loader />
+                ) : (
+                    <>
+                        <div className={s.formContainer}>
+                            <div className={s.calendar}>
+                                <Calendar selected={newDate} />
+                            </div>
+                            <form className={s.form} onSubmit={handleSubmitForm}>
+                                <input
+                                    className={s.inputDescription}
+                                    placeholder="Product description"
+                                    autoComplete="off"
+                                    type="text"
+                                    name="description"
+                                    value={description}
+                                    onChange={handleChangeForm}
+                                />
+
+                                <div className={s.inputCategoryContainer}>
+                                    <button
+                                        className={s.inputCategory}
+                                        onClick={handleIsListTogle}
+                                        type="button">
+                                        {category ? (
+                                            <p style={{ color: '#52555F' }}>{Translator(category)}</p>
+                                        ) : (
+                                            <p style={{ color: '#c7ccdc' }}>Product category</p>
+                                        )}
+                                        <span className={s.arrow}>&#129171;</span>
+                                    </button>
+                                    {list && (
+                                        <>
+                                            <div
+                                                className={s.overlay}
+                                                onClick={handleCloseByDrope}>
+                                            </div>
+                                            <ul className={s.listCategory}>
+                                                {prodExp.map((el, ind) => (
+                                                    <li
+                                                        value={el}
+                                                        key={ind}
+                                                        className={s.itemCategory}
+                                                        onClick={() => {
+                                                            setCategory(el);
+                                                            handleIsListTogle();
+                                                        }}
+                                                    >
+                                                        {Translator(el)}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </>
+                                    )}
                                 </div>
-                                <form className={s.form} onSubmit={handleSubmitForm}>
+                                <div className={s.errContainer}>
+                                    <p className={s.errDescriptionMsg}>
+                                        {!description && emptyInput && 'Enter description!'}
+                                    </p>
+                                    <p className={s.errCategoryMsg}>
+                                        {!category && emptyInput && 'Select category!'}
+                                    </p>
+                                    <p className={s.errSummMsg}>
+                                        {!sum && emptyInput && 'Enter sum!'}
+                                    </p>
+                                </div>
+                                <div className={s.inputSummContainer}>
                                     <input
-                                        className={s.inputDescription}
-                                        placeholder="Product description"
-                                        autoComplete="off"
-                                        type="text"
-                                        name="description"
-                                        value={description}
+                                        className={s.inputSumm}
+                                        placeholder="0,00"
+                                        type="number"
+                                        name="sum"
+                                        value={sum}
                                         onChange={handleChangeForm}
                                     />
-
-                                    <div className={s.inputCategoryContainer}>
-                                        <button
-                                            className={s.inputCategory}
-                                            onClick={handleIsListTogle}
-                                            type="button"
-                                        >
-                                            {category ? (
-                                                <p style={{ color: '#52555F' }}>{Translator(category)}</p>
-                                            ) : (
-                                                <p style={{ color: '#c7ccdc' }}>Product category</p>
-                                            )}
-                                            <span className={s.arrow}>&#129171;</span>
-                                        </button>
-                                        {list && (
-                                            <>
-                                                <div
-                                                    className={s.overlay}
-                                                    onClick={handleCloseByDrope}>
-                                                </div>
-                                                <ul className={s.listCategory}>
-                                                    {prodExp.map((el, ind) => (
-                                                        <li
-                                                            value={el}
-                                                            key={ind}
-                                                            className={s.itemCategory}
-                                                            onClick={() => {
-                                                                setCategory(el);
-                                                                handleIsListTogle();
-                                                            }}
-                                                        >
-                                                            {Translator(el)}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </>
-                                        )}
-                                    </div>
-                                    <div className={s.errContainer}>
-                                        <p className={s.errDescriptionMsg}>
-                                            {!description && emptyInput && 'Enter description!'}
-                                        </p>
-                                        <p className={s.errCategoryMsg}>
-                                            {!category && emptyInput && 'Select category!'}
-                                        </p>
-                                        <p className={s.errSummMsg}>
-                                            {!sum && emptyInput && 'Enter sum!'}
-                                        </p>
-                                    </div>
-                                    <div className={s.inputSummContainer}>
-                                        <input
-                                            className={s.inputSumm}
-                                            placeholder="0,00"
-                                            type="number"
-                                            name="sum"
-                                            value={sum}
-                                            onChange={handleChangeForm}
-                                        />
-                                        <Calculator />
-                                    </div>
-                                </form>
-                                <div className={s.buttonContainer}>
-                                    <Button
-                                        text={'INPUT'}
-                                        type={'submit'}
-                                        onClick={handleSubmitForm}
-                                    />
-                                    <Button
-                                        text={'CLEAR'}
-                                        type={'button'}
-                                        onClick={handleResetForm}
-                                    />
+                                    <Calculator />
                                 </div>
+                            </form>
+                            <div className={s.buttonContainer}>
+                                <Button
+                                    text={'INPUT'}
+                                    type={'submit'}
+                                    onClick={handleSubmitForm}
+                                />
+                                <Button
+                                    text={'CLEAR'}
+                                    type={'button'}
+                                    onClick={handleResetForm}
+                                />
                             </div>
+                        </div>
 
-                            <div className={s.tableContainer}>
-                                <div className={s.prods}>
-                                    <TransactionTable
-                                        transactionData={expensesTransactionData}
-                                        tablePage={pageLocation}
-                                    />
-                                </div>
-                                <div className={s.sumary}>
-                                    <SummaryTable summaryData={expensesSummaryData} />
-                                </div>
+                        <div className={s.tableContainer}>
+                            <div className={s.prods}>
+                                <TransactionTable
+                                    transactionData={expensesTransactionData}
+                                    tablePage={pageLocation}
+                                />
                             </div>
-                        </>
-                    )
-                }
+                            <div className={s.sumary}>
+                                <SummaryTable summaryData={expensesSummaryData} />
+                            </div>
+                        </div>
+                    </>
+                )}
             </div>
-        </div>
+        </div >
     );
-
 };
