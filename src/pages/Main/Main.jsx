@@ -40,7 +40,8 @@ export default function Main() {
           </>
         )}
         {isMobile && (
-          <><Calendar />
+          <>
+            <Calendar />
             <LinkBox>
 
               <ExspensesIncLink to="/expenses">Expenses</ExspensesIncLink>
