@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addExpense, getExpenseCategories, getExpenseStats } from "redux/Transaction/transactionOperations";
-import { getBalance, getExpencesCategories, getExpencesMonthStats, getExpencesTransactions, getIsLoading } from "redux/Transaction/transactionSelectors";
+import { getBalance, getCurrentDate, getExpencesCategories, getExpencesMonthStats, getExpencesTransactions, getIsLoading } from "redux/Transaction/transactionSelectors";
 import s from './ExpIncPart.module.css';
 import { Calendar } from 'components/Calendar/Calendar';
 import { Calculator } from 'components/Calculator/Calculator';
@@ -11,13 +11,15 @@ import { SummaryTable } from 'components/SummaryTable/SummaryTable';
 import { TransactionTable } from 'components/TransactionTable/TransactionTable';
 import { useLocation } from "react-router-dom";
 import { Translator } from "components/Translator/Translator";
+import { setNewDate } from 'redux/Transaction/transactionReducer';
+
 
 export const ExpencePart = () => {
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [sum, setSum] = useState('');
     const [list, setList] = useState(false);
-    const [startDate, setStartDate] = useState(new Date());
+    // const [startDate, setStartDate] = useState(new Date());
     const [emptyInput, setEmptyInput] = useState(false);
     const loading = useSelector(getIsLoading) === true;
 
@@ -29,13 +31,18 @@ export const ExpencePart = () => {
     const balance = useSelector(getBalance);
     const dispatch = useDispatch();
     const pageLocation = useLocation().pathname;
+    const newDate = useSelector(getCurrentDate);
+
     console.log(expensesTransactionData);
 
     useEffect(() => {
         dispatch(getExpenseCategories());
         dispatch(getExpenseStats());
-    }, [dispatch, balance]);
-
+        if (newDate === null) {
+            dispatch(setNewDate(new Date()))
+        }
+    }, [dispatch, balance, newDate]);
+    console.log(newDate);
     const handleChangeForm = evt => {
         const { value, name } = evt.target;
         switch (name) {
@@ -57,7 +64,7 @@ export const ExpencePart = () => {
         setDescription('');
         setCategory('');
         setSum('');
-        setStartDate(new Date());
+        // setStartDate(new Date());
     };
 
     const handleSubmitForm = evt => {
@@ -78,7 +85,7 @@ export const ExpencePart = () => {
         const items = {
             description: description,
             amount: Number(sum),
-            date: startDate.toISOString().slice(0, 10),
+            date: newDate.toISOString().slice(0, 10),
             category: category,
         };
         dispatch(addExpense(items));
@@ -106,7 +113,7 @@ export const ExpencePart = () => {
                             <a href="/React-team-project/Main"><svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="s.backToMain"><path d=" M18 5H3.83L7.41 1.41L6 0L0 6L6 12L7.41 10.59L3.83 7H18V5Z" fill="#FF751D"></path></svg></a>
                             <div className={s.formContainer}>
                                 <div className={s.calendar}>
-                                    <Calendar startDate={startDate} setStartDate={setStartDate} />
+                                    <Calendar selected={newDate} />
                                 </div>
                                 <form className={s.form} onSubmit={handleSubmitForm}>
                                     <input
@@ -207,8 +214,8 @@ export const ExpencePart = () => {
                         </>
                     )
                 }
-            </div >
-        </div >
+            </div>
+        </div>
     );
 
 };

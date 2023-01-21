@@ -2,8 +2,12 @@ import DatePicker from 'react-datepicker';
 import { forwardRef } from 'react';
 import styles from '../Calendar/Calendar.module.css';
 import 'react-datepicker/dist/react-datepicker.css';
+import { setNewDate } from 'redux/Transaction/transactionReducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCurrentDate } from 'redux/Transaction/transactionSelectors';
 
 export const Calendar = ({ startDate, setStartDate, setDate }) => {
+  const newDate = useSelector(getCurrentDate);
   const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
     <button className={styles.btn_calendar} onClick={onClick} ref={ref}>
       <svg
@@ -46,14 +50,14 @@ export const Calendar = ({ startDate, setStartDate, setDate }) => {
       {value}
     </button>
   ));
-
+  const dispatch = useDispatch();
   return (
     <div className={styles.container}>
       <DatePicker
         dateFormat="dd.MM.yyyy"
-        selected={startDate}
+        selected={newDate}
         onChange={date => {
-          setStartDate(date);
+          dispatch(setNewDate(date));
         }}
         customInput={<ExampleCustomInput />}
       />

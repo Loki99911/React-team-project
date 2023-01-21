@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import {
   StyledHomePage,
   Wrap,
@@ -14,9 +14,19 @@ import { ReactComponent as IconReports } from '../../images/reports.svg';
 import { Loader } from 'components/Loader/Loader';
 import { Calendar } from 'components/Calendar/Calendar';
 import MobileTransactionList from 'components/MobileTransactionList/MobileTransactionList';
+import { setNewDate } from 'redux/Transaction/transactionReducer';
+import { getCurrentDate } from 'redux/Transaction/transactionSelectors';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Main() {
   const { isMobile } = useMediaRules();
+  const newDate = useSelector(getCurrentDate);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+
+    dispatch(setNewDate(new Date()));
+  }, [dispatch]);
 
   return (
     <>
@@ -42,7 +52,7 @@ export default function Main() {
         )}
         {isMobile && (
           <>
-            <Calendar />
+            <Calendar selected={newDate} />
             <MobileTransactionList />
             <LinkBox>
 

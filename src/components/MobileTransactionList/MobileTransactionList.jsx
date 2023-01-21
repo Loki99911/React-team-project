@@ -5,8 +5,10 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getEmail } from 'redux/Auth/authSelectors';
 import { getIncomeStats, getExpenseStats, removeTransaction } from 'redux/Transaction/transactionOperations';
-import { getExpencesTransactions, getIncomesTransactions } from 'redux/Transaction/transactionSelectors';
+import { getCurrentDate, getExpencesTransactions, getIncomesTransactions } from 'redux/Transaction/transactionSelectors';
 import s from './mobileTransactionList.module.css';
+
+
 
 const MobileTransactionList = () => {
   const ExpensesTransactions = useSelector(getExpencesTransactions);
@@ -17,7 +19,7 @@ const MobileTransactionList = () => {
   });
 
   const allTransactions = [...IncomesTransactions, ...minusExpensesAmount];
-  const sortAllTransactions = [...allTransactions].slice().sort((a, b) => new Date(a.date) - new Date(b.date));
+  const sortAllTransactions = [...allTransactions].slice().sort((a, b) => new Date(b.date) - new Date(a.date));
 
 
   const dispatch = useDispatch();
@@ -26,15 +28,11 @@ const MobileTransactionList = () => {
   useEffect(() => {
     dispatch(getExpenseStats());
     dispatch(getIncomeStats());
+
   }, [dispatch, email]);
 
   return (
     <>
-      {/* <div className={s.calendar}>
-        <Calendar startDate={startDate} setStartDate={setStartDate} />
-      </div> */}
-
-
 
       <ul className={s.listmob}>
         {sortAllTransactions?.map(item => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addIncome, getIncomeCategories, getIncomeStats } from "redux/Transaction/transactionOperations";
-import { getBalance, getIncomesCategories, getIncomesMonthStats, getIncomesTransactions, getIsLoading } from "redux/Transaction/transactionSelectors";
+import { getBalance, getCurrentDate, getIncomesCategories, getIncomesMonthStats, getIncomesTransactions, getIsLoading } from "redux/Transaction/transactionSelectors";
 import s from './ExpIncPart.module.css';
 import { Calendar } from 'components/Calendar/Calendar';
 import { Calculator } from 'components/Calculator/Calculator';
@@ -11,13 +11,14 @@ import { SummaryTable } from 'components/SummaryTable/SummaryTable';
 import { TransactionTable } from 'components/TransactionTable/TransactionTable';
 import { useLocation } from "react-router-dom";
 import { Translator } from "components/Translator/Translator";
+import { setNewDate } from 'redux/Transaction/transactionReducer';
 
 export const IncomePart = () => {
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [sum, setSum] = useState('');
     const [list, setList] = useState(false);
-    const [startDate, setStartDate] = useState(new Date());
+    // const [startDate, setStartDate] = useState(new Date());
     const [emptyInput, setEmptyInput] = useState(false);
     const loading = useSelector(getIsLoading) === true;
 
@@ -29,12 +30,15 @@ export const IncomePart = () => {
     const balance = useSelector(getBalance);
     const dispatch = useDispatch();
     const pageLocation = useLocation().pathname;
-
+    const newDate = useSelector(getCurrentDate);
 
     useEffect(() => {
         dispatch(getIncomeCategories());
         dispatch(getIncomeStats());
-    }, [dispatch, balance]);
+        if (newDate === null) {
+            dispatch(setNewDate(new Date()))
+        }
+    }, [dispatch, balance, newDate]);
 
     const handleChangeForm = evt => {
         const { value, name } = evt.target;
@@ -57,7 +61,7 @@ export const IncomePart = () => {
         setDescription('');
         setCategory('');
         setSum('');
-        setStartDate(new Date());
+        // setStartDate(new Date());
     };
 
     const handleSubmitForm = evt => {
@@ -78,7 +82,7 @@ export const IncomePart = () => {
         const items = {
             description: description,
             amount: Number(sum),
-            date: startDate.toISOString().slice(0, 10),
+            date: newDate.toISOString().slice(0, 10),
             category: category,
         };
         dispatch(addIncome(items));
@@ -104,7 +108,7 @@ export const IncomePart = () => {
                     <>
                         <div className={s.formContainer}>
                             <div className={s.calendar}>
-                                <Calendar startDate={startDate} setStartDate={setStartDate} />
+                                <Calendar selected={newDate} />
                             </div>
                             <form className={s.form} onSubmit={handleSubmitForm}>
                                 <input
