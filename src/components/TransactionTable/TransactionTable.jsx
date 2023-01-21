@@ -29,7 +29,7 @@ export const TransactionTable = ({ tablePage, transactionData }) => {
         <table>
           <tbody className={s.Tbody} >
             {transactionData?.map(item => (
-              <tr className={s.Tr} key={item._id} colspan='4'>
+              <tr className={s.Tr} key={item._id} colSpan='4'>
                 <td className={s.Td} > {item.date}</td>
                 <td className={s.TDesc}>{item.description}</td>
                 <td className={s.Td}>{Translator(item.category)}</td>
