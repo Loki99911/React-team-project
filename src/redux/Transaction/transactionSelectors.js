@@ -26,3 +26,4 @@ export const getBalance = state => state.transactions.newBalance;
 export const getAllTransactions = state => state.transactions.allTransactions;
 export const getError = state => state.transactions.error;
 export const getIsLoading = state => state.transactions.isLoading;
+export const getCurrentDate = state => state.transactions.date;
