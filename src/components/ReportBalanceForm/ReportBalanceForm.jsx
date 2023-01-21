@@ -5,18 +5,16 @@ import {
   BalanceFormLabel,
   BalanceFormInput,
   BalanceFormBtn,
-} from './BalanceForm.styled';
+} from './ReportBalanceForm.styled';
 import NotifyBalance from '../NotifyBalance/NotifyBalance';
 import { InfoModal } from 'components/InfoModal/InfoModal';
 import { handleUserBalance } from '../../redux/Auth/authOperations';
 import { getBalance } from '../../redux/Transaction/transactionSelectors';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
-export default function BalanceForm() {
+export default function ReportBalanceForm() {
   const [modalOpen, setModalOpen] = useState(false);
   const stateBalance = useSelector(getBalance);
-  const [balance, setBalance] = useState(stateBalance);
+  const [balance, setBalance] = useState('');
 
   const dispatch = useDispatch();
 
@@ -26,7 +24,7 @@ export default function BalanceForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    toggleModal();
+    handleModalOpen()
   };
 
   const handleChange = ({ target: { value } }) => {
@@ -34,19 +32,23 @@ export default function BalanceForm() {
     setBalance(numText);
   };
 
+  // Handle update users balance
   const handleClick = () => {
     if (Number(balance) === 0) {
       setBalance(prev => String(stateBalance));
-      toast.error('Balance cannot be "0". Try again!', {
-        position: toast.POSITION.TOP_CENTER,
-      });
+      alert('!!!!!!');
       return;
     }
     dispatch(handleUserBalance(Number(balance)));
   };
 
-  const toggleModal = () => {
-    setModalOpen(prev => !prev);
+  // Open modal window
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+  // Close modal window
+  const handleModalClose = () => {
+    setModalOpen(false);
   };
 
   return (
@@ -63,14 +65,18 @@ export default function BalanceForm() {
             pattern="[0-9, .UAH]*"
             required
             onChange={handleChange}
-            value={`${balance}.00 UAH`}
+            disabled
+            // placeholder={`${balance}.00 UAH`}
+            value={`${balance}.00 UAH`} //как сделать с .UAH
           />
-          <BalanceFormBtn type="submit">Confirm</BalanceFormBtn>
+          <BalanceFormBtn disabled type="submit">
+            Confirm
+          </BalanceFormBtn>
         </div>
         {!stateBalance && <NotifyBalance />}
       </BalanceFormStyled>
       {modalOpen && (
-        <InfoModal closeModal={toggleModal} dispatch={handleClick}>
+        <InfoModal closeModal={handleModalClose} dispatch={handleClick}>
           Are you sure?
         </InfoModal>
       )}

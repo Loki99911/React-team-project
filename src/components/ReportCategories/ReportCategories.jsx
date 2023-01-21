@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 import { useState, useEffect } from "react";
 import { getIncomesReportData, getExpencesReportData } from "redux/Transaction/transactionSelectors";
 import reportsIcon from '../../images/reportsFiles/reports.svg';
-import { List, Item, ItemIncome, ItemSvg } from './ReportCategories.styled';
+import { List, Item, ItemIncome, ItemSvg, Text, TextPrice } from './ReportCategories.styled';
 import {ReactComponent as BgcIcon} from '../../images/reportsFiles/bgcForSvg.svg';
 import { ReactComponent as OrangeBgc } from '../../images/orangeBgc.svg';
 
@@ -51,7 +51,7 @@ const clickEventHandler = event => {
   const entries = Object.entries(data) ?? [];
   return (
       <div>
-      {data.total === null? <p>wait</p>:<List className={onChange === 'income' ? 'incomeList' : ''}>
+      {data.total === null? <Text>wait</Text>:<List className={onChange === 'income' ? 'incomeList' : ''}>
           {entries.map(item => {
             const iconName = item[0].replace(/ /g,'');
           valueArr.push(item);
@@ -63,7 +63,7 @@ const clickEventHandler = event => {
                 onClick={clickEventHandler}
                 className={iconName === active ? 'active' : ''}
               >
-                <p>{item[1].total}.00</p>
+                <TextPrice>{item[1].total}.00</TextPrice>
                 <ItemSvg width="56" height="56">
                   {iconName === active ? <OrangeBgc
                     width="59"
@@ -81,7 +81,7 @@ const clickEventHandler = event => {
                   
                   <use href={`${reportsIcon}#${iconName}`}></use>
                 </ItemSvg>
-                <p>{Translator(item[0])}</p>
+                <Text>{Translator(item[0])}</Text>
               </Item>
             );
           } else if (onChange === 'income') {
@@ -92,7 +92,7 @@ const clickEventHandler = event => {
                 onClick={clickEventHandler}
                 className={iconName === active ? 'active' : ''}
               >
-                <p>{item[1].total}.00</p>
+                <TextPrice>{item[1].total}.00</TextPrice>
                 <ItemSvg
                   width="56"
                   height="56"
@@ -113,7 +113,7 @@ const clickEventHandler = event => {
                   />}
                   <use href={`${reportsIcon}#${iconName}`}></use>
                 </ItemSvg>
-                <p>{Translator(item[0])}</p>
+                <Text>{Translator(item[0])}</Text>
               </ItemIncome>
             );
           }

@@ -21,9 +21,20 @@ const initialState = {
   },
 };
 
-const authSlice = createSlice({
+export const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    addAccessToken: (state, { payload }) => {
+      state.accessToken = payload;
+    },
+    addRefreshToken: (state, { payload }) => {
+      state.refreshToken = payload;
+    },
+    addSid: (state, { payload }) => {
+      state.sid = payload;
+    },
+  },
   extraReducers: builder =>
     builder
       .addCase(signUp.fulfilled, (state, { payload }) => {
@@ -49,6 +60,7 @@ const authSlice = createSlice({
         state.userData.email = payload.user.email;
         state.userData.id = payload.user.id;
         state.isLoggedIn = true;
+        state.isUserFetching = false;
       })
       .addCase(logout.fulfilled, () => ({ ...initialState }))
 
@@ -57,3 +69,5 @@ const authSlice = createSlice({
 });
 
 export default authSlice.reducer;
+
+export const { addAccessToken, addRefreshToken, addSid } = authSlice.actions;
