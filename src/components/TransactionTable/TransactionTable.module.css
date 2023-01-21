@@ -27,7 +27,7 @@ ul {
   height: 40px;
 }
 
-.Td {
+/* .Td {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -39,7 +39,6 @@ ul {
   border-bottom: 2px solid #f5f6fb;
   /* overflow: hidden;
   text-overflow: ellipsis; */
-}
 
 .Description {
   color: #52555F;
@@ -151,126 +150,6 @@ border-width: 2px; */
   }
 }
 
-.Line {
-  display: grid;
-  grid-template-columns: 1fr 2.6fr 1.5fr 1.5fr 0.8fr;
-  grid-template-areas: 'Date Description Category Sum Delete';
-
-  align-items: center;
-
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.66;
-  letter-spacing: 0.04em;
-  text-align: center;
-
-  background-color: #fff;
-  color: #52555f;
-
-  border-style: solid;
-  border-color: #f5f6fb;
-  border-right: none;
-  border-left: none;
-  border-top: none;
-  border-width: 2px;
-}
-
-.Line li:not(:last-child) {
-  padding-top: 9px;
-  padding-bottom: 9px;
-}
-
-.Date {
-  grid-area: Date;
-}
-
-.Category {
-  grid-area: Category;
-  min-width: 120px;
-}
-
-.Description {
-  grid-area: Description;
-  max-width: 183px;
-  text-align: left;
-  overflow: hidden;
-}
-
-.Sum {
-  grid-area: Sum;
-  font-weight: 700;
-}
-
-.Delete {
-  grid-area: Delete;
-  margin-right: 40px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-
-
-@media screen and (max-width: 1279px) {
-  .Line {
-    grid-template-columns: 1fr 1.9fr 1fr 1fr 0.6fr;
-  }
-
-  .Date {
-    margin-left: 20px;
-    text-align: left;
-  }
-
-  .Delete {
-    margin-right: 32px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .Line {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: 0.5fr 1fr 0.7fr 0.5fr;
-    grid-template-rows: 1.3fr 0.7fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      'Description Description Sum Delete'
-      'Date Category Sum Delete';
-    justify-items: start;
-    border-left: none;
-  }
-
-  .Line li:last-child {
-    border-bottom: 2px;
-  }
-
-  .Description {
-    width: 100%;
-    font-weight: 700;
-  }
-
-  .Date {
-    margin-left: 0;
-  }
-
-  .Category {
-    text-align: left;
-  }
-
-  .Date,
-  .Category {
-    font-weight: 400;
-    font-size: 8px;
-    line-height: 9px;
-  }
-
-  .Delete {
-    margin-right: 0;
-    margin-left: auto;
-  }
-}
-
 .TableScroll {
   margin-right: 75px;
   border-radius: 30px 30px 0 0;
@@ -299,7 +178,6 @@ border-width: 2px; */
   font-weight: bold;
   text-align: center;
   border: none;
-  padding: 5px 5px;
   background: #f5f6fb;
   font-size: 14px;
   color: #000000;
@@ -308,16 +186,15 @@ border-width: 2px; */
 
 .TableScroll tbody td {
   text-align: center;
-  /* padding: 10px 15px; */
   font-size: 14px;
   font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #52555F;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #52555F;
 
 }
 

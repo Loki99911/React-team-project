@@ -15,7 +15,7 @@ export const SummaryTable = ({ summaryData = {} }) => {
           return (
             <li key={index} className={s.Item}>
               <span className={s.Mouth}>{Translator(elem[0])}</span>
-              <span className={s.Sum}>{elem[1]}</span>
+              <span className={s.Sum}>{elem[1].toFixed(2)}</span>
             </li>
           );
         })}

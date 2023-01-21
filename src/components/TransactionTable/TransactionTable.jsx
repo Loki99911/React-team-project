@@ -35,9 +35,9 @@ export const TransactionTable = ({ tablePage, transactionData }) => {
                 <td className={s.Td}>{Translator(item.category)}</td>
                 {
                   tablePage === '/main/expenses' || tablePage === '/expenses' || tablePage === '/Main/expenses' ? (
-                    <td className={s.ExpensesSum}>{`- ${item.amount} грн.`}</td>
+                    <td className={s.ExpensesSum}>{`- ${item.amount.toFixed(2)} UAH.`}</td>
                   ) : (
-                    <td className={s.IncomeSum}>{`${item.amount} грн.`}</td>
+                    <td className={s.IncomeSum}>{`${item.amount.toFixed(2)} UAH.`}</td>
                   )
                 }
                 <td className={s.Td}>
@@ -45,12 +45,12 @@ export const TransactionTable = ({ tablePage, transactionData }) => {
                 </td>
               </tr >
             ))}
-          </tbody >
+          </tbody>
 
 
-        </table >
-      </div >
-    </div >
+        </table>
+      </div>
+    </div>
   );
 };
 
