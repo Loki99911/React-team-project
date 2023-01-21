@@ -160,7 +160,7 @@ border-width: 2px; */
 
 
 .TableScrollBody {
-  height: 340px;
+  height: 344px;
   overflow-x: auto;
   margin-top: 0px;
   margin-bottom: 20px;
@@ -172,6 +172,7 @@ border-width: 2px; */
   table-layout: fixed;
   border: none;
   border-collapse: collapse;
+  color: #52555F;
 }
 
 .TableScroll thead th {
@@ -181,7 +182,7 @@ border-width: 2px; */
   background: #f5f6fb;
   font-size: 14px;
   color: #000000;
-
+  height: 40px;
 }
 
 .TableScroll tbody td {
@@ -189,22 +190,32 @@ border-width: 2px; */
   font-size: 14px;
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   text-align: center;
   letter-spacing: 0.04em;
-  color: #52555F;
 
 }
 
+
+.TDesc {
+  width: 250px;
+}
+
+
+/* .TDel {
+  margin-right: 3px;
+} */
+
 .TableScroll tbody tr:nth-child(even) {
   background: #f5f6fb;
+
 }
 
 /* Стили для скролла */
 ::-webkit-scrollbar {
   width: 6px;
+
 }
 
 ::-webkit-scrollbar-track {
@@ -214,4 +225,5 @@ border-width: 2px; */
 ::-webkit-scrollbar-thumb {
   background-color: #ff6b01;
   border-radius: 2px;
+
 }
