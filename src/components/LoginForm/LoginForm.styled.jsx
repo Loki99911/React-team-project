@@ -78,7 +78,7 @@ export const LoginBtn = styled.button`
   height: 44px;
   border: none;
   border-radius: 16px;
-  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
   transition: color 250ms linear, background-color 250ms linear;
   &:hover {
     color: #ffffff;
