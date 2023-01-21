@@ -25,6 +25,7 @@ export const FormLayout = styled.div`
     margin-left: 160px;
   }
 `;
+
 export const FormText = styled.p`
   font-weight: 400;
   font-size: 12px;
@@ -34,9 +35,16 @@ export const FormText = styled.p`
 
 export const Form = styled.form`
   display: flex;
+  position: relative;
   width: 100%;
   flex-direction: column;
   justify-content: flex-start;
+
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #eb5757;
 `;
 
 export const LoginLabel = styled.label`
@@ -46,23 +54,30 @@ export const LoginLabel = styled.label`
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.04em;
+  color: #000000;
+
   margin-bottom: 12px;
+  &:last-of-type {
+    margin-top: 32px;
+  }
 `;
 
 export const LoginInput = styled.input`
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.04em;
   background-color: #f6f7fb;
   border: none;
   width: 100%;
   height: 52px;
+  padding: 0 20px;
   border-radius: 30px;
-  margin-bottom: 40px;
-  &:nth-child(2) {
-    margin-bottom: 32px;
-  }
 `;
 export const LoginBtnBlock = styled.div`
   display: flex;
   gap: 15px;
+  margin-top: 40px;
 `;
 
 export const LoginBtn = styled.button`
@@ -100,3 +115,14 @@ export const GoogleBtn = styled.a`
     background-color: #ff751d;
   }
 `;
+
+export const ErrorText = styled.span`
+  display: flex;
+  position: absolute;
+  top:80px;
+  &:last-of-type {
+    top:190px;
+  }
+
+`;
+
