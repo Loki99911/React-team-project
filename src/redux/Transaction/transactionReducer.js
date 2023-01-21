@@ -42,12 +42,18 @@ const initialState = {
   isLoading: false,
   error: null,
   newBalance: 0,
+  date: new Date(),
   allTransactions: [],
 };
 
 const transactionSlice = createSlice({
   name: 'transactions',
   initialState,
+  reducers: {
+    setNewDate: (state, { payload }) => {
+      state.date = payload;
+    },
+  },
   extraReducers: builder =>
     builder
       //   --------------------   transactions  ------------------------------
@@ -141,3 +147,5 @@ const transactionSlice = createSlice({
 });
 
 export default transactionSlice.reducer;
+
+export const { setNewDate } = transactionSlice.actions;
