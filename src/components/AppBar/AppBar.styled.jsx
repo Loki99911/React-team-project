@@ -37,6 +37,7 @@ export const UserIcon = styled.span`
 
 export const UserText = styled.p`
   margin: 0;
+  
 `;
 export const UserTextWrap = styled.div`
   position: relative;
@@ -53,16 +54,14 @@ export const UserTextWrap = styled.div`
   }
 `;
 
-
-
-
 export const LogoutBtn = styled.button`
   padding: 0;
   margin: 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
-  fill:red;
+  fill: red;
+  
 `;
 
 export const LogoutBtnText = styled.span`
@@ -72,4 +71,9 @@ export const LogoutBtnText = styled.span`
   font-size: 12px;
   line-height: 1.16;
   border-bottom: 1px solid black;
+  transition: color 250ms linear, border-bottom 250ms linear;
+  &:hover {
+    color: #ff751d;
+    border-bottom: 1px solid #ff751d;
+  }
 `;
