@@ -5,7 +5,7 @@ import { AppBar } from '../AppBar/AppBar';
 import { Loader } from 'components/Loader/Loader';
 import { ToastContainer } from 'react-toastify';
 import AniT from '../AniT/AniT';
-import Ani from 'components/Ani/Ani';
+// import Ani from 'components/Ani/Ani';
 
 export const SharedLayout = () => {
   return (
