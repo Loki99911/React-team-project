@@ -5,9 +5,13 @@ import { AppBar } from '../AppBar/AppBar';
 import { Loader } from 'components/Loader/Loader';
 import { ToastContainer } from 'react-toastify';
 import AniT from '../AniT/AniT';
+import { useSelector } from 'react-redux';
+import { getExpencesTransactions, getIncomesTransactions } from 'redux/Transaction/transactionSelectors';
 // import Ani from 'components/Ani/Ani';
 
 export const SharedLayout = () => {
+   const income = useSelector(getIncomesTransactions);
+   const expenses = useSelector(getExpencesTransactions);
   return (
     <Container>
       <AppBar />
@@ -15,7 +19,7 @@ export const SharedLayout = () => {
         <Outlet />
       </Suspense>
       <ToastContainer />
-      <AniT/>
+      <AniT color={'green'} />
       {/* <Ani/> */}
     </Container>
   );
