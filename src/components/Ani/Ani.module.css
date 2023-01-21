@@ -149,21 +149,7 @@ div .dot {
   animation: animate 9s linear infinite;
 }
 @keyframes animate {
-  /* 0% {
-    transform: scale(0) rotate(0) rotate(70deg);
-  }
- 25% {
-    transform: scale(1.5) rotate(-25px) rotate(30deg);
-  }
-  50% {
-    transform: scale(2.5) rotate(-50px) rotate(100deg);
-  }
-  75% {
-    transform: scale(3.5) rotate(-75px) rotate(180deg);
-  }
-  100% {
-    transform: scale(5) rotate(-100px) rotate(360deg);
-  } */
+
   0% {
     transform: scale(0) rotate(0) rotate(70deg);
   }

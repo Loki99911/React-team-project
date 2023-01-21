@@ -4,7 +4,8 @@ import { Container } from './SharedLayout.styled';
 import { AppBar } from '../AppBar/AppBar';
 import { Loader } from 'components/Loader/Loader';
 import { ToastContainer } from 'react-toastify';
-import Ani from '../Ani/Ani';
+import AniT from '../AniT/AniT';
+import Ani from 'components/Ani/Ani';
 
 export const SharedLayout = () => {
   return (
@@ -14,7 +15,8 @@ export const SharedLayout = () => {
         <Outlet />
       </Suspense>
       <ToastContainer />
-      <Ani/>
+      <AniT/>
+      {/* <Ani/> */}
     </Container>
   );
 };
