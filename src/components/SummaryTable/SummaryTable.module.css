@@ -22,6 +22,8 @@
   border-bottom: 2px solid #fff;
   min-height: 38px;
   font-weight: 700;
+  margin: 0;
+  padding: 0;
 }
 
 .List {
@@ -29,6 +31,8 @@
   flex-direction: column;
   max-height: 342px;
   overflow: scroll;
+  margin: 0;
+  padding: 0;
 }
 
 .Item {
@@ -45,6 +49,8 @@
 @media screen and (max-width: 1279px) {
   .Table {
     min-width: 230px;
+    margin-top: 50px;
+    margin-left: -30px;
   }
 
   .List {
