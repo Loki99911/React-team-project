@@ -206,11 +206,11 @@
   outline: none;
 }
 
-/* @media screen and (max-width: 1280px) {
-  .inputDescription {}
-
-
-} */
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+  .inputDescription {
+    width: 184px;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .inputDescription {
