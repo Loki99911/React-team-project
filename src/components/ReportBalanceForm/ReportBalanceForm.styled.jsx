@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const BalanceFormStyled = styled.form`
-  /* margin: 0 auto 50px; */
-  /* padding: 0 20px; */
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -14,9 +12,6 @@ export const BalanceFormStyled = styled.form`
     gap: 20px;
     align-items: baseline;
     margin: 0;
-  }
-  @media screen and (min-width: 1280px) {
-    /* margin: 0 auto; */
   }
 `;
 
@@ -37,14 +32,13 @@ export const BalanceFormInput = styled.input`
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-
   width: 183px;
   padding: 15px 30px;
   color: #52555f;
   border: 2px solid white;
   text-align: center;
-border-radius: 16px; 
- outline: none;
+  border-radius: 16px;
+  outline: none;
   background-color: #f5f6fb;
 
   transition: background-color 250s linear;
@@ -52,6 +46,7 @@ border-radius: 16px;
   :focus {
     background-color: #fff;
   }
+
   ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -75,31 +70,20 @@ border-radius: 16px;
 `;
 
 export const BalanceFormBtn = styled.button`
-display: none ;
+  display: none;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-
   color: rgba(82, 85, 95, 0.7);
   text-transform: uppercase;
   border: 2px solid white;
   outline: none;
   background-color: #f5f6fb;
-  /* cursor: pointer; */
-
-/* 
-  :hover,
-  :focus {
-    color: white;
-    background-color: #ff751d;
-    border-color: #ff751d;
-  } */
 
   @media screen and (min-width: 768px) {
-    
     width: 125px;
     padding: 12px 6px;
     border-radius: 16px;

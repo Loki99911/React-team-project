@@ -19,6 +19,7 @@ import {
 const pending = state => {
   state.isLoading = true;
 };
+
 const rejected = (state, { payload }) => {
   state.isLoading = false;
   state.error = payload;
@@ -56,7 +57,6 @@ const transactionSlice = createSlice({
   },
   extraReducers: builder =>
     builder
-      //   --------------------   transactions  ------------------------------
       .addCase(addIncome.pending, pending)
       .addCase(addIncome.rejected, rejected)
       .addCase(getIncomeStats.pending, pending)

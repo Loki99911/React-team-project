@@ -46,9 +46,7 @@ export const StyledWhiteButton = styled.button`
 export const ButtonBack = styled(Link)`
   background-color: transparent;
   border: none;
-
   display: flex;
   align-items: center;
-
   margin: 14px 0px 14px 16px;
 `;

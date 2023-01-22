@@ -6,9 +6,9 @@ import bgTabl from '../../images/BgTablet_1.png';
 import bgTabl2 from '../../images/BgTablet_2.png';
 
 export const StyledReportsPage = styled.div`
-    position: relative;
-    text-align: center;
- padding: 24px 0px 0px 0px;
+  position: relative;
+  text-align: center;
+  padding: 24px 0px 0px 0px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -56,19 +56,20 @@ export const Wrap = styled.div`
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start
+    align-items: flex-start;
   }
-   @media screen and (min-width: 1280px) {
+
+  @media screen and (min-width: 1280px) {
     padding-left: 40px;
-   }
+  }
 `;
 
 export const Link = styled(NavLink)`
   position: absolute;
   width: 18px;
   height: 12px;
-    top: 22px;
-    left: 23px;
+  top: 22px;
+  left: 23px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -102,8 +103,8 @@ export const Link = styled(NavLink)`
     left: 35px;
   }
 
-    @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1280px) {
     top: 56px;
     left: 91px;
-    }
+  }
 `;

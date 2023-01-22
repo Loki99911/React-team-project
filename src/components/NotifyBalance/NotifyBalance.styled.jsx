@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const StyledBackdrop = styled.div`
   position: fixed;
-
   top: 0;
   left: 0;
   height: 100vh;
@@ -48,7 +47,6 @@ export const NotifyBalanceTitle = styled.h2`
   padding-top: 24px;
   padding-left: 24px;
   padding-right: 24px;
-
   font-weight: 400;
   font-size: 14px;
   line-height: 1.43;
@@ -65,7 +63,6 @@ export const NotifyBalanceText = styled.p`
   padding-bottom: 49px;
   padding-left: 24px;
   padding-right: 24px;
-
   font-weight: 400;
   font-size: 12px;
   line-height: 1.33;

@@ -13,7 +13,6 @@ export const getExpencesCategories = state =>
   state.transactions.expences.categories;
 
 //  ------------- FOR REPORT --------------
-//  return an object with 2 entries
 export const getExpencesReportData = state =>
   state.transactions.transactionsByPeriod.expenses;
 export const getIncomesReportData = state =>

@@ -1,9 +1,4 @@
-// export default function Expenses() {
-//     return <div>Expenses...</div>;
-// };
-
 import { ExpencePart } from 'components/ExpIncPart/ExpencePart';
-// import { Main } from 'components/Main/Main';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {

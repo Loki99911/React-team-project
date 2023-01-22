@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Suspense, useEffect} from 'react';
+import { Suspense, useEffect } from 'react';
 import {
   StyledHomePage,
   Wrap,
@@ -24,7 +24,6 @@ export default function Main() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-
     dispatch(setNewDate(new Date()));
   }, [dispatch]);
 

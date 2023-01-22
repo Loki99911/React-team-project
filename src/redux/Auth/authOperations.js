@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -33,7 +32,6 @@ export const logIn = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const data = await logInUserAPI(user);
-      console.log('LOGGED IN ');
       token.set(data.accessToken);
       return data;
     } catch (error) {
@@ -78,6 +76,7 @@ export const signUp = createAsyncThunk(
     }
   }
 );
+
 export const logout = createAsyncThunk(
   'auth/logout',
   async (_, { rejectWithValue }) => {
@@ -144,42 +143,3 @@ export const handleUserBalance = createAsyncThunk(
     }
   }
 );
-
-// export const refreshUser = createAsyncThunk(
-//   'auth/refresh',
-//   async (_, { rejectWithValue, getState }) => {
-//     const state = getState();
-//     // console.log(state);
-//     const persistedToken = state.auth.refreshToken;
-//     const persistedSid = { sid: state.auth.sid };
-//     console.log(persistedToken);
-
-//     if (persistedToken === null) {
-//       return rejectWithValue();
-//     }
-
-//     token.set(persistedToken);
-//     try {
-//       const data = await axios.post('/auth/refresh', persistedSid);
-//       token.set(data.newAccessToken);
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error);
-//     }
-//   }
-// );
-
-// export const getFullUserInfo = createAsyncThunk(
-//   'auth/FullUserInfo',
-//   async (_, { rejectWithValue, getState }) => {
-//     try {
-//       const { accessToken } = getState().auth;
-//       token.set(accessToken);
-//       const data = await fullUserInfoAPI();
-//       return data;
-//     } catch (error) {
-//       console.log('Unauthorized. Please login again');
-//       return rejectWithValue(error);
-//     }
-//   }
-// );

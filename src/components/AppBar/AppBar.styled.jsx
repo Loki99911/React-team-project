@@ -37,8 +37,8 @@ export const UserIcon = styled.span`
 
 export const UserText = styled.p`
   margin: 0;
-  
 `;
+
 export const UserTextWrap = styled.div`
   position: relative;
   margin-right: 40px;
@@ -59,7 +59,7 @@ export const LogoutBtn = styled.button`
   margin: 0;
   border: none;
   background-color: transparent;
-  cursor: pointer;  
+  cursor: pointer;
 `;
 
 export const LogoutBtnText = styled.span`

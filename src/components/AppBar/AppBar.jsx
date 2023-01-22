@@ -4,8 +4,6 @@ import { InfoModal } from 'components/InfoModal/InfoModal';
 import logo from '../../images/logo.svg';
 import logoutSvg from '../../images/logout.svg';
 import { useDispatch, useSelector } from 'react-redux';
-// import { selectIsLoggedIn, selectUser } from 'redux/selectors';//Селектор Юзера
-// const userEmail = useSelector(selectUser);
 import { logout } from 'redux/Auth/authOperations';
 import {
   Header,

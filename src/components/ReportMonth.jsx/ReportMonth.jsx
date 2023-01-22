@@ -62,7 +62,6 @@ export default function ReportMonth() {
   const handlerClick = name => {
     switch (name) {
       case 'decrement':
-        // dispatch(filteredDataAction([]));
         setMonthNumber(monthNumber - 1);
         if (monthNumber === 0) {
           setMonthNumber(11);
@@ -70,7 +69,6 @@ export default function ReportMonth() {
         }
         break;
       case 'increment':
-        // dispatch(filteredDataAction([]));
         setMonthNumber(monthNumber + 1);
         if (monthNumber === 11) {
           setMonthNumber(0);

@@ -17,7 +17,6 @@ export const addIncome = createAsyncThunk(
   async (income, { rejectWithValue }) => {
     try {
       const data = await addIncomeAPI(income);
-      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -42,7 +41,6 @@ export const getIncomeCategories = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const data = await getIncomeCategoriesAPI();
-      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -69,7 +67,6 @@ export const getExpenseStats = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const data = await getExpenseStatsAPI();
-      //   console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -91,7 +88,6 @@ export const getExpenseCategories = createAsyncThunk(
 
 //  ----------------- DELETE TRANSACTION ---------------------
 
-// Error may occur in "return { data, id }"
 export const removeTransaction = createAsyncThunk(
   'transaction/removeTransaction',
   async (id, { rejectWithValue }) => {

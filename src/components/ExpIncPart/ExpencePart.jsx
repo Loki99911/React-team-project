@@ -30,10 +30,8 @@ export const ExpencePart = () => {
   const [category, setCategory] = useState('');
   const [sum, setSum] = useState('');
   const [list, setList] = useState(false);
-  // const [startDate, setStartDate] = useState(new Date());
   const [emptyInput, setEmptyInput] = useState(false);
   const loading = useSelector(getIsLoading) === true;
-
   const prodExp = useSelector(getExpencesCategories);
   const expensesTransactionData = useSelector(getExpencesTransactions);
   const expensesSummaryData = useSelector(getExpencesMonthStats);
@@ -42,7 +40,6 @@ export const ExpencePart = () => {
   const pageLocation = useLocation().pathname;
   const newDate = useSelector(getCurrentDate);
 
-  console.log(expensesTransactionData);
 
   useEffect(() => {
     dispatch(getExpenseCategories());
@@ -51,7 +48,6 @@ export const ExpencePart = () => {
       dispatch(setNewDate(new Date()));
     }
   }, [dispatch, balance, newDate]);
-  console.log(newDate);
   const handleChangeForm = evt => {
     const { value, name } = evt.target;
     switch (name) {
@@ -68,12 +64,12 @@ export const ExpencePart = () => {
         return;
     }
   };
+
   const handleResetForm = () => {
     setEmptyInput(false);
     setDescription('');
     setCategory('');
     setSum('');
-    // setStartDate(new Date());
   };
 
   const handleSubmitForm = evt => {
@@ -100,6 +96,7 @@ export const ExpencePart = () => {
     dispatch(addExpense(items));
     handleResetForm();
   };
+  
   const handleIsListTogle = () => {
     setList(!list);
   };

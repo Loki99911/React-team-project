@@ -16,12 +16,6 @@
   height: 44px;
 }
 
-
-
-
-
-
-
 @media screen and (min-width: 769px) {
   .backToMain {
     visibility: hidden;
@@ -31,9 +25,6 @@
     height: 616px;
   }
 }
-
-
-
 
 @media screen and (max-width: 768px) {
   .calendar {
@@ -57,7 +48,6 @@
   background-color: #fafbfd;
   border: 0px;
   color: #000000;
-  /* outline: 1px solid rgb(13, 64, 64); */
   cursor: pointer;
   transition: color 250ms linear;
 }
@@ -92,24 +82,18 @@
 .contentContainer {
   position: relative;
   box-sizing: border-box;
-  /* max-width: 1098px; */
   height: 579px;
   background: #ffffff;
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 0px 30px 30px 30px;
   padding: 6px 34px 61px;
-  /* outline: 1px solid rgb(212, 188, 30); */
 }
 
 @media screen and (max-width: 768px) {
   .contentContainer {
     padding: 0;
     box-shadow: none;
-    /* border-radius: 0; */
-    /* background-color: transparent; */
-
     position: absolute;
-    /* z-index: -1; */
     top: 56px;
     margin: 0 auto;
     width: 320px;
@@ -123,8 +107,6 @@
     visibility: visible;
     margin: 16px 0 16px 20px;
   }
-
-
 }
 
 @media screen and (min-width: 769px) {}
@@ -133,7 +115,6 @@
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
-  /* height: 44px; */
   overflow: hidden;
   margin-bottom: 60px;
   max-width: 1034px;
@@ -142,7 +123,6 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 48px;
-  /* outline: 1px solid rgb(106, 19, 220); */
 }
 
 
@@ -169,8 +149,6 @@
     flex-direction: column;
     margin-bottom: 80px;
     background-color: transparent;
-
-
   }
 }
 
@@ -192,11 +170,9 @@
 }
 
 .inputDescription {
-  /* display: inline-flex; */
   font-size: 12px;
   color: #52555f;
   font-weight: 400;
-  /* display: block; */
   width: 290px;
   height: 44px;
   border: 2px solid;
@@ -237,7 +213,6 @@
   width: 100vw;
   height: 100vh;
   background-color: transparent;
-  /* z-index: 1200; */
 }
 
 .inputCategory {
@@ -291,8 +266,6 @@
   padding-left: 0;
 }
 
-
-
 .itemCategory {
   font-size: 12px;
   color: #c7ccdc;
@@ -308,7 +281,6 @@
   color: #52555f;
   background-color: #f5f6fb;
 }
-
 
 @media screen and (max-width: 768px) {
   .listCategory {
@@ -397,8 +369,6 @@
 @media screen and (max-width: 1280px) {
   .buttonContainer {
     display: flex;
-
-    /* margin-top: 32px; */
     width: 265px;
   }
 }
@@ -416,33 +386,24 @@
 
 .tableContainer {
   display: flex;
-  /* outline: 1px solid rgb(25, 218, 28); */
 }
 
 @media screen and (max-width: 1279px) {
   .tableContainer {
     flex-wrap: wrap;
   }
-
 }
 
 .prods {
   width: 100%;
 }
 
-/* @media screen and (max-width: 1280px) {
-  .prods {
-    margin-bottom: 90px;
-  }
-} */
-
 .sumary {
   width: 230px;
-  /* position: relative; */
 }
+
 @media screen and (max-width: 1280px) {
   .sumary {
-    /* position: absolute; */
     width: 230px;
   }
 }
@@ -451,7 +412,6 @@
   position: absolute;
   top: 0;
   width: 600px;
-  /* outline: 1px solid rgb(9, 198, 28); */
 }
 
 @media screen and (max-width: 1280px) {
@@ -505,7 +465,6 @@
   .errCategoryMsg {
     top: 59px;
     right: 35px;
-    /* right: 35px; */
   }
 }
 
@@ -531,19 +490,3 @@
     transform: translateX(-75%);
   }
 }
-
-/* @media screen and (min-width: 400px) {
-  .box {
-    padding: 40px 60px;
-  }
-} */
-
-/* @media screen and (min-width: 768px) {
-  .prods {
-    width: 624px;
-  }
-  .sumary {
-    width: 230px;
-    height: 280px;
-  }
-} */

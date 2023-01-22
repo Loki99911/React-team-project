@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import ReportStats from 'components/ReportStats/ReportStats';
 import ReportCategories from 'components/ReportCategories/ReportCategories';
 import { ButtonsNextPrev } from 'components/Buttons/ButtonsNextPrev/ButtonsNextPrev';
@@ -18,15 +17,11 @@ export default function ReportsData() {
     return newArray;
   }
 
-  // useEffect(() => { }, [handleClick, ])
-
   function convertArrow(incomeArrow) {
-    console.log(incomeArrow);
+
     if (incomeArrow.length === 0) {
       return setArrow([]);
     } else {
-      // console.log(incomeArrow)
-      // const newArray = Object.values(incomeArrow[1])
       return setArrow(incomeArrow);
     }
   }
@@ -35,9 +30,6 @@ export default function ReportsData() {
     if (incomeArrow.length === 0) {
       return setArrow([]);
     } else {
-      // console.log(incomeArrow)
-      // const newArray = Object.values(incomeArrow[1])
-      console.log(incomeArrow);
       const newArray = incomeArrow[1];
       const ObjArray = ObjectConvertor(newArray);
       return setArrow(ObjArray);

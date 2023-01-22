@@ -9,14 +9,12 @@ export const RegisterLayout = styled.div`
   flex-direction: column;
   justify-content: left;
   flex-grow: 1;
-  /* padding: 85px 20px auto 20px; */
   padding-top: 85px;
   padding-left: 20px;
   padding-bottom: auto;
   padding-right: 20px;
 
   @media screen and (min-width: 768px) {
-    /* padding: 80px 170px auto 170px; */
     padding-top: 80px;
     padding-left: 170px;
     padding-right: 170px;
@@ -35,7 +33,6 @@ export const RegisterLayout = styled.div`
     flex-direction: row;
     justify-content: right;
     align-items: center;
-    /* padding: 115px 90px 125px 90px; */
     padding-top: 115px;
     padding-left: 90px;
     padding-bottom: 125px;

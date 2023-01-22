@@ -31,17 +31,3 @@ export const userBalanceAPI = body => {
     return data;
   });
 };
-
-// axios.interceptors.response.use(
-//   response => response,
-//   async error => {
-//     // const state = store.getState();
-//     // console.log(state);
-//     if (error.response.status === 401) {
-//       try {
-//         const { data } = await axios.post('/auth/refresh');
-//         // token.set(data.newAccessToken);
-//       } catch (error) {}
-//     }
-//   }
-// );

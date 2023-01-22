@@ -62,13 +62,11 @@ export const Link = styled(NavLink)`
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
-
   text-align: center;
   letter-spacing: 0.04em;
   text-decoration: none;
   margin-bottom: 40px;
   fill: #52555f;
-
   color: rgba(82, 85, 95, 0.7);
 
   transition: color 250ms linear;
@@ -101,14 +99,12 @@ export const ExspensesIncLink = styled(NavLink)`
   font-weight: 700;
   font-size: 12px;
   line-height: 14px;
-  
   display: flex;
   align-items: center;
   justify-content: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-decoration: none;
-
   background: #f5f6fb;
   color: #000000;
   width: 159px;
