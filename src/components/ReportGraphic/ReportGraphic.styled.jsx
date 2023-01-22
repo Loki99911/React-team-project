@@ -4,6 +4,7 @@ import styled from "styled-components";
 export  const BoxPadding = styled.div`
   padding-top: 35px;
   padding-bottom: 52px;
+  heigh0px;
   @media screen and (min-width: 768px) {
     padding: 30px 0 80px 0;
   }

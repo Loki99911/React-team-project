@@ -25,14 +25,15 @@ export default function ReportsData() {
   // useEffect(() => { }, [handleClick, ])
 
   function convertArrow(incomeArrow) {
-    if (incomeArrow === undefined) { return setArrow([]) } else {
+    console.log(incomeArrow)
+    if (incomeArrow.length === 0 ) { return } else {
       // console.log(incomeArrow)
       // const newArray = Object.values(incomeArrow[1])
       return setArrow(incomeArrow)}
   }
   
   function getArrow(incomeArrow) {
-    if (incomeArrow === undefined) { return setArrow([]) } else {
+    if (incomeArrow.length === 0 ) { return  } else {
       // console.log(incomeArrow)
       // const newArray = Object.values(incomeArrow[1])
       console.log(incomeArrow)
