@@ -17,7 +17,7 @@ import s from './ExpIncPart.module.css';
 import { Calendar } from 'components/Calendar/Calendar';
 import { Calculator } from 'components/Calculator/Calculator';
 import { Loader } from 'components/Loader/Loader';
-import Button from 'components/common/button/button';
+import Button from 'components/Buttons/Button/Button';
 import { SummaryTable } from 'components/SummaryTable/SummaryTable';
 import { TransactionTable } from 'components/TransactionTable/TransactionTable';
 import { useLocation } from 'react-router-dom';

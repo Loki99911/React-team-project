@@ -8,8 +8,8 @@ import {
   StyledCloseButton,
   StyledModalBackdrop,
 } from './InfoModal.styled';
-import { OrangeButton } from 'components/Buttons/OrangeButton';
-import { WhiteButton } from 'components/Buttons/WhiteButton';
+import { OrangeButton } from 'components/Buttons/ModalBtn/OrangeButton';
+import { WhiteButton } from 'components/Buttons/ModalBtn/WhiteButton';
 import { ReactComponent as Close } from '../../images/close.svg';
 
 const modalRoot = document.getElementById('modal-root');
