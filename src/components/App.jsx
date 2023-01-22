@@ -7,7 +7,7 @@ import { PublicRoute, PrivateRoute } from '../service/routes';
 import { useMediaRules } from '../MediaRules/MediaRules';
 import { refreshUser, token } from 'redux/Auth/authOperations';
 import { getIsUserFetching } from 'redux/Auth/authSelectors';
-import { Loader } from './Loader/Loader';
+import { MainLoader } from './MainLoader/MainLoader';
 import {
   addAccessToken,
   addRefreshToken,
@@ -55,7 +55,7 @@ export const App = () => {
   }, [dispatch]);
   const { isMobile } = useMediaRules();
   return isUserFetching ? (
-    <Loader />
+    <MainLoader />
   ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>

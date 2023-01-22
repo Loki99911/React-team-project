@@ -71,6 +71,10 @@ export const BalanceFormInput = styled.input`
     border-radius: 16px;
     margin-right: 15px;
   }
+
+  color: ${props => {
+    return props.value.includes('-') ? 'red' : ' #52555f';
+  }};
 `;
 
 export const BalanceFormBtn = styled.button`

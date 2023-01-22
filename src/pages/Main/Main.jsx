@@ -55,7 +55,6 @@ export default function Main() {
             <Calendar selected={newDate} />
             <MobileTransactionList />
             <LinkBox>
-
               <ExspensesIncLink to="/expenses">Expenses</ExspensesIncLink>
               <ExspensesIncLink to="/income">Income</ExspensesIncLink>
             </LinkBox>

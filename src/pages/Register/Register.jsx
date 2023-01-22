@@ -14,17 +14,29 @@ export default function Register() {
       <RegisterLayout>
         {isMobile && (
           <RegisterImgBox>
-            <img src={logoMobile} alt="logo" />
+            <img
+              src={logoMobile}
+              alt="logo"
+              className={`animate__animated animate__fadeInLeft`}
+            />
           </RegisterImgBox>
         )}
         {isTablet && (
           <RegisterImgBox>
-            <img src={logoTablet} alt="logo" />
+            <img
+              src={logoTablet}
+              alt="logo"
+              className={`animate__animated animate__fadeInLeft`}
+            />
           </RegisterImgBox>
         )}
         {isDesktop && (
           <RegisterImgBox>
-            <img src={logoDesktop} alt="logo" />
+            <img
+              src={logoDesktop}
+              alt="logo"
+              className={`animate__animated animate__fadeInLeft`}
+            />
           </RegisterImgBox>
         )}
         <LoginForm />

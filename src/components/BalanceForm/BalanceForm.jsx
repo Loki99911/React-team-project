@@ -9,7 +9,7 @@ import {
 import NotifyBalance from '../NotifyBalance/NotifyBalance';
 import { InfoModal } from 'components/InfoModal/InfoModal';
 import { handleUserBalance } from '../../redux/Auth/authOperations';
-import { getBalance } from '../../redux/Transaction/transactionSelectors';
+import { getBalance, getExpencesTransactions, getIncomesTransactions } from '../../redux/Transaction/transactionSelectors';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -17,6 +17,9 @@ export default function BalanceForm() {
   const [modalOpen, setModalOpen] = useState(false);
   const stateBalance = useSelector(getBalance);
   const [balance, setBalance] = useState(stateBalance);
+  const income = useSelector(getIncomesTransactions);
+  const expenses = useSelector(getExpencesTransactions);
+
 
   const dispatch = useDispatch();
 
@@ -42,6 +45,7 @@ export default function BalanceForm() {
       });
       return;
     }
+
     dispatch(handleUserBalance(Number(balance)));
   };
 
@@ -51,7 +55,10 @@ export default function BalanceForm() {
 
   return (
     <>
-      <BalanceFormStyled onSubmit={handleSubmit}>
+      <BalanceFormStyled
+        onSubmit={handleSubmit}
+        className={`animate__animated animate__bounceInDown`}
+      >
         <BalanceFormLabel>Balance:</BalanceFormLabel>
         <div>
           {' '}
@@ -65,7 +72,13 @@ export default function BalanceForm() {
             onChange={handleChange}
             value={`${balance}.00 UAH`}
           />
-          <BalanceFormBtn type="submit">Confirm</BalanceFormBtn>
+          {income.length === 0 && expenses.length === 0 ? (
+            <BalanceFormBtn type="submit">
+              Confirm
+            </BalanceFormBtn>
+          ) : (
+            <BalanceFormBtn disabled type="submit">Confirm</BalanceFormBtn>
+          )}
         </div>
         {!stateBalance && <NotifyBalance />}
       </BalanceFormStyled>
