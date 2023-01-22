@@ -1,11 +1,13 @@
 .Table {
   width: 100%;
-  min-width: 213px;
+  width: 213px;
 
   background: #f5f6fb;
   border-radius: 16px 16px 16px 0;
 
-  margin-bottom: 50px;
+  position: absolute;
+  top: 116px;
+  right: 34px;
 
   font-weight: 400;
   font-size: 12px;
@@ -48,9 +50,9 @@
 
 @media screen and (max-width: 1279px) {
   .Table {
+    position: static;
     min-width: 230px;
-    margin-top: 50px;
-    margin-left: -30px;
+    margin-top: 40px;
   }
 
   .List {

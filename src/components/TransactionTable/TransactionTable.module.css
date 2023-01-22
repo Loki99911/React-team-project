@@ -136,11 +136,17 @@ border-width: 2px; */
 } */
 
 .TableScroll {
+
   margin-right: 75px;
   border-radius: 30px;
   overflow: hidden;
   color: #000000;
 
+}
+@media screen and (min-width: 1280px) {
+  .TableScroll {
+  width: 746px;
+  }
 }
 
 
