@@ -23,6 +23,7 @@ import { TransactionTable } from 'components/TransactionTable/TransactionTable';
 import { useLocation } from 'react-router-dom';
 import { Translator } from 'components/Translator/Translator';
 import { setNewDate } from 'redux/Transaction/transactionReducer';
+import { ExpensesSmile } from 'components/ExpensesSmile/ExpensesSmile';
 
 export const ExpencePart = () => {
   const [description, setDescription] = useState('');
@@ -224,10 +225,14 @@ export const ExpencePart = () => {
 
             <div className={s.tableContainer}>
               <div className={s.prods}>
-                <TransactionTable
-                  transactionData={expensesTransactionData}
-                  tablePage={pageLocation}
-                />
+                {expensesTransactionData.length > 0 ? (
+                  <TransactionTable
+                    transactionData={expensesTransactionData}
+                    tablePage={pageLocation}
+                  />
+                ) : (
+                  <ExpensesSmile />
+                )}
               </div>
             </div>
           </>
