@@ -23,7 +23,7 @@ export default function ReportsData() {
   function convertArrow(incomeArrow) {
     console.log(incomeArrow);
     if (incomeArrow.length === 0) {
-      return;
+      return setArrow([]);
     } else {
       // console.log(incomeArrow)
       // const newArray = Object.values(incomeArrow[1])
@@ -33,7 +33,7 @@ export default function ReportsData() {
 
   function getArrow(incomeArrow) {
     if (incomeArrow.length === 0) {
-      return;
+      return setArrow([]);
     } else {
       // console.log(incomeArrow)
       // const newArray = Object.values(incomeArrow[1])

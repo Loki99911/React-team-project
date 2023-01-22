@@ -75,7 +75,7 @@ console.log(dataArray)
         >
           <XAxis type="number" hide="true"/>
           <YAxis  type="none" hide="true" />
-            <Bar dataKey="uv" barSize={15} fill="transparent" label={renderCustomizedBottomLabel}> 
+            <Bar dataKey="uv" barSize={15} fill="transparent" label={renderCustomizedBottomLabel} radius={[0, 10, 10, 0]}> 
               <LabelList dataKey="name" position="left" />
               {dataArray.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={colors[index % 20]} />
@@ -83,7 +83,7 @@ console.log(dataArray)
               </Bar>
         </ComposedChart> : <BarChart width={604} height={380} barCategoryGap="50%" barGap="50%" data={dataArray} margin={{ top: 20, right: 20, bottom: 60, left: 20 }}>
                       <CartesianGrid stroke="#F5F6FB" height={2} vertical={false} horizontalPoints={[40, 75, 110, 145, 180, 215, 250, 285, 320]} width="100%"/>
-      <Bar barSize={38} dataKey="uv" fill="#FF751D" label={renderCustomBarLabel} >
+      <Bar radius={[10, 10, 0, 0]} barSize={38} dataKey="uv" fill="#FF751D" label={renderCustomBarLabel} >
               <LabelList dataKey="name" position="bottom" angle={isTablet ? "-15" : "0" } />
       {dataArray.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={colors[index % 20]} />
