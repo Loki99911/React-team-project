@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect} from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { lazy } from 'react';
@@ -23,7 +23,7 @@ const Reports = lazy(() => import('../pages/Reports/Reports'));
 export const App = () => {
   const isUserFetching = useSelector(getIsUserFetching);
   const dispatch = useDispatch();
-
+  // const [startDate, setStartDate] = useState(new Date());
   // Google auth code below
   // Location for google authorization
 

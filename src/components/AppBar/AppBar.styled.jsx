@@ -59,9 +59,7 @@ export const LogoutBtn = styled.button`
   margin: 0;
   border: none;
   background-color: transparent;
-  cursor: pointer;
-  fill: red;
-  
+  cursor: pointer;  
 `;
 
 export const LogoutBtnText = styled.span`
