@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect} from 'react';
 import {
   StyledHomePage,
   Wrap,

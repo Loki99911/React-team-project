@@ -1,11 +1,11 @@
-import { Calendar } from 'components/Calendar/Calendar';
+// import { Calendar } from 'components/Calendar/Calendar';
 import DeleteButton from 'components/common/button-delete/button-delete';
 import { Translator } from 'components/Translator/Translator';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getEmail } from 'redux/Auth/authSelectors';
 import { getIncomeStats, getExpenseStats, removeTransaction } from 'redux/Transaction/transactionOperations';
-import { getCurrentDate, getExpencesTransactions, getIncomesTransactions } from 'redux/Transaction/transactionSelectors';
+import { getExpencesTransactions, getIncomesTransactions } from 'redux/Transaction/transactionSelectors';
 import s from './mobileTransactionList.module.css';
 
 
