@@ -9,7 +9,11 @@ import {
 import NotifyBalance from '../NotifyBalance/NotifyBalance';
 import { InfoModal } from 'components/InfoModal/InfoModal';
 import { handleUserBalance } from '../../redux/Auth/authOperations';
-import { getBalance, getExpencesTransactions, getIncomesTransactions } from '../../redux/Transaction/transactionSelectors';
+import {
+  getBalance,
+  getExpencesTransactions,
+  getIncomesTransactions,
+} from '../../redux/Transaction/transactionSelectors';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -19,7 +23,6 @@ export default function BalanceForm() {
   const [balance, setBalance] = useState(stateBalance);
   const income = useSelector(getIncomesTransactions);
   const expenses = useSelector(getExpencesTransactions);
-
 
   const dispatch = useDispatch();
 
@@ -61,23 +64,39 @@ export default function BalanceForm() {
       >
         <BalanceFormLabel>Balance:</BalanceFormLabel>
         <div>
-          {' '}
-          <BalanceFormInput
-            type="text"
-            name="balance"
-            title="Please, enter your balance"
-            placeholder="00.00 UAH"
-            pattern="[0-9, .UAH]*"
-            required
-            onChange={handleChange}
-            value={`${balance}.00 UAH`}
-          />
           {income.length === 0 && expenses.length === 0 ? (
-            <BalanceFormBtn type="submit">
-              Confirm
-            </BalanceFormBtn>
+            <>
+              {' '}
+              <BalanceFormInput
+                type="text"
+                name="balance"
+                title="Please, enter your balance"
+                placeholder="00.00 UAH"
+                pattern="[0-9, .UAH]*"
+                required
+                onChange={handleChange}
+                value={`${balance}.00 UAH`}
+              />
+              <BalanceFormBtn type="submit">Confirm</BalanceFormBtn>
+            </>
           ) : (
-            <BalanceFormBtn disabled type="submit">Confirm</BalanceFormBtn>
+            <>
+              {' '}
+              <BalanceFormInput
+                disabled
+                type="text"
+                name="balance"
+                title="Please, enter your balance"
+                placeholder="00.00 UAH"
+                pattern="[0-9, .UAH]*"
+                required
+                onChange={handleChange}
+                value={`${balance}.00 UAH`}
+              />
+              <BalanceFormBtn disabled type="submit">
+                Confirm
+              </BalanceFormBtn>
+            </>
           )}
         </div>
         {!stateBalance && <NotifyBalance />}
