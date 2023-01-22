@@ -23,16 +23,12 @@ const Reports = lazy(() => import('../pages/Reports/Reports'));
 export const App = () => {
   const isUserFetching = useSelector(getIsUserFetching);
   const dispatch = useDispatch();
-  // const [startDate, setStartDate] = useState(new Date());
-  // Google auth code below
-  // Location for google authorization
 
   const location = window.location;
   const urlSearchParams = new URLSearchParams(location.search);
   const accessToken = urlSearchParams.get('accessToken');
   const refreshToken = urlSearchParams.get('refreshToken');
   const sid = urlSearchParams.get('sid');
-  console.log('search params:', accessToken);
 
   // Change pathname if succesfull google authorization
   useEffect(() => {

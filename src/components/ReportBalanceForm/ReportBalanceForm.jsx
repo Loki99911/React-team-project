@@ -15,7 +15,6 @@ export default function ReportBalanceForm() {
   const [modalOpen, setModalOpen] = useState(false);
   const stateBalance = useSelector(getBalance);
   const [balance, setBalance] = useState('');
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,21 +31,18 @@ export default function ReportBalanceForm() {
     setBalance(numText);
   };
 
-  // Handle update users balance
   const handleClick = () => {
     if (Number(balance) === 0) {
       setBalance(prev => String(stateBalance));
-      alert('!!!!!!');
       return;
     }
     dispatch(handleUserBalance(Number(balance)));
   };
 
-  // Open modal window
   const handleModalOpen = () => {
     setModalOpen(true);
   };
-  // Close modal window
+ 
   const handleModalClose = () => {
     setModalOpen(false);
   };
@@ -66,8 +62,7 @@ export default function ReportBalanceForm() {
             required
             onChange={handleChange}
             disabled
-            // placeholder={`${balance}.00 UAH`}
-            value={`${balance}.00 UAH`} //как сделать с .UAH
+            value={`${balance}.00 UAH`}
           />
           <BalanceFormBtn disabled type="submit">
             Confirm

@@ -6,17 +6,14 @@ export const FormLayout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 425px; */
   padding: 40px 20px;
   margin-top: 50px;
-  /* height: 496px; */
-
   border-radius: 30px;
   background-color: #ffffff;
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+
   @media screen and (min-width: 768px) {
     width: 425px;
-    /* height: 550px; */
     padding: 55px 85px;
     margin-top: 80px;
   }
@@ -55,8 +52,8 @@ export const LoginLabel = styled.label`
   line-height: 1.16;
   letter-spacing: 0.04em;
   color: #000000;
-
   margin-bottom: 12px;
+
   &:last-of-type {
     margin-top: 32px;
   }
@@ -95,6 +92,7 @@ export const LoginBtn = styled.button`
   border-radius: 16px;
   filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
   transition: color 250ms linear, background-color 250ms linear;
+
   &:hover {
     color: #ffffff;
     background-color: #ff751d;
@@ -111,6 +109,7 @@ export const GoogleBtn = styled.a`
   border: none;
   border-radius: 26px;
   transition: background-color 250ms linear;
+
   &:hover {
     background-color: #ff751d;
   }
@@ -120,9 +119,9 @@ export const ErrorText = styled.span`
   display: flex;
   position: absolute;
   top:80px;
+
   &:last-of-type {
     top:190px;
   }
-
 `;
 

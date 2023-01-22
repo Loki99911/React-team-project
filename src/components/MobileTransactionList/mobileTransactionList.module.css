@@ -6,7 +6,6 @@
   align-items: center;
   text-align: right;
   letter-spacing: 0.04em;
-
   color: #e7192e;
 }
 
@@ -43,7 +42,6 @@
   align-items: center;
   text-align: right;
   letter-spacing: 0.04em;
-
   color: #407946;
 }
 
@@ -51,9 +49,6 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #f5f6fb;
-  /* margin-bottom: 10px;
-  padding-bottom: 8px;
-  height: 30px; */
 }
 
 .title {

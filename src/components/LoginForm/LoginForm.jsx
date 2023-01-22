@@ -57,7 +57,6 @@ const LoginForm = () => {
           handleBlur,
           handleSubmit,
           isSubmitting,
-          /* and other goodies */
         }) => (
           <Form onSubmit={handleSubmit}>
             <LoginLabel htmlFor={emailID}>Email:</LoginLabel>

@@ -30,10 +30,8 @@ export const IncomePart = () => {
   const [category, setCategory] = useState('');
   const [sum, setSum] = useState('');
   const [list, setList] = useState(false);
-  // const [startDate, setStartDate] = useState(new Date());
   const [emptyInput, setEmptyInput] = useState(false);
   const loading = useSelector(getIsLoading) === true;
-
   const prodInc = useSelector(getIncomesCategories);
   const incomesTransactionData = useSelector(getIncomesTransactions);
   const incomesSummaryData = useSelector(getIncomesMonthStats);
@@ -66,12 +64,12 @@ export const IncomePart = () => {
         return;
     }
   };
+
   const handleResetForm = () => {
     setEmptyInput(false);
     setDescription('');
     setCategory('');
     setSum('');
-    // setStartDate(new Date());
   };
 
   const handleSubmitForm = evt => {

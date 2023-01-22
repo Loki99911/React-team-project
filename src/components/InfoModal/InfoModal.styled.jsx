@@ -6,7 +6,6 @@ export const StyledModalWindow = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-
   border-radius: 30px;
   box-shadow: 10px 10px 30px rgba(82, 85, 95, 0.4);
 `;
@@ -53,6 +52,5 @@ export const StyledModalBackdrop = styled.div`
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
-
   background-color: rgba(0, 0, 0, 0.2);
 `;
