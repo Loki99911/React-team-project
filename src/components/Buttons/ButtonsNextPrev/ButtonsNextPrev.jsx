@@ -1,5 +1,5 @@
 import { ButtonBox, Button } from './ButtonsNextPrev.styled';
-import reports from '../../images/reportsFiles/reports.svg';
+import reports from '../../../images/reportsFiles/reports.svg';
 
 export const ButtonsNextPrev = ({ onButtonClick, children }) => {
   const handlerClick = event => {
