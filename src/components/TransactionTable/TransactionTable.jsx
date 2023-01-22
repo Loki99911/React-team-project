@@ -6,14 +6,10 @@ import DeleteButton from 'components/common/button-delete/button-delete';
 import { Translator } from 'components/Translator/Translator';
 export const TransactionTable = ({ tablePage, transactionData }) => {
   const dispatch = useDispatch();
-  console.log(tablePage);
 
   return (
 
     <div className={s.TableScroll}>
-
-
-
       <table>
         <thead className={s.Thead}>
           <tr>

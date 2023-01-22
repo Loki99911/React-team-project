@@ -29,3 +29,12 @@
 .svg_calendar {
   margin-right: 10px;
 }
+
+
+@media screen and (max-width: 768px) {
+  .btn_calendar {
+    background-color: #F5F6FB;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

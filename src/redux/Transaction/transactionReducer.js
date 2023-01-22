@@ -42,7 +42,7 @@ const initialState = {
   isLoading: false,
   error: null,
   newBalance: 0,
-  date: new Date(),
+  date: null,
   allTransactions: [],
 };
 
