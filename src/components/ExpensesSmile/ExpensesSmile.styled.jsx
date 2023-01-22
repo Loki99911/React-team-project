@@ -11,7 +11,7 @@ export const StyledIncomeSmile = styled.div`
 
 `;
 
-export const StyledIncomeSmileText = styled.pattern`
+export const StyledIncomeSmileText = styled.p`
   font-size: 20px;
   line-height: 40px;
   color: red;
