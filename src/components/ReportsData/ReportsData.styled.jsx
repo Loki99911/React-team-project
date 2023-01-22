@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 
 export const Box = styled.div`
+  background-color: #fff;
   padding-top: 30px;
   @media screen and (min-width: 768px) {
     padding: 20px 40px;
