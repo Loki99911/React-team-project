@@ -86,7 +86,14 @@ export const App = () => {
         )}
         {isMobile && (
           <>
-            <Route path="/main" element={<Main />} />
+            <Route
+              path="/main"
+              element={
+                <PrivateRoute>
+                  <Main />
+                </PrivateRoute>
+              }
+            />
             <Route path="/expenses" element={<Expenses />} />
             <Route path="/income" element={<Income />} />
             <Route path="*" element={<Navigate to="/main" />} />
