@@ -13,9 +13,10 @@ export const StyledHomePage = styled.div`
   flex-direction: column;
   flex-grow: 1;
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
  background-color: var(--header-background-color);
-}
+
+} */
 
   @media screen and (min-width: 768px) {
     padding: 40px 32px 60px 32px;
