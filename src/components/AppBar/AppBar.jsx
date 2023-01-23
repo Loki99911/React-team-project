@@ -70,7 +70,8 @@ export const AppBar = () => {
         <InfoModal closeModal={handleModalClose} dispatch={handleClick}>
           Do you really want to leave?
         </InfoModal>
-      )}
+      )
+      }
     </>
   );
 };
