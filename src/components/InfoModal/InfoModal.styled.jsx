@@ -21,6 +21,7 @@ export const StyledText = styled.p`
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  color: var(--general-text-color);
 `;
 
 export const StyledDivWithButtons = styled.div`
@@ -52,5 +53,4 @@ export const StyledModalBackdrop = styled.div`
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
-  background-color: var(--general-header-color);
-`;
+  background-color: rgba(0,0,0,0.2);`

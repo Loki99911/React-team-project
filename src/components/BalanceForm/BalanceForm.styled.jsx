@@ -19,7 +19,7 @@ export const BalanceFormStyled = styled.form`
 `;
 
 export const BalanceFormLabel = styled.label`
-  color: rgba(82, 85, 95, 0.7);
+  color: var(--balance-text-color);
   margin-bottom: 8px;
   font-size: 12px;
   line-height: calc(14 / 12);
@@ -43,9 +43,8 @@ export const BalanceFormInput = styled.input`
   border: 2px solid white;
   border-radius: 22px 0 0 22px;
   outline: none;
-  background-color: var(--auth-form-button-background-color);
-
-  transition: background-color 250s linear;
+  background-color: var(--trans-dropdown-active-background-color);
+  
 
   :focus {
     background-color: var(--trans-background-color);
