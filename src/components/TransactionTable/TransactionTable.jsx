@@ -4,8 +4,12 @@ import { removeTransaction } from 'redux/Transaction/transactionOperations';
 import { PropTypes } from 'prop-types';
 import DeleteButton from 'components/Buttons/ButtonDelete/ButtonDelete';
 import { Translator } from 'components/Translator/Translator';
+import useSound from 'use-sound';
+import basket from '../../sounds/basket.mp3';
+
 export const TransactionTable = ({ tablePage, transactionData }) => {
   const dispatch = useDispatch();
+  const [play] = useSound(basket);
 
   return (
     <div className={s.TableScroll}>
@@ -41,7 +45,10 @@ export const TransactionTable = ({ tablePage, transactionData }) => {
                 )}
                 <td>
                   <DeleteButton
-                    onClick={() => dispatch(removeTransaction(item._id))}
+                    onClick={() => {
+                      dispatch(removeTransaction(item._id));
+                      play();
+                    }}
                   />
                 </td>
               </tr>

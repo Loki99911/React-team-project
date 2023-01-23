@@ -16,8 +16,13 @@ import {
 } from '../../redux/Transaction/transactionSelectors';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useSound from 'use-sound';
+import confirmYes from '../../sounds/confirmYes.mp3';
+import confirmNo from '../../sounds/confirmNo.mp3';
 
 export default function BalanceForm() {
+  const [playYes] = useSound(confirmYes);
+  const [playNo] = useSound(confirmNo);
   const [modalOpen, setModalOpen] = useState(false);
   const stateBalance = useSelector(getBalance);
   const [balance, setBalance] = useState(stateBalance);
@@ -46,10 +51,12 @@ export default function BalanceForm() {
       toast.error('Balance cannot be "0". Try again!', {
         position: toast.POSITION.TOP_CENTER,
       });
+      playNo();
       return;
     }
 
     dispatch(handleUserBalance(Number(balance)));
+    playYes();
   };
 
   const toggleModal = () => {
