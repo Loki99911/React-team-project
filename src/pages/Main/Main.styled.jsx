@@ -13,6 +13,10 @@ export const StyledHomePage = styled.div`
   flex-direction: column;
   flex-grow: 1;
 
+@media screen and (max-width: 767px) {
+ background-color: var(--header-background-color);
+}
+
   @media screen and (min-width: 768px) {
     padding: 40px 32px 60px 32px;
     background-image: url(${bgTabl});
@@ -26,6 +30,7 @@ export const StyledHomePage = styled.div`
       screen and (min-resolution: 2dppx) {
       background-image: url(${bgTabl2});
     }
+
   }
 
   @media screen and (min-width: 1280px) {
@@ -66,24 +71,23 @@ export const Link = styled(NavLink)`
   letter-spacing: 0.04em;
   text-decoration: none;
   margin-bottom: 40px;
-  fill: #52555f;
-  color: rgba(82, 85, 95, 0.7);
-
+  fill: var(--table-description-text-color);
+  color: var(--balance-text-color);
   transition: color 250ms linear;
 
   :hover,
   :focus {
-    color: #ff751d;
+    color: var(--trans-navbar-active-link-text-color);
   }
   :hover .reportsIcon,
   :focus .reportsIcon {
-    fill: #ff751d;
+    fill: var(--trans-navbar-active-link-text-color);
   }
   .reportsIcon {
     margin-left: 20px;
     width: 14px;
     height: 14px;
-    fill: #52555f;
+    fill: var(--table-description-text-color);
     transition: fill 250ms linear;
   }
 
@@ -105,8 +109,8 @@ export const ExspensesIncLink = styled(NavLink)`
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-decoration: none;
-  background: #f5f6fb;
-  color: #000000;
+  background-color: var(--trans-dropdown-active-background-color);
+  color: var(--general-header-color);
   width: 159px;
   height: 53px;
 
@@ -114,25 +118,25 @@ export const ExspensesIncLink = styled(NavLink)`
 
   :hover,
   :focus {
-    color: #ffffff;
-    background-color: #ff751d;
+    color: var(--balance-button-border-color);
+    background-color: var( --general-accent-background-color);
   }
 
   @media screen and (min-width: 768px) {
     width: 140px;
     height: 40px;
-    background: #fafbfd;
+    background: var(--trans-navbar-link-background);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 
     &.active {
-      color: #ff751d;
-      background-color: #fefefe;
+      color: var(--trans-navbar-active-link-text-color);
+      background-color: var(--trans-navbar-link-background);
     }
     :hover:not(.active),
     :focus-visible:not(.active) {
-      color: #ff751d;
-      background: #fafbfd;
+      color: var(--trans-navbar-active-link-text-color);
+      background: var(--trans-navbar-link-background);
     }
   }
 `;
@@ -144,6 +148,7 @@ export const LinkBox = styled.div`
     gap: 2px;
     display: flex;
     margin-top: auto;
+   
   }
   
   @media screen and (min-width: 768px) {

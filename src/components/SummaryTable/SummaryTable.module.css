@@ -1,7 +1,7 @@
 .Table {
   width: 100%;
   width: 213px;
-  background: #f5f6fb;
+  background: var(--summary-background-color);
   border-radius: 16px 16px 16px 0;
   position: absolute;
   top: 116px;
@@ -18,11 +18,12 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--summary-border-color);
   min-height: 38px;
   font-weight: 700;
   margin: 0;
   padding: 0;
+  color: var(--table-description-text-color);
 }
 
 .List {
@@ -40,8 +41,8 @@
   align-items: center;
   min-height: 38px;
   padding: 0 12px;
-  color: #52555f;
-  border-top: 2px solid #fff;
+  color: var(--table-description-text-color);
+  border-top: 2px solid var(--summary-border-color);
 }
 
 @media screen and (max-width: 1279px) {

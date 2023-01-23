@@ -9,8 +9,8 @@
 .inputCount {
   width: 119px;
   height: 44px;
-  border: 2px solid #f6f7fc;
+  border: 2px solid var(--auth-form-input-background-color);
   border-radius: 0px 16px 16px 0px;
   text-align: center;
-  color: #c7ccdc;
+  color: var(--trans-form-input-placeholder-color);
 }

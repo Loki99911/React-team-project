@@ -9,7 +9,7 @@ export const FormLayout = styled.div`
   padding: 40px 20px;
   margin-top: 50px;
   border-radius: 30px;
-  background-color: #ffffff;
+  background-color: var(--auth-form-background-color);
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
 
   @media screen and (min-width: 768px) {
@@ -41,7 +41,7 @@ export const Form = styled.form`
   font-size: 10px;
   line-height: 1.2;
   letter-spacing: 0.04em;
-  color: #eb5757;
+  color: var(--auth-form-validation-error-color);
 `;
 
 export const LoginLabel = styled.label`
@@ -51,7 +51,7 @@ export const LoginLabel = styled.label`
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.04em;
-  color: #000000;
+  color: var(--general-header-color);
   margin-bottom: 12px;
 
   &:last-of-type {
@@ -64,7 +64,7 @@ export const LoginInput = styled.input`
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.04em;
-  background-color: #f6f7fb;
+  background-color: var(--auth-form-input-background-color);
   border: none;
   width: 100%;
   height: 52px;
@@ -85,17 +85,17 @@ export const LoginBtn = styled.button`
   width: 100%;
   padding: 0;
   margin: 0;
-  color: #52555f;
-  background-color: #f5f6fb;
+  color: var(--table-description-text-color);
+  background-color: var(--auth-background-top-part-color);
   height: 44px;
   border: none;
   border-radius: 16px;
-  filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+  filter: var(--auth-form-button-shadow);
   transition: color 250ms linear, background-color 250ms linear;
 
   &:hover {
-    color: #ffffff;
-    background-color: #ff751d;
+    color: var(--auth-background-bot-part-color);
+    background-color: var(--general-accent-background-color);
   }
 `;
 
@@ -105,13 +105,13 @@ export const GoogleBtn = styled.a`
   justify-content: center;
   padding: 10px 19px;
   margin: 0;
-  background-color: #f6f7fb;
+  background-color: var(--auth-form-input-background-colo);
   border: none;
   border-radius: 26px;
   transition: background-color 250ms linear;
 
   &:hover {
-    background-color: #ff751d;
+    background-color: var(--general-accent-background-color);
   }
 `;
 

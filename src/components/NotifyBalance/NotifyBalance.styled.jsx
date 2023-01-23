@@ -20,7 +20,7 @@ export const NotifyBalanceContainer = styled.div`
   max-width: 280px;
   max-height: 163px;
   width: 100%;
-  background: linear-gradient(117.84deg, #1d346a 2.84%, #031634 67.28%);
+  background: var(--balance-popup-message-gradient);
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 30px;
 
@@ -51,7 +51,7 @@ export const NotifyBalanceTitle = styled.h2`
   font-size: 14px;
   line-height: 1.43;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: var(--balance-popup-message-text-color);
 
   @media screen and (min-width: 768px) {
     padding-left: 29px;
@@ -66,7 +66,7 @@ export const NotifyBalanceText = styled.p`
   font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
-  color: #ffffff;
+  color: var(--balance-popup-message-text-color);
 
   @media screen and (min-width: 768px) {
     padding-left: 29px;

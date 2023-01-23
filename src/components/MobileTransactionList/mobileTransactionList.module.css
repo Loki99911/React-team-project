@@ -6,7 +6,7 @@
   align-items: center;
   text-align: right;
   letter-spacing: 0.04em;
-  color: #e7192e;
+  color: var(--table-expense-text-color);
 }
 
 .listmob {
@@ -16,7 +16,7 @@
   overflow-y: scroll;
   margin-bottom: auto;
   margin-top: 90px;
-  background-color: #ffffff;
+  background-color: var(--table-element-background-color);
 }
 
 /* Стили для скролла */
@@ -26,11 +26,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f5f6fb;
+  background-color: var(--table-head-element-background-color);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ff6b01;
+  background-color: var(--trans-navbar-active-link-text-color);
   border-radius: 2px;
 }
 
@@ -42,13 +42,13 @@
   align-items: center;
   text-align: right;
   letter-spacing: 0.04em;
-  color: #407946;
+  color: var(--table-income-text-color);
 }
 
 .itemLi {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #f5f6fb;
+  border-bottom: 1px solid var(--table-element-border-color);
 }
 
 .title {
@@ -59,7 +59,7 @@
   align-items: center;
   letter-spacing: 0.04em;
   margin-bottom: 0px;
-  color: #52555F;
+  color: var(--table-description-text-color);
 }
 
 .infoText {
@@ -79,7 +79,7 @@
   font-size: 8px;
   line-height: 9px;
   letter-spacing: 0.04em;
-  color: #52555F;
+  color: var(--table-description-text-color);
 }
 
 .buttonDeletemob {

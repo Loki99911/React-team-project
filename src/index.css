@@ -1,8 +1,204 @@
-@import-normalize;
+:root {
+  /* Adaptive Design Variables */
+  --desktop: 1280px;
+  --tablet: 768px;
+  --pdesktop: 1279px;
+  --ptablet: 767px;
+  --responsive-mobile-end: 480px;
+  --responsive-mobile-start: 320px;
+
+  /* Transition Variables */
+  --default-transition-time: 250ms;
+  --default-transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Color Variables */
+/* General */
+/* dark theme */
+html[data-theme='dark'] {
+  --general-background-top-part-color: #2f3031;
+  --general-background-bot-part-color: #252525;
+  --general-background-top-color: #c7c8c8;
+  --general-accent-background-color: #ff751d;
+  --general-accent-text-color: #252525;
+  --general-accent-shadow: drop-shadow(1px 3px 5px hsla(24, 100%, 52%, 0.35));
+  --general-text-color: #969698;
+  --general-header-color: #ffffff;
+
+  /* Universal Modal */
+  --modal-background-color: #252525;
+  --modal-button-border-color: #d2d3d4;
+  --modal-shadow: 10px 10px 30px rgba(82, 85, 95, 0.4);
+
+  /* Header/SharedLayout */
+  --header-background-color: #252525;
+  --header-line-separator-color: #414244;
+  --header-user-background-color: #2a2b2c;
+
+  /* AuthForm */
+  --auth-background-top-part-color: #2a2b2c;
+  --auth-background-bot-part-color: #252525;
+  --auth-form-background-color: #252525;
+  --auth-form-input-background-color: #212121;
+  --auth-form-input-placeholder-color: #4e4e4e;
+  --auth-form-button-background-color: #2a2b2c;
+  --auth-form-button-text-color: #131414;
+  --auth-form-button-normal-color1: #4f4f52;
+  --auth-form-button-normal-color2: #a1a1a3;
+  --auth-form-button-normal-color3: #9d9b9b;
+  --auth-form-button-shadow: drop-shadow(1px 3px 5px rgba(111, 112, 117, 0.15));
+  --auth-form-validation-error-color: #eb5757;
+
+  /* Balance */
+  --balance-balance-text-color: #59595ab2;
+  --balance-balance-text-opacity: 70%;
+  --balance-button-border-color: #b7b5b5;
+  --balance-popup-message-gradient: linear-gradient(117.84deg,
+      #1d346a 2.84%,
+      #031634 67.28%);
+  --balance-popup-message-text-color: #252525;
+  --balance-text-color: rgba(231, 231, 234, 0.7);
+  --balance-modal-top-color: #1d346a;
+
+  /* Transactions */
+  /* Navbar */
+  --trans-navbar-link-background: #1a1919;
+  --trans-navbar-active-link-text-color: #ff751d;
+  --trans-background-color: #252525;
+
+  /* TransactionForm */
+  --trans-form-input-border-color: #141414;
+  --trans-form-input-placeholder-color: #474848;
+  --trans-form-clear-button-border-color: #141414;
+  --trans-dropdown-border-color: #2a2b2c;
+  --trans-dropdown-text-color: #f1f2f5;
+  --trans-dropdown-background-color: #252525;
+  --trans-dropdown-active-background-color: #2a2b2c;
+
+  /* TransactionTable */
+  --table-head-element-background-color: #2a2b2c;
+  --table-element-background-color: #252525;
+  --table-element-border-color: #2a2b2c;
+  --balance-text-color: rgba(255, 255, 255);
+  --table-description-text-color: rgba(255, 255, 255);
+  --table-income-text-color: #407946;
+  --table-expense-text-color: #e7192e;
+
+  /* SummaryTable */
+  --summary-background-color: #2a2b2c;
+  --summary-border-color: #252525;
+
+  /* Report */
+  /* Top Panel */
+  --top-panel-background-color: #252525;
+  --top-panel-expense-color: #e53935;
+  --top-panel-income-color: #407946;
+
+  /* Reports */
+
+  --report-icon-fill-active: #ffdac0;
+  --report-icon-fill: #4f4f52;
+  --report-bg-rectangle-active: #ff751d;
+
+  /* Diagram */
+  --diagram-descended-accent-color: #ffdac0;
+}
+
+/* light theme */
+html[data-theme='light'] {
+  --general-background-top-part-color: #f2f5fc;
+  --general-background-bot-part-color: #ffffff;
+  --general-background-top-color: #ffffff;
+  --general-accent-background-color: #ff751d;
+  --general-accent-text-color: #ffffff;
+  --general-accent-shadow: drop-shadow(1px 3px 5px hsla(24, 100%, 52%, 0.35));
+  --general-text-color: #2e2f30;
+  --general-header-color: #000000;
+
+  /* Universal Modal */
+  --modal-background-color: #ffffff;
+  --modal-button-border-color: #f5f6fb;
+  --modal-shadow: 10px 10px 30px rgba(82, 85, 95, 0.4);
+
+  /* Header/SharedLayout */
+  --header-background-color: #ffffff;
+  --header-line-separator-color: #e0e5eb;
+  --header-user-background-color: #f5f6fa;
+
+  /* AuthForm */
+  --auth-background-top-part-color: #f5f6fb;
+  --auth-background-bot-part-color: #ffffff;
+  --auth-form-background-color: #ffffff;
+  --auth-form-input-background-color: #f6f7fb;
+  --auth-form-input-placeholder-color: #a6abb9;
+  --auth-form-button-background-color: #f5f6fb;
+  --auth-form-button-text-color: #f5f6fb;
+  --auth-form-button-shadow: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+  --auth-form-button-normal-color1: #fefefe;
+  --auth-form-button-normal-color2: #f5f6fb;
+  --auth-form-button-normal-color3: #e6e9fb;
+
+  --auth-form-validation-error-color: #eb5757;
+
+  /* Balance */
+  --balance-balance-text-color: #52555fb2;
+  --balance-balance-text-opacity: 70%;
+  --balance-button-border-color: #ffffff;
+  --balance-popup-message-gradient: linear-gradient(117.84deg,
+      #1d346a 2.84%,
+      #031634 67.28%);
+  --balance-popup-message-text-color: #ffffff;
+  --balance-text-color: rgba(82, 85, 95, 0.7);
+  --balance-modal-top-color: #1d346a;
+
+  /* Transactions */
+  /* Navbar */
+  --trans-navbar-link-background: #fefefe;
+  --trans-navbar-active-link-text-color: #ff751d;
+  --trans-background-color: #ffffff;
+
+  /* TransactionForm */
+  --trans-form-input-border-color: #f6f7fc;
+  --trans-form-input-placeholder-color: #c7ccdc;
+  --trans-form-clear-button-border-color: #f6f7fc;
+  --trans-dropdown-border-color: #f5f6fb;
+  --trans-dropdown-text-color: #c7ccdc;
+  --trans-dropdown-background-color: #ffffff;
+  --trans-dropdown-active-background-color: #f5f6fb;
+
+  /* TransactionTable */
+  --table-head-element-background-color: #f5f6fb;
+  --table-element-background-color: #ffffff;
+  --table-element-border-color: #f5f6fb;
+  --table-income-text-color: #407946;
+  --table-expense-text-color: #e7192e;
+  --table-description-text-color: #52555f;
+
+  /* SummaryTable */
+  --summary-background-color: #f5f6fb;
+  --summary-border-color: #ffffff;
+
+  /* Report */
+  /* Top Panel */
+  --top-panel-background-color: #ffffff;
+  --top-panel-expense-color: #e53935;
+  --top-panel-income-color: #407946;
+
+  /* Reports */
+
+  --report-icon-fill-active: #ff751d;
+  --report-icon-fill: #071f41;
+  --report-bg-rectangle-active: #ffdac0;
+
+  /* Diagram */
+  --diagram-descended-accent-color: #ffdac0;
+}
+
+
 
 body {
   height: 100vh;
-  background-color: #ffffff;
+  background-color: var(--general-background-bot-part-color);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -24,5 +220,5 @@ body .recharts-text.recharts-label tspan {
   line-height: 14px;
   letter-spacing: 0.02em;
 
-  fill: #52555f;
+  fill: var(--table-description-text-color);
 }

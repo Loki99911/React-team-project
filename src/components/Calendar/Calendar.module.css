@@ -3,11 +3,11 @@
   justify-content: center;
   align-items: center;
   font-size: 30;
-  color: #010101;
+  color: var(--general-text-color);
 }
 
 .btn_calendar {
-  background-color: white;
+  background-color: var(--general-background-bot-part-color);
   border: none;
   height: 100%;
   font-style: normal;
@@ -21,7 +21,7 @@
   margin: 0;
   padding: 0;
 
-  color: #52555f;
+  color: var(--balance-balance-text-color);
   cursor: pointer;
   transition: color 250ms linear;
 }
@@ -33,7 +33,7 @@
 
 @media screen and (max-width: 768px) {
   .btn_calendar {
-    background-color: #F5F6FB;
+    background-color: var(--auth-form-button-background-color);
     margin-right: auto;
     margin-left: auto;
   }

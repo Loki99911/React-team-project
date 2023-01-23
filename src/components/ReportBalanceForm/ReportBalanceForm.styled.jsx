@@ -16,7 +16,7 @@ export const BalanceFormStyled = styled.form`
 `;
 
 export const BalanceFormLabel = styled.label`
-  color: rgba(82, 85, 95, 0.7);
+  color: var(--balance-text-color);
   margin-bottom: 8px;
   font-size: 12px;
   line-height: calc(14 / 12);
@@ -34,12 +34,12 @@ export const BalanceFormInput = styled.input`
   letter-spacing: 0.02em;
   width: 183px;
   padding: 15px 30px;
-  color: #52555f;
+  color: var(--balance-balance-text-color);
   border: 2px solid white;
   text-align: center;
   border-radius: 16px;
   outline: none;
-  background-color: #f5f6fb;
+  background-color: var(--header-user-background-color);
 
   transition: background-color 250s linear;
 
@@ -77,18 +77,18 @@ export const BalanceFormBtn = styled.button`
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  color: rgba(82, 85, 95, 0.7);
+  color: var(-balance-text-color);
   text-transform: uppercase;
   border: 2px solid white;
   outline: none;
-  background-color: #f5f6fb;
+  background-color: var(--auth-form-button-normal-color2);
 
   @media screen and (min-width: 768px) {
     width: 125px;
     padding: 12px 6px;
     border-radius: 16px;
     text-align: center;
-    border-left: 2px solid white;
+    border-left: 2px solid var(--balance-button-border-color);
   }
 
   @media screen and (min-width: 1280px) {

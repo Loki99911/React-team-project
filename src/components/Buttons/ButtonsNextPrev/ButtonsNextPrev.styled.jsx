@@ -16,7 +16,7 @@ export const Button = styled.button`
   transition: color 250ms linear;
   :hover,
   :focus {
-    color: #ff751d;
+    color: var(--trans-navbar-active-link-text-color);
     cursor: pointer;
     
   }

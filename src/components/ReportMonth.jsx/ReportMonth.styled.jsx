@@ -12,7 +12,7 @@ export const LinkText = styled.p`
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.04em;
-  color: rgba(82, 85, 95, 0.7);
+  color: var(--balance-text-color);
 
   @media screen and (min-width: 768px) {
     display: block;
@@ -27,7 +27,7 @@ export const PeriodText = styled.p`
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.04em;
-  color: rgba(82, 85, 95, 0.7);
+  color: var(--balance-text-color);
 `;
 
 export const ReportWrap = styled.div`

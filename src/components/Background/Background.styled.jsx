@@ -7,7 +7,7 @@ export const StyledBackground = styled.div`
   margin: 0 auto;
   width: 320px;
   height: 296px;
-  background-color: #f5f6fb;
+  background-color: var(--auth-background-top-part-color);
   border-radius: 0 0 0 112px;
 
   @media screen and (min-width: 768px) {
