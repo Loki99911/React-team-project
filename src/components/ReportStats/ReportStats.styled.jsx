@@ -7,7 +7,7 @@ export const StatsContainer = styled.div`
   width: 280px;
   height: 85px;
   padding: 7px, 0px;
-  background: #ffffff;
+  background: var(--top-panel-background-color);
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
   border-radius: 20px;
   margin-left: auto;
@@ -31,8 +31,8 @@ export const StatsContainer = styled.div`
 export const VerticalLine = styled.div`
   width: 0px;
   height: 70px;
-  background-color: #e0e5eb;
-  border: 1px solid #e0e5eb;
+  background-color: var(--header-line-separator-color);
+  border: 1px solid var(--header-line-separator-color);
 
   @media screen and (min-width: 768px) {
     height: 36px;
@@ -53,7 +53,7 @@ export const Text = styled.p`
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  color: #52555f;
+  color: var(--table-description-text-color);
 `;
 
 export const TextExpenses = styled.p`
@@ -61,7 +61,7 @@ export const TextExpenses = styled.p`
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  color: #e53935;
+  color: var(--top-panel-expense-color);
 `;
 
 export const TextIncomes = styled.p`
@@ -69,5 +69,5 @@ export const TextIncomes = styled.p`
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  color: #407946;
+  color: var(--top-panel-income-color);
 `;

@@ -38,17 +38,17 @@ export const BalanceFormInput = styled.input`
 
   width: 140px;
   padding: 12px 18px;
-  color: #52555f;
+  color: var(--balance-balance-text-color);
   text-align: right;
   border: 2px solid white;
   border-radius: 22px 0 0 22px;
   outline: none;
-  background-color: #f5f6fb;
+  background-color: var(--auth-form-button-background-color);
 
   transition: background-color 250s linear;
 
   :focus {
-    background-color: #fff;
+    background-color: var(--trans-background-color);
   }
   ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {
@@ -58,7 +58,7 @@ export const BalanceFormInput = styled.input`
   }
 
   &::placeholder {
-    color: #000;
+    color: var(--general-header-color);
     letter-spacing: 0.02em;
     font-weight: 700;
     font-size: 12px;
@@ -87,14 +87,14 @@ export const BalanceFormBtn = styled.button`
 
   width: 140px;
   padding: 12px 18px;
-  color: rgba(82, 85, 95, 0.7);
+  color: var(--balance-text-color);
   text-align: left;
   text-transform: uppercase;
   border: 2px solid white;
   border-left: none;
   border-radius: 0 22px 22px 0;
   outline: none;
-  background-color: #f5f6fb;
+  background-color: var(--trans-dropdown-active-background-color);
   cursor: pointer;
 
   transition: border-color 250ms linear, color 250ms linear,
@@ -102,9 +102,9 @@ export const BalanceFormBtn = styled.button`
 
   :hover,
   :focus {
-    color: white;
-    background-color: #ff751d;
-    border-color: #ff751d;
+    color: var(--auth-background-bot-part-color);
+    background-color: var(--general-accent-background-color);
+    border-color: var(--general-accent-background-color);
   }
 
   @media screen and (min-width: 768px) {
@@ -112,6 +112,6 @@ export const BalanceFormBtn = styled.button`
     padding: 12px 6px;
     border-radius: 16px;
     text-align: center;
-    border-left: 2px solid white;
+    border-left: 2px solid var(--balance-button-border-color);
   }
 `;

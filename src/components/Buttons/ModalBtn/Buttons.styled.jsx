@@ -26,10 +26,10 @@ export const StyledWhiteButton = styled.button`
   padding: 12px 34px;
   width: 125px;
   height: 44px;
-  border: 2px solid #f5f6fb;
-  background-color: #fff;
+  border: 2px solid var(--trans-dropdown-border-color);
+  background-color: var(--header-background-color);
   border-radius: 16px;
-  color: #52555f;
+  color: var(--balance-balance-text-color);
   font-size: 12px;
   font-weight: 700;
   font-family: inherit;

@@ -2,7 +2,7 @@
   width: 136px;
   height: 44px;
   border-radius: 16px;
-  border: 2px solid #f2f5fc;
+  border: 2px solid var(--general-background-top-part-color);
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
@@ -11,8 +11,8 @@
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  background-color: #fff;
-  color: #52555F;
+  background-color: var(--general-background-bot-part-color);
+  color: var(--table-description-text-color);
   transition: all 0.2s ease-out;
 
 }
@@ -20,14 +20,14 @@
 .button:hover,
 .button:focus {
   cursor: pointer;
-  background-color: #ff751d;
-  color: #fff;
+  background-color: var(--trans-navbar-active-link-text-color);
+  color: var(--trans-background-color);
 }
 
 .button:active {
   cursor: pointer;
-  background-color: #fc6303;
-  color: rgb(0, 0, 0);
+  background-color: var(--general-accent-background-color);
+  color: var(--general-header-color);
 }
 
 .button:first-child {

@@ -16,6 +16,7 @@ import {
 } from './AppBar.styled';
 import { getEmail } from 'redux/Auth/authSelectors';
 import { useMediaRules } from '../../MediaRules/MediaRules';
+import CustomizedSwitches from 'components/Theme/ThemeBtn';
 
 export const AppBar = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -40,6 +41,7 @@ export const AppBar = () => {
         <Link to="/">
           <img src={logo} alt="logo" />
         </Link>
+        <CustomizedSwitches />
         {userMail && (
           <UserInfo>
             <UserIcon>{userMail[0].toUpperCase()}</UserIcon>
@@ -61,8 +63,9 @@ export const AppBar = () => {
               </LogoutBtn>
             )}
           </UserInfo>
-        )}
-      </Header>
+        )
+        }
+      </Header >
       {modalOpen && (
         <InfoModal closeModal={handleModalClose} dispatch={handleClick}>
           Do you really want to leave?

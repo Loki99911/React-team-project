@@ -14,9 +14,9 @@
   position: relative;
   width: 380px;
   padding: 50px 58px 60px;
-  box-shadow: 10px 10px 30px rgba(82, 85, 95, 0.4);
+  box-shadow: var(--modal-shadow);
   border-radius: 30px;
-  background-color: #ffffff;
+  background-color: var(--trans-background-color);
 }
 
 @media screen and (max-width: 400px) {
@@ -54,19 +54,19 @@
 
 .closeButton:hover,
 .closeButton:focus {
-  background-color: #ff751d;
+  background-color: var(--general-accent-background-color);
   border: 2px solid #838385;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.closeButton:hover > .svg,
-.closeButton:focus > .svg {
-  fill: rgb(253, 253, 253);
+.closeButton:hover>.svg,
+.closeButton:focus>.svg {
+  fill: var(--table-head-element-background-color);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .svg {
-  fill: #52555f;
+  fill: var(--table-description-text-color);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -78,7 +78,7 @@
   line-height: 1.14;
   text-align: center;
   letter-spacing: 0.02em;
-  color: #52555f;
+  color: var(--table-head-element-background-color);
 }
 
 .buttons {
@@ -98,15 +98,15 @@
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #ffffff;
-  background-color: #ff751d;
+  color: var(--modal-background-color);
+  background-color: var(--general-accent-background-color);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttonYes:hover,
 .buttonYes:focus {
-  background-color: #ff741da0;
-  color: #000000;
+  background-color: var(--general-accent-background-color);
+  color: var(--general-header-color);
   border: 2px solid #838385;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -114,7 +114,7 @@
 .buttonNo {
   width: 125px;
   height: 44px;
-  border: 2px solid #f5f6fb;
+  border: 2px solid var(--modal-button-border-color);
   border-radius: 16px;
   cursor: pointer;
   font-weight: 700;
@@ -123,15 +123,15 @@
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #52555f;
-  background-color: #ffffff;
+  color: var(--table-description-text-color);
+  background-color: var(--table-element-background-color);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttonNo:hover,
 .buttonNo:focus {
-  background-color: #6e6e6e8e;
-  color: #ffffff;
+  background-color: var(--table-description-text-color);
+  color: var(--table-element-background-color);
   border: 2px solid #4e4e4e9c;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -149,14 +149,15 @@
     text-align: center;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: #ffffff;
-    background-color: #ff751d;
+    color: var(--table-element-background-color);
+    background-color: var(--general-accent-background-color);
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
+
   .buttonNo {
     width: 120px;
     height: 44px;
-    border: 2px solid #f5f6fb;
+    border: 2px solid var(--modal-button-border-color);
     border-radius: 16px;
     cursor: pointer;
     font-weight: 700;
@@ -165,8 +166,8 @@
     text-align: center;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: #52555f;
-    background-color: #ffffff;
+    color: var(--table-description-text-color);
+    background-color: var(--table-element-background-color);
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

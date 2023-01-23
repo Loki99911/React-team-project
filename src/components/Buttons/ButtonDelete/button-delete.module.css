@@ -8,5 +8,5 @@
 }
 
 .btnDelete:hover {
-  background-color: #f5f6fb;
+  background-color: var(--header-user-background-color);
 }

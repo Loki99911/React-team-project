@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-  background-color: #fff;
+  background-color: var(--top-panel-background-color);
   padding-top: 30px;
 
   @media screen and (min-width: 768px) {
     padding: 20px 40px;
     margin-top: 32px;
     border-radius: 30px;
-    background-color: #fff;
+    background-color: var(--top-panel-background-color);
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   }
   
@@ -32,5 +32,5 @@ export const NavText = styled.p`
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #000000;
+  color: var(--general-header-color);
 `;

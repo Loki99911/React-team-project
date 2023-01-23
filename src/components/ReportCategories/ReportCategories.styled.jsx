@@ -25,16 +25,16 @@ export const Item = styled.li`
   margin: 0%;
   padding: 10px 0;
   gap: 5px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--general-header-color);
 
   &.active {
-    fill: #ff751d;
+    fill: var(--general-accent-background-color);
   }
 
   &:hover,
   &:focus {
     cursor: pointer;
-    fill: #ff751d;
+    fill: var(--general-accent-background-color);
   }
 
   @media screen and (min-width: 768px) {
@@ -59,20 +59,20 @@ export const ItemIncome = styled.li`
   margin: 0%;
   padding: 10px 0;
   gap: 5px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--general-header-color);
 
   &p {
     margin-bottom: 0;
   }
 
   &.active {
-    fill: #ff751d;
+    fill: var(--report-icon-fill-active);
   }
 
   &:hover,
   &:focus {
     cursor: pointer;
-    fill: #ff751d;
+    fill: var(--report-icon-fill-active);
   }
 
   @media screen and (min-width: 768px) {
@@ -98,7 +98,7 @@ export const Text = styled.p`
   line-height: 14px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #52555f;
+  color: var(--table-description-text-color);
 `;
 
 export const TextPrice = styled.p`
@@ -112,5 +112,5 @@ export const TextPrice = styled.p`
   line-height: 14px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #52555f;
+  color: var(--table-description-text-color);
 `;

@@ -16,7 +16,7 @@ export const BoxPadding = styled.div`
 
 export const TableBox = styled.div`
   position: relative;
-  background-color: #fff;
+  background-color: var(--top-panel-background-color);
 
   @media screen and (min-width: 768px) {
     border-radius: 30px;
@@ -40,5 +40,5 @@ export const Text = styled.text`
   align-items: center;
   text-align: center;
   letter-spacing: 0.02em;
-  color: #52555f;
+  color: var(--table-description-text-color);
 `;

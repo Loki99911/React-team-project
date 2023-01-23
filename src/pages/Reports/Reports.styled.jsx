@@ -79,20 +79,20 @@ export const Link = styled(NavLink)`
   text-align: center;
   letter-spacing: 0.04em;
   text-decoration: none;
-  fill: #52555f;
+  fill: var(--table-description-text-color);
 
-  color: rgba(82, 85, 95, 0.7);
+  color: var(--balance-text-color);
 
   transition: color 250ms linear;
 
   :hover,
   :focus {
-    color: #ff751d;
+    color: var(--general-accent-background-color);
   }
   .backToMain {
     width: 100%;
     height: 100%;
-    fill: #52555f;
+    fill: var(--table-description-text-color);
     transition: fill 250ms linear;
   }
 
