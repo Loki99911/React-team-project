@@ -11,6 +11,8 @@ export const FormLayout = styled.div`
   border-radius: 30px;
   background-color: var(--auth-form-background-color);
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  color: var(--general-text-color);
+
 
   @media screen and (min-width: 768px) {
     width: 425px;
