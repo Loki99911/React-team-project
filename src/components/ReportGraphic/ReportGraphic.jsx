@@ -1,5 +1,6 @@
 import { TableBox, BoxPadding, Text } from './ReportGraphic.styled';
 import { useEffect, useState } from 'react';
+import shortid from 'shortid';
 import React from 'react';
 import {
   BarChart,
@@ -68,6 +69,7 @@ export default function ReportGraphic({ state }) {
         >
           {isMobile ? (
             <ComposedChart
+              key={shortid.generate()}
               layout="vertical"
               width={280}
               height={380}
@@ -95,7 +97,8 @@ export default function ReportGraphic({ state }) {
               </Bar>
             </ComposedChart>
           ) : (
-            <BarChart
+              <BarChart
+                key={shortid.generate()}
               width={604}
               height={380}
               barCategoryGap="50%"
