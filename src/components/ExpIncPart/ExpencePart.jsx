@@ -24,8 +24,13 @@ import { useLocation } from 'react-router-dom';
 import { Translator } from 'components/Translator/Translator';
 import { setNewDate } from 'redux/Transaction/transactionReducer';
 import { ExpensesSmile } from 'components/ExpensesSmile/ExpensesSmile';
+import useSound from 'use-sound';
+import input from '../../sounds/input.mp3';
+import clear from '../../sounds/clear.mp3';
 
 export const ExpencePart = () => {
+  const [playInput] = useSound(input);
+  const [playClear] = useSound(clear);
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [sum, setSum] = useState('');
@@ -70,6 +75,7 @@ export const ExpencePart = () => {
     setDescription('');
     setCategory('');
     setSum('');
+    playClear();
   };
 
   const handleSubmitForm = evt => {
@@ -93,6 +99,7 @@ export const ExpencePart = () => {
       date: newDate.toISOString().slice(0, 10),
       category: category,
     };
+    playInput();
     dispatch(addExpense(items));
     handleResetForm();
   };
